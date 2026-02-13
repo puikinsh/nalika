@@ -158,18 +158,20 @@ All asset paths are relative to the `nalika/` directory — open HTML files from
 
 ## Pages (48)
 
+All pages are live on the Colorlib demo server. Click any page name to preview.
+
 | Category | Pages |
 | --- | --- |
-| **Dashboards** | Main Dashboard, Analytics, Projects |
-| **E-commerce** | Product List, Product Edit, Product Detail, Product Cart, Product Payment |
-| **Charts** | Bar, Line, Area, Rounded, Sparkline, Mixed (C3), ApexCharts |
-| **Forms** | Basic Elements, Advanced Elements (Tom Select, noUiSlider, Pickr, native pickers), Password Meter, Multi Upload, Text Editor (Quill), Dual List Box |
-| **Tables** | Static Table, Data Table |
-| **UI Components** | Accordions, Alerts, Buttons, Modals, Tabs, Notifications, Widgets |
-| **Interface** | Kanban Board, Activity Timeline, Calendar, Code Editor, Image Cropper, PDF Viewer |
-| **Mailbox** | Inbox, View Mail, Compose Mail |
-| **Miscellaneous** | File Manager, Blog, Blog Details, 404 Page, 500 Page |
-| **Auth** | Login, Register, Password Recovery, Lock Screen |
+| **Dashboards** | [Main Dashboard](https://colorlib.com/polygon/nalika/index.html), [Analytics](https://colorlib.com/polygon/nalika/index-1.html), [Projects](https://colorlib.com/polygon/nalika/index-2.html), [Statistics](https://colorlib.com/polygon/nalika/analytics.html), [Widgets](https://colorlib.com/polygon/nalika/widgets.html) |
+| **E-commerce** | [Product List](https://colorlib.com/polygon/nalika/product-list.html), [Product Edit](https://colorlib.com/polygon/nalika/product-edit.html), [Product Detail](https://colorlib.com/polygon/nalika/product-detail.html), [Product Cart](https://colorlib.com/polygon/nalika/product-cart.html), [Product Payment](https://colorlib.com/polygon/nalika/product-payment.html) |
+| **Charts** | [Bar](https://colorlib.com/polygon/nalika/bar-charts.html), [Line](https://colorlib.com/polygon/nalika/line-charts.html), [Area](https://colorlib.com/polygon/nalika/area-charts.html), [Rounded](https://colorlib.com/polygon/nalika/rounded-chart.html), [Sparkline](https://colorlib.com/polygon/nalika/sparkline.html), [Mixed (C3)](https://colorlib.com/polygon/nalika/c3.html) |
+| **Forms** | [Basic Elements](https://colorlib.com/polygon/nalika/basic-form-element.html), [Advanced Elements](https://colorlib.com/polygon/nalika/advance-form-element.html), [Password Meter](https://colorlib.com/polygon/nalika/password-meter.html), [Multi Upload](https://colorlib.com/polygon/nalika/multi-upload.html), [Text Editor](https://colorlib.com/polygon/nalika/tinymc.html), [Dual List Box](https://colorlib.com/polygon/nalika/dual-list-box.html) |
+| **Tables** | [Static Table](https://colorlib.com/polygon/nalika/static-table.html), [Data Table](https://colorlib.com/polygon/nalika/data-table.html) |
+| **UI Components** | [Accordions](https://colorlib.com/polygon/nalika/accordion.html), [Alerts](https://colorlib.com/polygon/nalika/alerts.html), [Buttons](https://colorlib.com/polygon/nalika/buttons.html), [Modals](https://colorlib.com/polygon/nalika/modals.html), [Tabs](https://colorlib.com/polygon/nalika/tabs.html), [Notifications](https://colorlib.com/polygon/nalika/notifications.html) |
+| **Interface** | [Kanban Board](https://colorlib.com/polygon/nalika/kanban-board.html), [Activity Timeline](https://colorlib.com/polygon/nalika/activity-timeline.html), [Calendar](https://colorlib.com/polygon/nalika/calendar.html), [Code Editor](https://colorlib.com/polygon/nalika/code-editor.html), [Image Cropper](https://colorlib.com/polygon/nalika/images-cropper.html), [PDF Viewer](https://colorlib.com/polygon/nalika/pdf-viewer.html) |
+| **Mailbox** | [Inbox](https://colorlib.com/polygon/nalika/mailbox.html), [View Mail](https://colorlib.com/polygon/nalika/mailbox-view.html), [Compose Mail](https://colorlib.com/polygon/nalika/mailbox-compose.html) |
+| **Miscellaneous** | [File Manager](https://colorlib.com/polygon/nalika/file-manager.html), [Blog](https://colorlib.com/polygon/nalika/blog.html), [Blog Details](https://colorlib.com/polygon/nalika/blog-details.html), [404 Page](https://colorlib.com/polygon/nalika/404.html), [500 Page](https://colorlib.com/polygon/nalika/500.html) |
+| **Auth** | [Login](https://colorlib.com/polygon/nalika/login.html), [Register](https://colorlib.com/polygon/nalika/register.html), [Password Recovery](https://colorlib.com/polygon/nalika/password-recovery.html), [Lock Screen](https://colorlib.com/polygon/nalika/lock.html) |
 
 ## Technology Stack
 
@@ -210,9 +212,9 @@ nalika/
   fonts/              Custom nalika icon font (local)
   img/                SVG placeholders organized by feature
   pdf/                Sample PDF for viewer page
-documentation/
-  index.html          Template documentation (standalone)
 ```
+
+**Documentation:** [View Template Documentation](https://colorlib.com/polygon/nalika/documentation/index.html)
 
 ## Architecture
 
