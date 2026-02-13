@@ -6,9 +6,11 @@ Nalika includes 48 ready-to-use pages covering dashboards, e-commerce, charts, f
 
 ## Live Preview
 
-### Screenshot
+### Screenshots
 
-![Nalika admin dashboard template preview](https://colorlib.com/wp/wp-content/uploads/sites/2/nalika-simple-free-bootstrap-admin-dashboard.jpg)
+![Nalika — Main Dashboard with charts, stats, and sidebar navigation](screenshots/nalika-dark-bootstrap-admin-panel.png)
+
+![Nalika — Project Management dashboard with sprint tasks and activity feed](screenshots/nalika-dark-dashboard-template.png)
 
 ### Demo Site: [View Live Demo](https://colorlib.com/polygon/nalika/index.html)
 
