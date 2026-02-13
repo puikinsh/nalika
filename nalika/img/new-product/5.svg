@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="370" height="400" viewBox="0 0 370 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#312e81"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ab8ce4"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="370" height="400" fill="url(#bg)"/>
+  <rect width="370" height="200" fill="url(#shine)"/>
+  <!-- Decorative circles -->
+  <circle cx="300" cy="60" r="80" fill="#ab8ce4" opacity="0.06"/>
+  <circle cx="70" cy="340" r="100" fill="#7c3aed" opacity="0.06"/>
+  <!-- Diamond/gem icon -->
+  <g transform="translate(185,175)" fill="none" stroke="url(#accent)" stroke-width="2" opacity="0.9">
+    <polygon points="0,-50 45,-15 28,35 -28,35 -45,-15" stroke-width="2.5"/>
+    <line x1="-45" y1="-15" x2="45" y2="-15"/>
+    <line x1="0" y1="-50" x2="-15" y2="-15"/>
+    <line x1="0" y1="-50" x2="15" y2="-15"/>
+    <line x1="-15" y1="-15" x2="28" y2="35"/>
+    <line x1="15" y1="-15" x2="-28" y2="35"/>
+    <line x1="0" y1="-15" x2="0" y2="35"/>
+  </g>
+  <!-- Label -->
+  <text x="185" y="260" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="500" fill="#a5b4fc" letter-spacing="2" opacity="0.7">PREMIUM</text>
+</svg>

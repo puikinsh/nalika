@@ -1,0 +1,781 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Kanban Board | Nalika - Material Admin Template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon
+		============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- Google Fonts
+		============================================ -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5.3.8 CSS
+		============================================ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <!-- Bootstrap Icons 1.13.1
+		============================================ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- nalika Icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/nalika-icon.css">
+    <!-- AOS 2.3.4 CSS
+		============================================ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <!-- SimpleBar 6.2.7 CSS
+		============================================ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@6.2.7/dist/simplebar.min.css">
+    <!-- main CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- style CSS
+		============================================ -->
+    <link rel="stylesheet" href="style.css">
+    <!-- responsive CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+
+    <div class="left-sidebar-pro">
+        <nav id="sidebar" class="">
+            <div class="sidebar-header">
+                <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
+                <strong><img src="img/logo/logosn.png" alt="" /></strong>
+            </div>
+            <div class="nalika-profile">
+                <div class="profile-dtl">
+                    <a href="#"><img src="https://avatars.githubusercontent.com/u/3451398?s=200&v=4" alt="Aigars Silkalns" /></a>
+                    <h2>Aigars <span class="min-dtn">Silkalns</span></h2>
+                </div>
+                <div class="profile-social-dtl">
+                    <ul class="dtl-social">
+                        <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                        <li><a href="#"><i class="bi bi-twitter-x"></i></a></li>
+                        <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="left-custom-menu-adp-wrap comment-scrollbar">
+                <nav class="sidebar-nav left-sidebar-menu-pro">
+                    <ul class="metismenu" id="menu1">
+                        <li>
+                            <a class="has-arrow" href="index.html">
+							   <i class="bi big-icon bi-speedometer2 icon-wrap"></i>
+							   <span class="mini-click-non">Dashboards</span>
+							</a>
+                            <ul class="submenu-angle" aria-expanded="true">
+                                <li><a title="Main Dashboard" href="index.html"><span class="mini-sub-pro">Main Dashboard</span></a></li>
+                                <li><a title="Analytics" href="index-1.html"><span class="mini-sub-pro">Analytics</span></a></li>
+                                <li><a title="Projects" href="index-2.html"><span class="mini-sub-pro">Projects</span></a></li>
+                                <li><a title="Statistics" href="analytics.html"><span class="mini-sub-pro">Statistics</span></a></li>
+                                <li><a title="Widgets" href="widgets.html"><span class="mini-sub-pro">Widgets</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="product-list.html" aria-expanded="false"><i class="bi big-icon bi-bag icon-wrap"></i> <span class="mini-click-non">Ecommerce</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Product List" href="product-list.html"><span class="mini-sub-pro">Product List</span></a></li>
+                                <li><a title="Product Edit" href="product-edit.html"><span class="mini-sub-pro">Product Edit</span></a></li>
+                                <li><a title="Product Detail" href="product-detail.html"><span class="mini-sub-pro">Product Detail</span></a></li>
+                                <li><a title="Product Cart" href="product-cart.html"><span class="mini-sub-pro">Product Cart</span></a></li>
+                                <li><a title="Product Payment" href="product-payment.html"><span class="mini-sub-pro">Product Payment</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="bi big-icon bi-envelope icon-wrap"></i> <span class="mini-click-non">Mailbox</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Inbox" href="mailbox.html"><span class="mini-sub-pro">Inbox</span></a></li>
+                                <li><a title="View Mail" href="mailbox-view.html"><span class="mini-sub-pro">View Mail</span></a></li>
+                                <li><a title="Compose Mail" href="mailbox-compose.html"><span class="mini-sub-pro">Compose Mail</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="active">
+                            <a class="has-arrow" href="kanban-board.html" aria-expanded="false"><i class="bi big-icon bi-grid-3x3 icon-wrap"></i> <span class="mini-click-non">Interface</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Kanban Board" href="kanban-board.html"><span class="mini-sub-pro">Kanban Board</span></a></li>
+                                <li><a title="Activity Timeline" href="activity-timeline.html"><span class="mini-sub-pro">Activity Timeline</span></a></li>
+                                <li><a title="Calendar" href="calendar.html"><span class="mini-sub-pro">Calendar</span></a></li>
+                                <li><a title="Code Editor" href="code-editor.html"><span class="mini-sub-pro">Code Editor</span></a></li>
+                                <li><a title="Images Cropper" href="images-cropper.html"><span class="mini-sub-pro">Images Cropper</span></a></li>
+                                <li><a title="PDF Viewer" href="pdf-viewer.html"><span class="mini-sub-pro">PDF Viewer</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="file-manager.html" aria-expanded="false"><i class="bi big-icon bi-pie-chart icon-wrap"></i> <span class="mini-click-non">Miscellaneous</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="File Manager" href="file-manager.html"><span class="mini-sub-pro">File Manager</span></a></li>
+                                <li><a title="Blog" href="blog.html"><span class="mini-sub-pro">Blog</span></a></li>
+                                <li><a title="Blog Details" href="blog-details.html"><span class="mini-sub-pro">Blog Details</span></a></li>
+                                <li><a title="404 Page" href="404.html"><span class="mini-sub-pro">404 Page</span></a></li>
+                                <li><a title="500 Page" href="500.html"><span class="mini-sub-pro">500 Page</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="bar-charts.html" aria-expanded="false"><i class="bi big-icon bi-bar-chart icon-wrap"></i> <span class="mini-click-non">Charts</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Bar Charts" href="bar-charts.html"><span class="mini-sub-pro">Bar Charts</span></a></li>
+                                <li><a title="Line Charts" href="line-charts.html"><span class="mini-sub-pro">Line Charts</span></a></li>
+                                <li><a title="Area Charts" href="area-charts.html"><span class="mini-sub-pro">Area Charts</span></a></li>
+                                <li><a title="Rounded Charts" href="rounded-chart.html"><span class="mini-sub-pro">Rounded Charts</span></a></li>
+                                <li><a title="Mixed Charts" href="c3.html"><span class="mini-sub-pro">Mixed Charts</span></a></li>
+                                <li><a title="Sparkline Charts" href="sparkline.html"><span class="mini-sub-pro">Sparkline Charts</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="static-table.html" aria-expanded="false"><i class="bi big-icon bi-table icon-wrap"></i> <span class="mini-click-non">Data Tables</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Static Table" href="static-table.html"><span class="mini-sub-pro">Static Table</span></a></li>
+                                <li><a title="Data Table" href="data-table.html"><span class="mini-sub-pro">Data Table</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="basic-form-element.html" aria-expanded="false"><i class="bi big-icon bi-ui-checks icon-wrap"></i> <span class="mini-click-non">Forms</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Basic Form Elements" href="basic-form-element.html"><span class="mini-sub-pro">Basic Elements</span></a></li>
+                                <li><a title="Advance Form Elements" href="advance-form-element.html"><span class="mini-sub-pro">Advanced Elements</span></a></li>
+                                <li><a title="Password Meter" href="password-meter.html"><span class="mini-sub-pro">Password Meter</span></a></li>
+                                <li><a title="Multi Upload" href="multi-upload.html"><span class="mini-sub-pro">Multi Upload</span></a></li>
+                                <li><a title="Text Editor" href="tinymc.html"><span class="mini-sub-pro">Text Editor</span></a></li>
+                                <li><a title="Dual List Box" href="dual-list-box.html"><span class="mini-sub-pro">Dual List Box</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="notifications.html" aria-expanded="false"><i class="bi big-icon bi-display icon-wrap"></i> <span class="mini-click-non">App Views</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Notifications" href="notifications.html"><span class="mini-sub-pro">Notifications</span></a></li>
+                                <li><a title="Alerts" href="alerts.html"><span class="mini-sub-pro">Alerts</span></a></li>
+                                <li><a title="Modals" href="modals.html"><span class="mini-sub-pro">Modals</span></a></li>
+                                <li><a title="Buttons" href="buttons.html"><span class="mini-sub-pro">Buttons</span></a></li>
+                                <li><a title="Tabs" href="tabs.html"><span class="mini-sub-pro">Tabs</span></a></li>
+                                <li><a title="Accordion" href="accordion.html"><span class="mini-sub-pro">Accordion</span></a></li>
+                            </ul>
+                        </li>
+                        <li id="removable">
+                            <a class="has-arrow" href="#" aria-expanded="false"><i class="bi big-icon bi-files icon-wrap"></i> <span class="mini-click-non">Pages</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Login" href="login.html"><span class="mini-sub-pro">Login</span></a></li>
+                                <li><a title="Register" href="register.html"><span class="mini-sub-pro">Register</span></a></li>
+                                <li><a title="Lock" href="lock.html"><span class="mini-sub-pro">Lock</span></a></li>
+                                <li><a title="Password Recovery" href="password-recovery.html"><span class="mini-sub-pro">Password Recovery</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </nav>
+    </div>
+    <!-- Start Welcome area -->
+    <div class="all-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="logo-pro">
+                        <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-advance-area">
+                    <div class="header-top-area">
+            <div class="container-fluid">
+                <div class="nk-header-bar">
+                    <!-- Sidebar Toggle -->
+                    <button type="button" id="sidebarCollapse" class="btn text-white p-0 me-3 border-0 text-decoration-none" style="font-size:20px;">
+                        <i class="icon nalika-menu-task"></i>
+                    </button>
+
+                    <!-- Search -->
+                    <div class="nk-header-search d-none d-lg-block">
+                        <input type="text" class="nk-search-input" placeholder="Search...">
+                        <i class="bi bi-search nk-search-icon"></i>
+                    </div>
+
+                    <!-- Right Icons -->
+                    <div class="nk-header-right ms-auto">
+                        <!-- Messages -->
+                        <div class="dropdown">
+                            <a href="#" class="nk-header-icon" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                                <i class="icon nalika-mail"></i>
+                                <span class="nk-badge"></span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <h6 class="nk-dd-title">Messages</h6>
+                                <div class="nk-dd-body">
+                                    <a href="#" class="nk-dd-item">
+                                        <img src="img/contact/1.svg" alt="">
+                                        <div class="nk-dd-item-body">
+                                            <div class="d-flex justify-content-between"><h6>Aigars</h6><span class="nk-dd-date">16 Sept</span></div>
+                                            <p>Please done this project as soon possible.</p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="nk-dd-item">
+                                        <img src="img/contact/4.svg" alt="">
+                                        <div class="nk-dd-item-body">
+                                            <div class="d-flex justify-content-between"><h6>Sulaiman din</h6><span class="nk-dd-date">16 Sept</span></div>
+                                            <p>Please done this project as soon possible.</p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="nk-dd-item">
+                                        <img src="img/contact/3.svg" alt="">
+                                        <div class="nk-dd-item-body">
+                                            <div class="d-flex justify-content-between"><h6>Victor Jara</h6><span class="nk-dd-date">16 Sept</span></div>
+                                            <p>Please done this project as soon possible.</p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="nk-dd-item">
+                                        <img src="img/contact/2.svg" alt="">
+                                        <div class="nk-dd-item-body">
+                                            <div class="d-flex justify-content-between"><h6>Victor Jara</h6><span class="nk-dd-date">16 Sept</span></div>
+                                            <p>Please done this project as soon possible.</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="nk-dd-footer">
+                                    <a href="#">View All Messages</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Notifications -->
+                        <div class="dropdown">
+                            <a href="#" class="nk-header-icon" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                                <i class="icon nalika-alarm"></i>
+                                <span class="nk-badge"></span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <h6 class="nk-dd-title">Notifications</h6>
+                                <div class="nk-dd-body">
+                                    <a href="#" class="nk-dd-item">
+                                        <div class="nk-notif-icon"><i class="icon nalika-tick"></i></div>
+                                        <div class="nk-dd-item-body">
+                                            <div class="d-flex justify-content-between"><h6>Aigars</h6><span class="nk-dd-date">16 Sept</span></div>
+                                            <p>Please done this project as soon possible.</p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="nk-dd-item">
+                                        <div class="nk-notif-icon"><i class="icon nalika-cloud"></i></div>
+                                        <div class="nk-dd-item-body">
+                                            <div class="d-flex justify-content-between"><h6>Sulaiman din</h6><span class="nk-dd-date">16 Sept</span></div>
+                                            <p>Please done this project as soon possible.</p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="nk-dd-item">
+                                        <div class="nk-notif-icon"><i class="icon nalika-folder"></i></div>
+                                        <div class="nk-dd-item-body">
+                                            <div class="d-flex justify-content-between"><h6>Victor Jara</h6><span class="nk-dd-date">16 Sept</span></div>
+                                            <p>Please done this project as soon possible.</p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="nk-dd-item">
+                                        <div class="nk-notif-icon"><i class="icon nalika-bar-chart"></i></div>
+                                        <div class="nk-dd-item-body">
+                                            <div class="d-flex justify-content-between"><h6>Victor Jara</h6><span class="nk-dd-date">16 Sept</span></div>
+                                            <p>Please done this project as soon possible.</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="nk-dd-footer">
+                                    <a href="#">View All Notifications</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- User Profile -->
+                        <div class="dropdown">
+                            <a href="#" class="nk-header-icon nk-header-user" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="icon nalika-user"></i>
+                                <span class="nk-user-name d-none d-md-inline">Aigars</span>
+                                <i class="bi bi-chevron-down" style="font-size:12px;"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end nk-user-menu">
+                                <li><a class="dropdown-item" href="register.html"><i class="icon nalika-home me-2"></i>Register</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="icon nalika-user me-2"></i>My Profile</a></li>
+                                <li><a class="dropdown-item" href="lock.html"><i class="icon nalika-diamond me-2"></i>Lock</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="icon nalika-settings me-2"></i>Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="login.html"><i class="icon nalika-unlocked me-2"></i>Log Out</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Settings Panel -->
+                        <div class="dropdown">
+                            <a href="#" class="nk-header-icon" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                                <i class="icon nalika-menu-task"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end nk-settings-panel">
+                                <ul class="nav nav-tabs nav-fill" role="tablist">
+                                    <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#nkNews" type="button">News</button></li>
+                                    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#nkActivity" type="button">Activity</button></li>
+                                    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#nkSettings" type="button">Settings</button></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <!-- News Tab -->
+                                    <div class="tab-pane fade show active" id="nkNews">
+                                        <div class="nk-panel-heading">
+                                            <h6><i class="icon nalika-chat me-1"></i> Latest News</h6>
+                                            <p>You have 10 New News.</p>
+                                        </div>
+                                        <a href="#" class="nk-panel-item">
+                                            <img src="img/contact/4.svg" alt="">
+                                            <div class="nk-panel-item-body">
+                                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                <small>Yesterday 2:45 pm</small>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="nk-panel-item">
+                                            <img src="img/contact/1.svg" alt="">
+                                            <div class="nk-panel-item-body">
+                                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                <small>Yesterday 2:45 pm</small>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="nk-panel-item">
+                                            <img src="img/contact/2.svg" alt="">
+                                            <div class="nk-panel-item-body">
+                                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                <small>Yesterday 2:45 pm</small>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="nk-panel-item">
+                                            <img src="img/contact/3.svg" alt="">
+                                            <div class="nk-panel-item-body">
+                                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                <small>Yesterday 2:45 pm</small>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="nk-panel-item">
+                                            <img src="img/contact/4.svg" alt="">
+                                            <div class="nk-panel-item-body">
+                                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                <small>Yesterday 2:45 pm</small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <!-- Activity Tab -->
+                                    <div class="tab-pane fade" id="nkActivity">
+                                        <div class="nk-panel-heading">
+                                            <h6><i class="icon nalika-happiness me-1"></i> Recent Activity</h6>
+                                            <p>You have 20 Recent Activity.</p>
+                                        </div>
+                                        <div class="nk-activity-item">
+                                            <h6>New User Registered</h6>
+                                            <p>The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                            <small>1 hours ago</small>
+                                        </div>
+                                        <div class="nk-activity-item">
+                                            <h6>New Order Received</h6>
+                                            <p>The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                            <small>2 hours ago</small>
+                                        </div>
+                                        <div class="nk-activity-item">
+                                            <h6>New Order Received</h6>
+                                            <p>The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                            <small>3 hours ago</small>
+                                        </div>
+                                        <div class="nk-activity-item">
+                                            <h6>New Order Received</h6>
+                                            <p>The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                            <small>4 hours ago</small>
+                                        </div>
+                                        <div class="nk-activity-item">
+                                            <h6>New User Registered</h6>
+                                            <p>The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                            <small>5 hours ago</small>
+                                        </div>
+                                    </div>
+                                    <!-- Settings Tab -->
+                                    <div class="tab-pane fade" id="nkSettings">
+                                        <div class="nk-panel-heading">
+                                            <h6><i class="icon nalika-gear me-1"></i> Settings Panel</h6>
+                                            <p>You have 20 Settings. 5 not completed.</p>
+                                        </div>
+                                        <div class="nk-setting-item">
+                                            <label for="nkOpt1">Show notifications</label>
+                                            <div class="form-check form-switch mb-0">
+                                                <input class="form-check-input" type="checkbox" id="nkOpt1">
+                                            </div>
+                                        </div>
+                                        <div class="nk-setting-item">
+                                            <label for="nkOpt2">Disable Chat</label>
+                                            <div class="form-check form-switch mb-0">
+                                                <input class="form-check-input" type="checkbox" id="nkOpt2">
+                                            </div>
+                                        </div>
+                                        <div class="nk-setting-item">
+                                            <label for="nkOpt3">Enable history</label>
+                                            <div class="form-check form-switch mb-0">
+                                                <input class="form-check-input" type="checkbox" id="nkOpt3">
+                                            </div>
+                                        </div>
+                                        <div class="nk-setting-item">
+                                            <label for="nkOpt4">Show charts</label>
+                                            <div class="form-check form-switch mb-0">
+                                                <input class="form-check-input" type="checkbox" id="nkOpt4">
+                                            </div>
+                                        </div>
+                                        <div class="nk-setting-item">
+                                            <label for="nkOpt5">Update everyday</label>
+                                            <div class="form-check form-switch mb-0">
+                                                <input class="form-check-input" type="checkbox" id="nkOpt5" checked>
+                                            </div>
+                                        </div>
+                                        <div class="nk-setting-item">
+                                            <label for="nkOpt6">Global search</label>
+                                            <div class="form-check form-switch mb-0">
+                                                <input class="form-check-input" type="checkbox" id="nkOpt6" checked>
+                                            </div>
+                                        </div>
+                                        <div class="nk-setting-item">
+                                            <label for="nkOpt7">Offline users</label>
+                                            <div class="form-check form-switch mb-0">
+                                                <input class="form-check-input" type="checkbox" id="nkOpt7" checked>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="breadcome-area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="breadcome-list single-page-breadcome">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                        <div class="breadcome-heading">
+                                            <form role="search" class="">
+                                                <input type="text" placeholder="Search..." class="form-control">
+                                                <a href=""><i class="bi bi-search"></i></a>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                        <ul class="breadcome-menu">
+                                            <li><a href="#">Home</a> <span class="bread-slash">/</span>
+                                            </li>
+                                            <li><span class="bread-blod">Kanban Board</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Kanban Board Start -->
+        <div class="kanban-area mg-tb-15">
+            <div class="container-fluid">
+                <!-- Board Header -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <h4 class="mb-1" style="color: var(--nk-text-primary);">Project Sprint Board</h4>
+                                <p class="mb-0" style="color: var(--nk-text-muted);">Sprint 14 &middot; Feb 3 &ndash; Feb 17, 2026</p>
+                            </div>
+                            <button class="btn btn-sm" style="background: var(--nk-accent-blue); color: #fff; border-radius: var(--nk-radius-sm);" id="addTaskBtn">
+                                <i class="bi bi-plus-lg me-1"></i>Add Task
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Board Columns -->
+                <div class="row kanban-board">
+                    <!-- Todo Column -->
+                    <div class="col-lg-3 col-md-6 col-12 mb-3">
+                        <div class="kanban-column">
+                            <div class="kanban-column-header">
+                                <span class="kanban-dot" style="background: var(--nk-text-muted);"></span>
+                                <h6>Todo</h6>
+                                <span class="kanban-count" id="countTodo">4</span>
+                            </div>
+                            <div class="kanban-list" id="kanbanTodo">
+                                <div class="kanban-card" data-id="1">
+                                    <div class="kanban-card-labels">
+                                        <span class="kanban-label kanban-label-feature">Feature</span>
+                                    </div>
+                                    <h6 class="kanban-card-title">User authentication flow</h6>
+                                    <p class="kanban-card-desc">Implement OAuth 2.0 login with Google and GitHub providers</p>
+                                    <div class="kanban-card-meta">
+                                        <span class="kanban-card-due"><i class="bi bi-calendar3 me-1"></i>Feb 10</span>
+                                        <div class="kanban-card-assignee" title="Sarah M.">SM</div>
+                                    </div>
+                                </div>
+                                <div class="kanban-card" data-id="2">
+                                    <div class="kanban-card-labels">
+                                        <span class="kanban-label kanban-label-bug">Bug</span>
+                                        <span class="kanban-label kanban-label-urgent">Urgent</span>
+                                    </div>
+                                    <h6 class="kanban-card-title">Fix pagination offset error</h6>
+                                    <p class="kanban-card-desc">Products page shows duplicate items on page 3+</p>
+                                    <div class="kanban-card-meta">
+                                        <span class="kanban-card-due"><i class="bi bi-calendar3 me-1"></i>Feb 7</span>
+                                        <div class="kanban-card-assignee" title="Alex K.">AK</div>
+                                    </div>
+                                </div>
+                                <div class="kanban-card" data-id="3">
+                                    <div class="kanban-card-labels">
+                                        <span class="kanban-label kanban-label-design">Design</span>
+                                    </div>
+                                    <h6 class="kanban-card-title">Dashboard chart redesign</h6>
+                                    <p class="kanban-card-desc">Replace bar charts with area charts per new design spec</p>
+                                    <div class="kanban-card-meta">
+                                        <span class="kanban-card-due"><i class="bi bi-calendar3 me-1"></i>Feb 12</span>
+                                        <div class="kanban-card-assignee" title="Jordan L.">JL</div>
+                                    </div>
+                                </div>
+                                <div class="kanban-card" data-id="4">
+                                    <div class="kanban-card-labels">
+                                        <span class="kanban-label kanban-label-feature">Feature</span>
+                                    </div>
+                                    <h6 class="kanban-card-title">Export to CSV endpoint</h6>
+                                    <p class="kanban-card-desc">Add /api/export route for order and product data</p>
+                                    <div class="kanban-card-meta">
+                                        <span class="kanban-card-due"><i class="bi bi-calendar3 me-1"></i>Feb 14</span>
+                                        <div class="kanban-card-assignee" title="Mike T.">MT</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- In Progress Column -->
+                    <div class="col-lg-3 col-md-6 col-12 mb-3">
+                        <div class="kanban-column">
+                            <div class="kanban-column-header">
+                                <span class="kanban-dot" style="background: var(--nk-accent-blue);"></span>
+                                <h6>In Progress</h6>
+                                <span class="kanban-count" id="countProgress">3</span>
+                            </div>
+                            <div class="kanban-list" id="kanbanProgress">
+                                <div class="kanban-card" data-id="5">
+                                    <div class="kanban-card-labels">
+                                        <span class="kanban-label kanban-label-feature">Feature</span>
+                                    </div>
+                                    <h6 class="kanban-card-title">Real-time notifications</h6>
+                                    <p class="kanban-card-desc">WebSocket integration for order status and chat messages</p>
+                                    <div class="kanban-card-meta">
+                                        <span class="kanban-card-due"><i class="bi bi-calendar3 me-1"></i>Feb 9</span>
+                                        <div class="kanban-card-assignee" title="Sarah M.">SM</div>
+                                    </div>
+                                </div>
+                                <div class="kanban-card" data-id="6">
+                                    <div class="kanban-card-labels">
+                                        <span class="kanban-label kanban-label-bug">Bug</span>
+                                    </div>
+                                    <h6 class="kanban-card-title">Mobile sidebar z-index overlap</h6>
+                                    <p class="kanban-card-desc">Sidebar overlay blocks modal on viewports &lt; 768px</p>
+                                    <div class="kanban-card-meta">
+                                        <span class="kanban-card-due"><i class="bi bi-calendar3 me-1"></i>Feb 8</span>
+                                        <div class="kanban-card-assignee" title="Alex K.">AK</div>
+                                    </div>
+                                </div>
+                                <div class="kanban-card" data-id="7">
+                                    <div class="kanban-card-labels">
+                                        <span class="kanban-label kanban-label-improvement">Improvement</span>
+                                    </div>
+                                    <h6 class="kanban-card-title">Optimize image loading</h6>
+                                    <p class="kanban-card-desc">Implement lazy loading + AVIF format with fallbacks</p>
+                                    <div class="kanban-card-meta">
+                                        <span class="kanban-card-due"><i class="bi bi-calendar3 me-1"></i>Feb 11</span>
+                                        <div class="kanban-card-assignee" title="Jordan L.">JL</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review Column -->
+                    <div class="col-lg-3 col-md-6 col-12 mb-3">
+                        <div class="kanban-column">
+                            <div class="kanban-column-header">
+                                <span class="kanban-dot" style="background: var(--nk-accent-purple);"></span>
+                                <h6>Review</h6>
+                                <span class="kanban-count" id="countReview">2</span>
+                            </div>
+                            <div class="kanban-list" id="kanbanReview">
+                                <div class="kanban-card" data-id="8">
+                                    <div class="kanban-card-labels">
+                                        <span class="kanban-label kanban-label-feature">Feature</span>
+                                    </div>
+                                    <h6 class="kanban-card-title">Multi-currency support</h6>
+                                    <p class="kanban-card-desc">EUR, GBP, JPY conversion using live exchange rates</p>
+                                    <div class="kanban-card-meta">
+                                        <span class="kanban-card-due"><i class="bi bi-calendar3 me-1"></i>Feb 6</span>
+                                        <div class="kanban-card-assignee" title="Mike T.">MT</div>
+                                    </div>
+                                </div>
+                                <div class="kanban-card" data-id="9">
+                                    <div class="kanban-card-labels">
+                                        <span class="kanban-label kanban-label-design">Design</span>
+                                    </div>
+                                    <h6 class="kanban-card-title">Empty state illustrations</h6>
+                                    <p class="kanban-card-desc">SVG illustrations for empty tables, no results, and errors</p>
+                                    <div class="kanban-card-meta">
+                                        <span class="kanban-card-due"><i class="bi bi-calendar3 me-1"></i>Feb 7</span>
+                                        <div class="kanban-card-assignee" title="Jordan L.">JL</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Done Column -->
+                    <div class="col-lg-3 col-md-6 col-12 mb-3">
+                        <div class="kanban-column">
+                            <div class="kanban-column-header">
+                                <span class="kanban-dot" style="background: var(--nk-accent-teal);"></span>
+                                <h6>Done</h6>
+                                <span class="kanban-count" id="countDone">3</span>
+                            </div>
+                            <div class="kanban-list" id="kanbanDone">
+                                <div class="kanban-card kanban-card-done" data-id="10">
+                                    <div class="kanban-card-labels">
+                                        <span class="kanban-label kanban-label-bug">Bug</span>
+                                    </div>
+                                    <h6 class="kanban-card-title">Fix date picker locale</h6>
+                                    <p class="kanban-card-desc">Date picker shows US format instead of user locale</p>
+                                    <div class="kanban-card-meta">
+                                        <span class="kanban-card-due"><i class="bi bi-check-circle me-1"></i>Feb 4</span>
+                                        <div class="kanban-card-assignee" title="Alex K.">AK</div>
+                                    </div>
+                                </div>
+                                <div class="kanban-card kanban-card-done" data-id="11">
+                                    <div class="kanban-card-labels">
+                                        <span class="kanban-label kanban-label-improvement">Improvement</span>
+                                    </div>
+                                    <h6 class="kanban-card-title">Upgrade Bootstrap to 5.3.8</h6>
+                                    <p class="kanban-card-desc">Migrate data attributes, utility classes, and JS API</p>
+                                    <div class="kanban-card-meta">
+                                        <span class="kanban-card-due"><i class="bi bi-check-circle me-1"></i>Feb 3</span>
+                                        <div class="kanban-card-assignee" title="Sarah M.">SM</div>
+                                    </div>
+                                </div>
+                                <div class="kanban-card kanban-card-done" data-id="12">
+                                    <div class="kanban-card-labels">
+                                        <span class="kanban-label kanban-label-feature">Feature</span>
+                                    </div>
+                                    <h6 class="kanban-card-title">Dark theme CSS tokens</h6>
+                                    <p class="kanban-card-desc">Replaced 300+ hardcoded colors with CSS custom properties</p>
+                                    <div class="kanban-card-meta">
+                                        <span class="kanban-card-due"><i class="bi bi-check-circle me-1"></i>Feb 2</span>
+                                        <div class="kanban-card-assignee" title="Mike T.">MT</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Kanban Board End -->
+        <div class="footer-copyright-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer-copy-right">
+                            <p>Copyright &copy; 2026 <a href="https://colorlib.com/wp/templates/">Colorlib</a> All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap 5.3.8 Bundle (includes Popper)
+		============================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS 2.3.4
+		============================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- SimpleBar 6.2.7
+		============================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/simplebar@6.2.7/dist/simplebar.min.js"></script>
+    <!-- SortableJS 1.15.6
+		============================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.6/Sortable.min.js"></script>
+    <!-- main JS
+		============================================ -->
+    <script src="js/main.js"></script>
+    <!-- Kanban Init
+		============================================ -->
+    <script>
+    (function () {
+        var lists = ['kanbanTodo', 'kanbanProgress', 'kanbanReview', 'kanbanDone'];
+        var counters = {
+            kanbanTodo: document.getElementById('countTodo'),
+            kanbanProgress: document.getElementById('countProgress'),
+            kanbanReview: document.getElementById('countReview'),
+            kanbanDone: document.getElementById('countDone')
+        };
+
+        function updateCounts() {
+            lists.forEach(function (id) {
+                var el = document.getElementById(id);
+                if (el && counters[id]) {
+                    counters[id].textContent = el.querySelectorAll('.kanban-card').length;
+                }
+            });
+        }
+
+        lists.forEach(function (id) {
+            var el = document.getElementById(id);
+            if (!el) return;
+            new Sortable(el, {
+                group: 'kanban',
+                animation: 200,
+                ghostClass: 'kanban-ghost',
+                chosenClass: 'kanban-chosen',
+                dragClass: 'kanban-drag',
+                handle: '.kanban-card',
+                onEnd: function () {
+                    updateCounts();
+                    // Toggle done styling
+                    document.querySelectorAll('.kanban-card').forEach(function (card) {
+                        if (card.closest('#kanbanDone')) {
+                            card.classList.add('kanban-card-done');
+                        } else {
+                            card.classList.remove('kanban-card-done');
+                        }
+                    });
+                }
+            });
+        });
+
+        // Add task button
+        var addBtn = document.getElementById('addTaskBtn');
+        if (addBtn) {
+            addBtn.addEventListener('click', function () {
+                var todoList = document.getElementById('kanbanTodo');
+                if (!todoList) return;
+                var newId = Date.now();
+                var card = document.createElement('div');
+                card.className = 'kanban-card';
+                card.setAttribute('data-id', newId);
+                card.innerHTML =
+                    '<div class="kanban-card-labels">' +
+                        '<span class="kanban-label kanban-label-feature">Feature</span>' +
+                    '</div>' +
+                    '<h6 class="kanban-card-title" contenteditable="true">New task title...</h6>' +
+                    '<p class="kanban-card-desc" contenteditable="true">Task description</p>' +
+                    '<div class="kanban-card-meta">' +
+                        '<span class="kanban-card-due"><i class="bi bi-calendar3 me-1"></i>TBD</span>' +
+                        '<div class="kanban-card-assignee" title="Unassigned">?</div>' +
+                    '</div>';
+                todoList.prepend(card);
+                updateCounts();
+                card.querySelector('.kanban-card-title').focus();
+            });
+        }
+    })();
+    </script>
+</body>
+
+</html>

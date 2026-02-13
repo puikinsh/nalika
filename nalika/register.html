@@ -1,179 +1,124 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Register | Nalika - Material Admin Template</title>
-    <meta name="description" content="">
+    <title>Register | Nalika - Admin Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- favicon
-		============================================ -->
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-    <!-- Google Fonts
-		============================================ -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
-    <!-- Bootstrap CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Bootstrap CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <!-- owl.carousel CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/owl.theme.css">
-    <link rel="stylesheet" href="css/owl.transitions.css">
-    <!-- animate CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/animate.css">
-    <!-- normalize CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/normalize.css">
-    <!-- main CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/main.css">
-    <!-- morrisjs CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/morrisjs/morris.css">
-    <!-- mCustomScrollbar CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/scrollbar/jquery.mCustomScrollbar.min.css">
-    <!-- metisMenu CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/metisMenu/metisMenu.min.css">
-    <link rel="stylesheet" href="css/metisMenu/metisMenu-vertical.css">
-    <!-- calendar CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/calendar/fullcalendar.min.css">
-    <link rel="stylesheet" href="css/calendar/fullcalendar.print.min.css">
-    <!-- forms CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/form/all-type-forms.css">
-    <!-- style CSS
-		============================================ -->
-    <link rel="stylesheet" href="style.css">
-    <!-- responsive CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/responsive.css">
-    <!-- modernizr JS
-		============================================ -->
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            background: #152036;
+            font-family: 'Roboto', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nk-auth-card {
+            background: #1b2a47;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            width: 100%;
+            max-width: 520px;
+            padding: 40px;
+        }
+        .nk-auth-logo { font-size: 28px; font-weight: 700; color: #fff; letter-spacing: 1px; }
+        .nk-auth-logo span { color: #03a9f4; }
+        .nk-auth-card .form-control {
+            background: #152036;
+            border: 1px solid #253a5c;
+            color: #fff;
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 14px;
+        }
+        .nk-auth-card .form-control:focus {
+            border-color: #03a9f4;
+            box-shadow: 0 0 0 2px rgba(3,169,244,0.15);
+            background: #152036;
+            color: #fff;
+        }
+        .nk-auth-card .form-control::placeholder { color: #6c7a8d; }
+        .nk-auth-card .form-label { color: #8a9bb5; font-size: 13px; font-weight: 500; }
+        .nk-auth-card .form-check-label { color: #8a9bb5; font-size: 13px; }
+        .nk-auth-card .form-check-input { background-color: #253a5c; border-color: #253a5c; }
+        .nk-auth-card .form-check-input:checked { background-color: #03a9f4; border-color: #03a9f4; }
+        .btn-nk-primary {
+            background: #03a9f4; border: none; color: #fff; border-radius: 8px;
+            padding: 10px; font-weight: 500; font-size: 15px; transition: background 0.2s;
+        }
+        .btn-nk-primary:hover { background: #0290d1; color: #fff; }
+        .btn-nk-outline {
+            background: transparent; border: 1px solid #253a5c; color: #8a9bb5;
+            border-radius: 8px; padding: 10px; font-size: 14px; transition: all 0.2s;
+        }
+        .btn-nk-outline:hover { border-color: #03a9f4; color: #03a9f4; }
+        .nk-auth-footer { color: #5a6a7f; font-size: 13px; }
+        .nk-auth-footer a { color: #03a9f4; text-decoration: none; }
+        .nk-auth-footer a:hover { text-decoration: underline; }
+        .nk-divider { display: flex; align-items: center; color: #5a6a7f; font-size: 12px; margin: 20px 0; }
+        .nk-divider::before, .nk-divider::after { content: ''; flex: 1; height: 1px; background: #253a5c; }
+        .nk-divider span { padding: 0 12px; }
+    </style>
 </head>
 
 <body>
-    <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+    <div class="text-center px-3">
+        <div class="nk-auth-card mx-auto mb-4">
+            <div class="nk-auth-logo mb-2">N<span>alika</span></div>
+            <p class="text-secondary mb-4" style="font-size:14px;">Create your account</p>
 
-    <div class="color-line"></div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="back-link back-backend">
-                    <a href="index.html" class="btn btn-primary">Back to Dashboard</a>
+            <form action="#" id="registerForm">
+                <div class="mb-3 text-start">
+                    <label class="form-label" for="reg-username">Username</label>
+                    <input type="text" id="reg-username" class="form-control" placeholder="Choose a username" required>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
-            <div class="col-md-6 col-md-6 col-sm-6 col-xs-12">
-                <div class="text-center custom-login">
-                    <h3>Registration</h3>
-                    <p>Admin template with very clean and aesthetic style prepared for your next app. </p>
-                </div>
-                <div class="hpanel">
-                    <div class="panel-body">
-                        <form action="#" id="loginForm">
-                            <div class="row">
-                                <div class="form-group col-lg-12">
-                                    <label>Username</label>
-                                    <input class="form-control">
-                                </div>
-                                <div class="form-group col-lg-6">
-                                    <label>Password</label>
-                                    <input type="password" class="form-control">
-                                </div>
-                                <div class="form-group col-lg-6">
-                                    <label>Repeat Password</label>
-                                    <input type="password" class="form-control">
-                                </div>
-                                <div class="form-group col-lg-6">
-                                    <label>Email Address</label>
-                                    <input class="form-control">
-                                </div>
-                                <div class="form-group col-lg-6">
-                                    <label>Repeat Email Address</label>
-                                    <input class="form-control">
-                                </div>
-                                <div class="checkbox col-lg-12">
-                                    <input type="checkbox" class="i-checks" checked> Sigh up for our newsletter
-                                </div>
-                            </div>
-                            <div class="text-center">
-                                <button class="btn btn-success loginbtn">Register</button>
-                                <button class="btn btn-default">Cancel</button>
-                            </div>
-                        </form>
+                <div class="row">
+                    <div class="col-sm-6 mb-3 text-start">
+                        <label class="form-label" for="reg-password">Password</label>
+                        <input type="password" id="reg-password" class="form-control" placeholder="Create password" required>
+                    </div>
+                    <div class="col-sm-6 mb-3 text-start">
+                        <label class="form-label" for="reg-password2">Confirm Password</label>
+                        <input type="password" id="reg-password2" class="form-control" placeholder="Repeat password" required>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
+                <div class="row">
+                    <div class="col-sm-6 mb-3 text-start">
+                        <label class="form-label" for="reg-email">Email</label>
+                        <input type="email" id="reg-email" class="form-control" placeholder="you@example.com" required>
+                    </div>
+                    <div class="col-sm-6 mb-3 text-start">
+                        <label class="form-label" for="reg-email2">Confirm Email</label>
+                        <input type="email" id="reg-email2" class="form-control" placeholder="Repeat email" required>
+                    </div>
+                </div>
+                <div class="mb-4 text-start">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="newsletter" checked>
+                        <label class="form-check-label" for="newsletter">Sign up for our newsletter</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-nk-primary w-100 mb-3">Create Account</button>
+                <div class="nk-divider"><span>already have an account?</span></div>
+                <a href="login.html" class="btn btn-nk-outline w-100">Sign In</a>
+            </form>
         </div>
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <p>Copyright © 2018 <a href="https://colorlib.com/wp/templates/">Colorlib</a> All rights reserved.</p>
-            </div>
+
+        <a href="index.html" class="text-decoration-none" style="color:#5a6a7f; font-size:13px;">
+            <i class="bi bi-arrow-left me-1"></i>Back to Dashboard
+        </a>
+
+        <div class="nk-auth-footer mt-4">
+            <p>&copy; 2026 <a href="https://colorlib.com/wp/templates/">Colorlib</a>. All rights reserved.</p>
         </div>
     </div>
 
-    <!-- jquery
-		============================================ -->
-    <script src="js/vendor/jquery-1.11.3.min.js"></script>
-    <!-- bootstrap JS
-		============================================ -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- wow JS
-		============================================ -->
-    <script src="js/wow.min.js"></script>
-    <!-- price-slider JS
-		============================================ -->
-    <script src="js/jquery-price-slider.js"></script>
-    <!-- meanmenu JS
-		============================================ -->
-    <script src="js/jquery.meanmenu.js"></script>
-    <!-- owl.carousel JS
-		============================================ -->
-    <script src="js/owl.carousel.min.js"></script>
-    <!-- sticky JS
-		============================================ -->
-    <script src="js/jquery.sticky.js"></script>
-    <!-- scrollUp JS
-		============================================ -->
-    <script src="js/jquery.scrollUp.min.js"></script>
-    <!-- mCustomScrollbar JS
-		============================================ -->
-    <script src="js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/scrollbar/mCustomScrollbar-active.js"></script>
-    <!-- metisMenu JS
-		============================================ -->
-    <script src="js/metisMenu/metisMenu.min.js"></script>
-    <script src="js/metisMenu/metisMenu-active.js"></script>
-    <!-- tab JS
-		============================================ -->
-    <script src="js/tab.js"></script>
-    <!-- icheck JS
-		============================================ -->
-    <script src="js/icheck/icheck.min.js"></script>
-    <script src="js/icheck/icheck-active.js"></script>
-    <!-- plugins JS
-		============================================ -->
-    <script src="js/plugins.js"></script>
-    <!-- main JS
-		============================================ -->
-    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="170" height="150" viewBox="0 0 170 150">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#450a0a"/>
+      <stop offset="100%" stop-color="#7f1d1d"/>
+    </linearGradient>
+  </defs>
+  <rect width="170" height="150" fill="url(#bg)"/>
+  <circle cx="140" cy="120" r="35" fill="#dc2626" opacity="0.08"/>
+  <!-- Sunglasses icon -->
+  <g transform="translate(85,68)" fill="none" stroke="#fca5a5" stroke-width="1.5" opacity="0.8">
+    <ellipse cx="-14" cy="0" rx="14" ry="10"/>
+    <ellipse cx="14" cy="0" rx="14" ry="10"/>
+    <path d="M0,-3 C1,-5 3,-6 5,-6"/>
+    <path d="M0,-3 C-1,-5 -3,-6 -5,-6"/>
+    <line x1="-28" y1="-4" x2="-36" y2="-8"/>
+    <line x1="28" y1="-4" x2="36" y2="-8"/>
+  </g>
+  <text x="85" y="105" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="500" fill="#fca5a5" letter-spacing="1" opacity="0.5">EYEWEAR</text>
+</svg>

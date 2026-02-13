@@ -1,60 +1,138 @@
 /*----------------------------------------*/
-/*  1.  tab CSS
+/*  Tabs Page Styles
 /*----------------------------------------*/
-.custon-tab-style1{
-	background:#fff;
-	padding:20px;
+
+/* Base tab nav (border-bottom style) */
+.nk-tabs {
+    border-bottom: 2px solid #1e3154;
+    gap: 4px;
 }
-.custon-tab-style1 p{
-	font-size:14px;
-	color:#303030;
-	line-height:24px;
+.nk-tabs .nav-link {
+    color: #8e8e8e;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    padding: 10px 16px;
+    font-size: 13px;
+    border-radius: 0;
+    transition: color 0.2s, border-color 0.2s;
 }
-.custon-tab-menu-style1 .tab-custon-ic{
-	margin-right:10px;
+.nk-tabs .nav-link:hover {
+    color: #ccc;
+    border-bottom-color: #5a6a7f;
 }
-.tab-menu-right li{
-	float:right
+.nk-tabs .nav-link.active {
+    color: #fff;
+    background: transparent;
+    border-bottom-color: #03a9f4;
 }
-.custom-menu-wrap.custon-tab-menu-style1 li a{
-	margin-right:0px;
+.nk-tabs .nav-link.disabled {
+    color: #4a5568;
 }
-.nav-tabs.custom-menu-wrap.custon-tab-menu-style1 li a, .nav-tabs.custom-menu-wrap.custon-tab-menu-style1 li.active a{
-	font-size:14px;
+
+/* Pill tabs */
+.nk-pills {
+    gap: 6px;
+    margin-bottom: 4px;
 }
-.tab-content-details{
-	text-align:center;
-	background:#fff;
-	padding:20px 100px;
-	border: 1px solid rgba(0,0,0,.12);
+.nk-pills .nav-link {
+    color: #8e8e8e;
+    background: transparent;
+    border: 1px solid #1e3154;
+    padding: 8px 16px;
+    font-size: 13px;
+    border-radius: 6px;
+    transition: all 0.2s;
 }
-.tab-content-details h2{
-	font-size:20px;
-	color:#303030;
+.nk-pills .nav-link:hover {
+    color: #ccc;
+    background: #1e3154;
 }
-.tab-content-details p{
-	font-size:14px;
-	color:#303030;
-	line-height:24px;
+.nk-pills .nav-link.active {
+    color: #fff;
+    background: #03a9f4;
+    border-color: #03a9f4;
 }
-.nav-tabs.custom-menu-wrap li a:hover{
-	background:#303030;
-	color:#fff;
+
+/* Tab content area */
+.nk-tab-content {
+    padding-top: 20px;
+    margin-top: 16px;
+    font-size: 13px;
+    color: #8e8e8e;
+    line-height: 1.7;
 }
-.nav-tabs.custom-menu-wrap li a{
-	color:#444;
+
+/* Icon tabs (icon stacked above label) */
+.nk-icon-tabs {
+    gap: 8px;
+    margin-bottom: 4px;
 }
-.nav-tabs.custom-menu-wrap li.active a{
-	color:#303030;
+.nk-icon-tabs .nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: #8e8e8e;
+    background: #1e3154;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 11px;
+    transition: all 0.2s;
 }
-.nav-tabs.custom-menu-wrap li.active a:hover{
-	color:#fff;
+.nk-icon-tabs .nav-link i {
+    font-size: 22px;
 }
-.nav-tabs.custom-menu-wrap li a, .nav-tabs.custom-menu-wrap li.active a{
-	border:1px solid transparent;
-	padding:15px 25px;
-	font-size:15px;
+.nk-icon-tabs .nav-link:hover {
+    color: #ccc;
+    background: #253a5c;
 }
-.tab-custon-menu-bg-style ul.main-menu-dropdown li a:hover{
-	color:#fff;
+.nk-icon-tabs .nav-link.active {
+    color: #fff;
+    background: rgba(3, 169, 244, 0.15);
+    border-color: #03a9f4;
+}
+.nk-icon-tabs .nav-link.active i {
+    color: #03a9f4;
+}
+
+/* Underline tabs (minimal underline, no border) */
+.nk-underline-tabs {
+    border-bottom: 1px solid #1e3154;
+    gap: 0;
+}
+.nk-underline-tabs .nav-link {
+    color: #8e8e8e;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    padding: 10px 20px;
+    font-size: 13px;
+    background: transparent;
+    border-radius: 0;
+    transition: color 0.2s, border-color 0.2s;
+}
+.nk-underline-tabs .nav-link:hover {
+    color: #ccc;
+}
+.nk-underline-tabs .nav-link.active {
+    color: #24caa1;
+    border-bottom-color: #24caa1;
+}
+
+/* Dark form inputs for vertical tab demo */
+.white-box .form-control,
+.white-box .form-select {
+    background: #1e3154;
+    border-color: #253a5c;
+    color: #fff;
+    font-size: 13px;
+}
+.white-box .form-control:focus,
+.white-box .form-select:focus {
+    background: #1e3154;
+    border-color: #03a9f4;
+    color: #fff;
+    box-shadow: 0 0 0 2px rgba(3, 169, 244, 0.15);
 }

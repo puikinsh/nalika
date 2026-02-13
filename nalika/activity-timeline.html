@@ -1,0 +1,863 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Activity Timeline | Nalika - Material Admin Template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon
+		============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- Google Fonts
+		============================================ -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5.3.8 CSS
+		============================================ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <!-- Bootstrap Icons 1.13.1
+		============================================ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- nalika Icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/nalika-icon.css">
+    <!-- AOS 2.3.4 CSS
+		============================================ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <!-- SimpleBar 6.2.7 CSS
+		============================================ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@6.2.7/dist/simplebar.min.css">
+    <!-- main CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- style CSS
+		============================================ -->
+    <link rel="stylesheet" href="style.css">
+    <!-- responsive CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+
+    <div class="left-sidebar-pro">
+        <nav id="sidebar" class="">
+            <div class="sidebar-header">
+                <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
+                <strong><img src="img/logo/logosn.png" alt="" /></strong>
+            </div>
+            <div class="nalika-profile">
+                <div class="profile-dtl">
+                    <a href="#"><img src="https://avatars.githubusercontent.com/u/3451398?s=200&v=4" alt="Aigars Silkalns" /></a>
+                    <h2>Aigars <span class="min-dtn">Silkalns</span></h2>
+                </div>
+                <div class="profile-social-dtl">
+                    <ul class="dtl-social">
+                        <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                        <li><a href="#"><i class="bi bi-twitter-x"></i></a></li>
+                        <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="left-custom-menu-adp-wrap comment-scrollbar">
+                <nav class="sidebar-nav left-sidebar-menu-pro">
+                    <ul class="metismenu" id="menu1">
+                        <li>
+                            <a class="has-arrow" href="index.html">
+							   <i class="bi big-icon bi-speedometer2 icon-wrap"></i>
+							   <span class="mini-click-non">Dashboards</span>
+							</a>
+                            <ul class="submenu-angle" aria-expanded="true">
+                                <li><a title="Main Dashboard" href="index.html"><span class="mini-sub-pro">Main Dashboard</span></a></li>
+                                <li><a title="Analytics" href="index-1.html"><span class="mini-sub-pro">Analytics</span></a></li>
+                                <li><a title="Projects" href="index-2.html"><span class="mini-sub-pro">Projects</span></a></li>
+                                <li><a title="Statistics" href="analytics.html"><span class="mini-sub-pro">Statistics</span></a></li>
+                                <li><a title="Widgets" href="widgets.html"><span class="mini-sub-pro">Widgets</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="product-list.html" aria-expanded="false"><i class="bi big-icon bi-bag icon-wrap"></i> <span class="mini-click-non">Ecommerce</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Product List" href="product-list.html"><span class="mini-sub-pro">Product List</span></a></li>
+                                <li><a title="Product Edit" href="product-edit.html"><span class="mini-sub-pro">Product Edit</span></a></li>
+                                <li><a title="Product Detail" href="product-detail.html"><span class="mini-sub-pro">Product Detail</span></a></li>
+                                <li><a title="Product Cart" href="product-cart.html"><span class="mini-sub-pro">Product Cart</span></a></li>
+                                <li><a title="Product Payment" href="product-payment.html"><span class="mini-sub-pro">Product Payment</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="bi big-icon bi-envelope icon-wrap"></i> <span class="mini-click-non">Mailbox</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Inbox" href="mailbox.html"><span class="mini-sub-pro">Inbox</span></a></li>
+                                <li><a title="View Mail" href="mailbox-view.html"><span class="mini-sub-pro">View Mail</span></a></li>
+                                <li><a title="Compose Mail" href="mailbox-compose.html"><span class="mini-sub-pro">Compose Mail</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="active">
+                            <a class="has-arrow" href="kanban-board.html" aria-expanded="false"><i class="bi big-icon bi-grid-3x3 icon-wrap"></i> <span class="mini-click-non">Interface</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Kanban Board" href="kanban-board.html"><span class="mini-sub-pro">Kanban Board</span></a></li>
+                                <li><a title="Activity Timeline" href="activity-timeline.html"><span class="mini-sub-pro">Activity Timeline</span></a></li>
+                                <li><a title="Calendar" href="calendar.html"><span class="mini-sub-pro">Calendar</span></a></li>
+                                <li><a title="Code Editor" href="code-editor.html"><span class="mini-sub-pro">Code Editor</span></a></li>
+                                <li><a title="Images Cropper" href="images-cropper.html"><span class="mini-sub-pro">Images Cropper</span></a></li>
+                                <li><a title="PDF Viewer" href="pdf-viewer.html"><span class="mini-sub-pro">PDF Viewer</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="file-manager.html" aria-expanded="false"><i class="bi big-icon bi-pie-chart icon-wrap"></i> <span class="mini-click-non">Miscellaneous</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="File Manager" href="file-manager.html"><span class="mini-sub-pro">File Manager</span></a></li>
+                                <li><a title="Blog" href="blog.html"><span class="mini-sub-pro">Blog</span></a></li>
+                                <li><a title="Blog Details" href="blog-details.html"><span class="mini-sub-pro">Blog Details</span></a></li>
+                                <li><a title="404 Page" href="404.html"><span class="mini-sub-pro">404 Page</span></a></li>
+                                <li><a title="500 Page" href="500.html"><span class="mini-sub-pro">500 Page</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="bar-charts.html" aria-expanded="false"><i class="bi big-icon bi-bar-chart icon-wrap"></i> <span class="mini-click-non">Charts</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Bar Charts" href="bar-charts.html"><span class="mini-sub-pro">Bar Charts</span></a></li>
+                                <li><a title="Line Charts" href="line-charts.html"><span class="mini-sub-pro">Line Charts</span></a></li>
+                                <li><a title="Area Charts" href="area-charts.html"><span class="mini-sub-pro">Area Charts</span></a></li>
+                                <li><a title="Rounded Charts" href="rounded-chart.html"><span class="mini-sub-pro">Rounded Charts</span></a></li>
+                                <li><a title="Mixed Charts" href="c3.html"><span class="mini-sub-pro">Mixed Charts</span></a></li>
+                                <li><a title="Sparkline Charts" href="sparkline.html"><span class="mini-sub-pro">Sparkline Charts</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="static-table.html" aria-expanded="false"><i class="bi big-icon bi-table icon-wrap"></i> <span class="mini-click-non">Data Tables</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Static Table" href="static-table.html"><span class="mini-sub-pro">Static Table</span></a></li>
+                                <li><a title="Data Table" href="data-table.html"><span class="mini-sub-pro">Data Table</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="basic-form-element.html" aria-expanded="false"><i class="bi big-icon bi-ui-checks icon-wrap"></i> <span class="mini-click-non">Forms</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Basic Form Elements" href="basic-form-element.html"><span class="mini-sub-pro">Basic Elements</span></a></li>
+                                <li><a title="Advance Form Elements" href="advance-form-element.html"><span class="mini-sub-pro">Advanced Elements</span></a></li>
+                                <li><a title="Password Meter" href="password-meter.html"><span class="mini-sub-pro">Password Meter</span></a></li>
+                                <li><a title="Multi Upload" href="multi-upload.html"><span class="mini-sub-pro">Multi Upload</span></a></li>
+                                <li><a title="Text Editor" href="tinymc.html"><span class="mini-sub-pro">Text Editor</span></a></li>
+                                <li><a title="Dual List Box" href="dual-list-box.html"><span class="mini-sub-pro">Dual List Box</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="notifications.html" aria-expanded="false"><i class="bi big-icon bi-display icon-wrap"></i> <span class="mini-click-non">App Views</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Notifications" href="notifications.html"><span class="mini-sub-pro">Notifications</span></a></li>
+                                <li><a title="Alerts" href="alerts.html"><span class="mini-sub-pro">Alerts</span></a></li>
+                                <li><a title="Modals" href="modals.html"><span class="mini-sub-pro">Modals</span></a></li>
+                                <li><a title="Buttons" href="buttons.html"><span class="mini-sub-pro">Buttons</span></a></li>
+                                <li><a title="Tabs" href="tabs.html"><span class="mini-sub-pro">Tabs</span></a></li>
+                                <li><a title="Accordion" href="accordion.html"><span class="mini-sub-pro">Accordion</span></a></li>
+                            </ul>
+                        </li>
+                        <li id="removable">
+                            <a class="has-arrow" href="#" aria-expanded="false"><i class="bi big-icon bi-files icon-wrap"></i> <span class="mini-click-non">Pages</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Login" href="login.html"><span class="mini-sub-pro">Login</span></a></li>
+                                <li><a title="Register" href="register.html"><span class="mini-sub-pro">Register</span></a></li>
+                                <li><a title="Lock" href="lock.html"><span class="mini-sub-pro">Lock</span></a></li>
+                                <li><a title="Password Recovery" href="password-recovery.html"><span class="mini-sub-pro">Password Recovery</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </nav>
+    </div>
+    <!-- Start Welcome area -->
+    <div class="all-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="logo-pro">
+                        <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-advance-area">
+                    <div class="header-top-area">
+            <div class="container-fluid">
+                <div class="nk-header-bar">
+                    <!-- Sidebar Toggle -->
+                    <button type="button" id="sidebarCollapse" class="btn text-white p-0 me-3 border-0 text-decoration-none" style="font-size:20px;">
+                        <i class="icon nalika-menu-task"></i>
+                    </button>
+
+                    <!-- Search -->
+                    <div class="nk-header-search d-none d-lg-block">
+                        <input type="text" class="nk-search-input" placeholder="Search...">
+                        <i class="bi bi-search nk-search-icon"></i>
+                    </div>
+
+                    <!-- Right Icons -->
+                    <div class="nk-header-right ms-auto">
+                        <!-- Messages -->
+                        <div class="dropdown">
+                            <a href="#" class="nk-header-icon" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                                <i class="icon nalika-mail"></i>
+                                <span class="nk-badge"></span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <h6 class="nk-dd-title">Messages</h6>
+                                <div class="nk-dd-body">
+                                    <a href="#" class="nk-dd-item">
+                                        <img src="img/contact/1.svg" alt="">
+                                        <div class="nk-dd-item-body">
+                                            <div class="d-flex justify-content-between"><h6>Aigars</h6><span class="nk-dd-date">16 Sept</span></div>
+                                            <p>Please done this project as soon possible.</p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="nk-dd-item">
+                                        <img src="img/contact/4.svg" alt="">
+                                        <div class="nk-dd-item-body">
+                                            <div class="d-flex justify-content-between"><h6>Sulaiman din</h6><span class="nk-dd-date">16 Sept</span></div>
+                                            <p>Please done this project as soon possible.</p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="nk-dd-item">
+                                        <img src="img/contact/3.svg" alt="">
+                                        <div class="nk-dd-item-body">
+                                            <div class="d-flex justify-content-between"><h6>Victor Jara</h6><span class="nk-dd-date">16 Sept</span></div>
+                                            <p>Please done this project as soon possible.</p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="nk-dd-item">
+                                        <img src="img/contact/2.svg" alt="">
+                                        <div class="nk-dd-item-body">
+                                            <div class="d-flex justify-content-between"><h6>Victor Jara</h6><span class="nk-dd-date">16 Sept</span></div>
+                                            <p>Please done this project as soon possible.</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="nk-dd-footer">
+                                    <a href="#">View All Messages</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Notifications -->
+                        <div class="dropdown">
+                            <a href="#" class="nk-header-icon" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                                <i class="icon nalika-alarm"></i>
+                                <span class="nk-badge"></span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <h6 class="nk-dd-title">Notifications</h6>
+                                <div class="nk-dd-body">
+                                    <a href="#" class="nk-dd-item">
+                                        <div class="nk-notif-icon"><i class="icon nalika-tick"></i></div>
+                                        <div class="nk-dd-item-body">
+                                            <div class="d-flex justify-content-between"><h6>Aigars</h6><span class="nk-dd-date">16 Sept</span></div>
+                                            <p>Please done this project as soon possible.</p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="nk-dd-item">
+                                        <div class="nk-notif-icon"><i class="icon nalika-cloud"></i></div>
+                                        <div class="nk-dd-item-body">
+                                            <div class="d-flex justify-content-between"><h6>Sulaiman din</h6><span class="nk-dd-date">16 Sept</span></div>
+                                            <p>Please done this project as soon possible.</p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="nk-dd-item">
+                                        <div class="nk-notif-icon"><i class="icon nalika-folder"></i></div>
+                                        <div class="nk-dd-item-body">
+                                            <div class="d-flex justify-content-between"><h6>Victor Jara</h6><span class="nk-dd-date">16 Sept</span></div>
+                                            <p>Please done this project as soon possible.</p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="nk-dd-item">
+                                        <div class="nk-notif-icon"><i class="icon nalika-bar-chart"></i></div>
+                                        <div class="nk-dd-item-body">
+                                            <div class="d-flex justify-content-between"><h6>Victor Jara</h6><span class="nk-dd-date">16 Sept</span></div>
+                                            <p>Please done this project as soon possible.</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="nk-dd-footer">
+                                    <a href="#">View All Notifications</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- User Profile -->
+                        <div class="dropdown">
+                            <a href="#" class="nk-header-icon nk-header-user" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="icon nalika-user"></i>
+                                <span class="nk-user-name d-none d-md-inline">Aigars</span>
+                                <i class="bi bi-chevron-down" style="font-size:12px;"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end nk-user-menu">
+                                <li><a class="dropdown-item" href="register.html"><i class="icon nalika-home me-2"></i>Register</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="icon nalika-user me-2"></i>My Profile</a></li>
+                                <li><a class="dropdown-item" href="lock.html"><i class="icon nalika-diamond me-2"></i>Lock</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="icon nalika-settings me-2"></i>Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="login.html"><i class="icon nalika-unlocked me-2"></i>Log Out</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Settings Panel -->
+                        <div class="dropdown">
+                            <a href="#" class="nk-header-icon" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                                <i class="icon nalika-menu-task"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end nk-settings-panel">
+                                <ul class="nav nav-tabs nav-fill" role="tablist">
+                                    <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#nkNews" type="button">News</button></li>
+                                    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#nkActivity" type="button">Activity</button></li>
+                                    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#nkSettings" type="button">Settings</button></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <!-- News Tab -->
+                                    <div class="tab-pane fade show active" id="nkNews">
+                                        <div class="nk-panel-heading">
+                                            <h6><i class="icon nalika-chat me-1"></i> Latest News</h6>
+                                            <p>You have 10 New News.</p>
+                                        </div>
+                                        <a href="#" class="nk-panel-item">
+                                            <img src="img/contact/4.svg" alt="">
+                                            <div class="nk-panel-item-body">
+                                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                <small>Yesterday 2:45 pm</small>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="nk-panel-item">
+                                            <img src="img/contact/1.svg" alt="">
+                                            <div class="nk-panel-item-body">
+                                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                <small>Yesterday 2:45 pm</small>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="nk-panel-item">
+                                            <img src="img/contact/2.svg" alt="">
+                                            <div class="nk-panel-item-body">
+                                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                <small>Yesterday 2:45 pm</small>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="nk-panel-item">
+                                            <img src="img/contact/3.svg" alt="">
+                                            <div class="nk-panel-item-body">
+                                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                <small>Yesterday 2:45 pm</small>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="nk-panel-item">
+                                            <img src="img/contact/4.svg" alt="">
+                                            <div class="nk-panel-item-body">
+                                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                <small>Yesterday 2:45 pm</small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <!-- Activity Tab -->
+                                    <div class="tab-pane fade" id="nkActivity">
+                                        <div class="nk-panel-heading">
+                                            <h6><i class="icon nalika-happiness me-1"></i> Recent Activity</h6>
+                                            <p>You have 20 Recent Activity.</p>
+                                        </div>
+                                        <div class="nk-activity-item">
+                                            <h6>New User Registered</h6>
+                                            <p>The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                            <small>1 hours ago</small>
+                                        </div>
+                                        <div class="nk-activity-item">
+                                            <h6>New Order Received</h6>
+                                            <p>The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                            <small>2 hours ago</small>
+                                        </div>
+                                        <div class="nk-activity-item">
+                                            <h6>New Order Received</h6>
+                                            <p>The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                            <small>3 hours ago</small>
+                                        </div>
+                                        <div class="nk-activity-item">
+                                            <h6>New Order Received</h6>
+                                            <p>The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                            <small>4 hours ago</small>
+                                        </div>
+                                        <div class="nk-activity-item">
+                                            <h6>New User Registered</h6>
+                                            <p>The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                            <small>5 hours ago</small>
+                                        </div>
+                                    </div>
+                                    <!-- Settings Tab -->
+                                    <div class="tab-pane fade" id="nkSettings">
+                                        <div class="nk-panel-heading">
+                                            <h6><i class="icon nalika-gear me-1"></i> Settings Panel</h6>
+                                            <p>You have 20 Settings. 5 not completed.</p>
+                                        </div>
+                                        <div class="nk-setting-item">
+                                            <label for="nkOpt1">Show notifications</label>
+                                            <div class="form-check form-switch mb-0">
+                                                <input class="form-check-input" type="checkbox" id="nkOpt1">
+                                            </div>
+                                        </div>
+                                        <div class="nk-setting-item">
+                                            <label for="nkOpt2">Disable Chat</label>
+                                            <div class="form-check form-switch mb-0">
+                                                <input class="form-check-input" type="checkbox" id="nkOpt2">
+                                            </div>
+                                        </div>
+                                        <div class="nk-setting-item">
+                                            <label for="nkOpt3">Enable history</label>
+                                            <div class="form-check form-switch mb-0">
+                                                <input class="form-check-input" type="checkbox" id="nkOpt3">
+                                            </div>
+                                        </div>
+                                        <div class="nk-setting-item">
+                                            <label for="nkOpt4">Show charts</label>
+                                            <div class="form-check form-switch mb-0">
+                                                <input class="form-check-input" type="checkbox" id="nkOpt4">
+                                            </div>
+                                        </div>
+                                        <div class="nk-setting-item">
+                                            <label for="nkOpt5">Update everyday</label>
+                                            <div class="form-check form-switch mb-0">
+                                                <input class="form-check-input" type="checkbox" id="nkOpt5" checked>
+                                            </div>
+                                        </div>
+                                        <div class="nk-setting-item">
+                                            <label for="nkOpt6">Global search</label>
+                                            <div class="form-check form-switch mb-0">
+                                                <input class="form-check-input" type="checkbox" id="nkOpt6" checked>
+                                            </div>
+                                        </div>
+                                        <div class="nk-setting-item">
+                                            <label for="nkOpt7">Offline users</label>
+                                            <div class="form-check form-switch mb-0">
+                                                <input class="form-check-input" type="checkbox" id="nkOpt7" checked>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="breadcome-area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="breadcome-list single-page-breadcome">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                        <div class="breadcome-heading">
+                                            <form role="search" class="">
+                                                <input type="text" placeholder="Search..." class="form-control">
+                                                <a href=""><i class="bi bi-search"></i></a>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                        <ul class="breadcome-menu">
+                                            <li><a href="#">Home</a> <span class="bread-slash">/</span>
+                                            </li>
+                                            <li><span class="bread-blod">Activity Timeline</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Activity Timeline Start -->
+        <div class="timeline-area mg-tb-15">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Main Timeline -->
+                    <div class="col-lg-8 col-md-12 col-12">
+                        <div class="timeline-wrapper">
+                            <div class="timeline-header mb-4">
+                                <h4 style="color: var(--nk-text-primary);">Activity Feed</h4>
+                                <p style="color: var(--nk-text-muted);">Recent events across all projects and team activity</p>
+                            </div>
+
+                            <!-- Today -->
+                            <div class="timeline-date-group">
+                                <div class="timeline-date-label">Today &mdash; Feb 11, 2026</div>
+                            </div>
+
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-marker timeline-marker-success">
+                                        <i class="bi bi-rocket-takeoff"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-content-header">
+                                            <h6>Production deployment completed</h6>
+                                            <span class="timeline-time">2 hours ago</span>
+                                        </div>
+                                        <p>Version <strong>2.4.0</strong> deployed to production. All health checks passed. 3 new features and 7 bug fixes included.</p>
+                                        <div class="timeline-tags">
+                                            <span class="badge bg-success bg-opacity-25 text-success">v2.4.0</span>
+                                            <span class="badge bg-info bg-opacity-25 text-info">production</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-marker timeline-marker-info">
+                                        <i class="bi bi-person-plus"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-content-header">
+                                            <h6>New team member joined</h6>
+                                            <span class="timeline-time">4 hours ago</span>
+                                        </div>
+                                        <p><strong>Elena Rodriguez</strong> joined as Senior Frontend Developer. Assigned to the Dashboard Redesign project.</p>
+                                        <div class="timeline-attachment">
+                                            <div class="timeline-user-card">
+                                                <div class="timeline-avatar" style="background: var(--nk-accent-purple);">ER</div>
+                                                <div>
+                                                    <strong>Elena Rodriguez</strong>
+                                                    <small>Senior Frontend Developer</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-marker timeline-marker-warning">
+                                        <i class="bi bi-exclamation-triangle"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-content-header">
+                                            <h6>Server CPU alert triggered</h6>
+                                            <span class="timeline-time">5 hours ago</span>
+                                        </div>
+                                        <p>CPU usage on <strong>web-prod-03</strong> exceeded 90% for 15 minutes. Auto-scaling added 2 additional instances. Resolved automatically.</p>
+                                        <div class="timeline-tags">
+                                            <span class="badge bg-warning bg-opacity-25 text-warning">alert</span>
+                                            <span class="badge bg-success bg-opacity-25 text-success">auto-resolved</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-marker timeline-marker-primary">
+                                        <i class="bi bi-cart-check"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-content-header">
+                                            <h6>Large order received</h6>
+                                            <span class="timeline-time">6 hours ago</span>
+                                        </div>
+                                        <p>Order <strong>#38291</strong> placed for $12,450.00 by Enterprise customer Acme Corp. 47 items across 3 product categories.</p>
+                                        <div class="timeline-stats">
+                                            <div class="timeline-stat">
+                                                <span class="timeline-stat-value">$12,450</span>
+                                                <span class="timeline-stat-label">Total</span>
+                                            </div>
+                                            <div class="timeline-stat">
+                                                <span class="timeline-stat-value">47</span>
+                                                <span class="timeline-stat-label">Items</span>
+                                            </div>
+                                            <div class="timeline-stat">
+                                                <span class="timeline-stat-value">3</span>
+                                                <span class="timeline-stat-label">Categories</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Yesterday -->
+                            <div class="timeline-date-group">
+                                <div class="timeline-date-label">Yesterday &mdash; Feb 10, 2026</div>
+                            </div>
+
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-marker timeline-marker-danger">
+                                        <i class="bi bi-bug"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-content-header">
+                                            <h6>Critical bug reported</h6>
+                                            <span class="timeline-time">Yesterday at 3:22 PM</span>
+                                        </div>
+                                        <p>Payment gateway returning 500 errors for Stripe webhook callbacks. Affecting ~12% of checkout completions. Hotfix branch created.</p>
+                                        <div class="timeline-tags">
+                                            <span class="badge bg-danger bg-opacity-25 text-danger">critical</span>
+                                            <span class="badge bg-warning bg-opacity-25 text-warning">payments</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-marker timeline-marker-info">
+                                        <i class="bi bi-git"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-content-header">
+                                            <h6>Feature branch merged</h6>
+                                            <span class="timeline-time">Yesterday at 11:05 AM</span>
+                                        </div>
+                                        <p><strong>feature/multi-currency</strong> merged into main by Mike T. PR #284 with 23 commits, +1,847 / -342 lines changed.</p>
+                                        <div class="timeline-code-ref">
+                                            <i class="bi bi-code-square me-1"></i>
+                                            <code>PR #284</code> &middot; 23 commits &middot; 14 files changed
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-marker timeline-marker-success">
+                                        <i class="bi bi-clipboard-check"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-content-header">
+                                            <h6>Sprint review completed</h6>
+                                            <span class="timeline-time">Yesterday at 10:00 AM</span>
+                                        </div>
+                                        <p>Sprint 13 review: 18 of 21 stories completed (86% velocity). 3 stories carried over to Sprint 14. Team velocity trending up 12% from last sprint.</p>
+                                        <div class="timeline-progress-wrap">
+                                            <div class="d-flex justify-content-between mb-1">
+                                                <small>Sprint completion</small>
+                                                <small>86%</small>
+                                            </div>
+                                            <div class="progress" style="height: 6px; background: var(--nk-bg-body);">
+                                                <div class="progress-bar" role="progressbar" style="width: 86%; background: var(--nk-accent-teal);" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Feb 9 -->
+                            <div class="timeline-date-group">
+                                <div class="timeline-date-label">Feb 9, 2026</div>
+                            </div>
+
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-marker timeline-marker-primary">
+                                        <i class="bi bi-graph-up-arrow"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-content-header">
+                                            <h6>Weekly analytics report generated</h6>
+                                            <span class="timeline-time">Feb 9 at 8:00 AM</span>
+                                        </div>
+                                        <p>Platform metrics for Feb 3&ndash;9: 24,891 active users (+8.2%), 1,247 new signups, $89,340 in revenue (+15.4% WoW).</p>
+                                        <div class="timeline-stats">
+                                            <div class="timeline-stat">
+                                                <span class="timeline-stat-value">24.9K</span>
+                                                <span class="timeline-stat-label">Active Users</span>
+                                            </div>
+                                            <div class="timeline-stat">
+                                                <span class="timeline-stat-value">1,247</span>
+                                                <span class="timeline-stat-label">Signups</span>
+                                            </div>
+                                            <div class="timeline-stat">
+                                                <span class="timeline-stat-value">$89.3K</span>
+                                                <span class="timeline-stat-label">Revenue</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-marker timeline-marker-info">
+                                        <i class="bi bi-shield-check"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-content-header">
+                                            <h6>Security audit passed</h6>
+                                            <span class="timeline-time">Feb 9 at 2:30 PM</span>
+                                        </div>
+                                        <p>Quarterly security scan completed. 0 critical, 0 high, 2 medium findings (both related to outdated dependencies). Remediation scheduled for Sprint 14.</p>
+                                        <div class="timeline-tags">
+                                            <span class="badge bg-success bg-opacity-25 text-success">passed</span>
+                                            <span class="badge bg-info bg-opacity-25 text-info">Q1 2026</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar Summary -->
+                    <div class="col-lg-4 col-md-12 col-12">
+                        <!-- Quick Stats -->
+                        <div class="timeline-sidebar-card mb-3">
+                            <h6 class="timeline-sidebar-title">This Week</h6>
+                            <div class="timeline-quick-stats">
+                                <div class="timeline-quick-stat">
+                                    <div class="timeline-quick-stat-icon" style="background: rgba(3, 169, 244, 0.15); color: var(--nk-accent-blue);">
+                                        <i class="bi bi-code-slash"></i>
+                                    </div>
+                                    <div>
+                                        <strong>47</strong>
+                                        <span>Commits</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-quick-stat">
+                                    <div class="timeline-quick-stat-icon" style="background: rgba(36, 202, 161, 0.15); color: var(--nk-accent-teal);">
+                                        <i class="bi bi-check2-circle"></i>
+                                    </div>
+                                    <div>
+                                        <strong>18</strong>
+                                        <span>Tasks Done</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-quick-stat">
+                                    <div class="timeline-quick-stat-icon" style="background: rgba(171, 140, 228, 0.15); color: var(--nk-accent-purple);">
+                                        <i class="bi bi-people"></i>
+                                    </div>
+                                    <div>
+                                        <strong>1,247</strong>
+                                        <span>New Users</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-quick-stat">
+                                    <div class="timeline-quick-stat-icon" style="background: rgba(225, 37, 3, 0.15); color: var(--nk-accent-red);">
+                                        <i class="bi bi-bug"></i>
+                                    </div>
+                                    <div>
+                                        <strong>3</strong>
+                                        <span>Bugs Filed</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Team Activity -->
+                        <div class="timeline-sidebar-card mb-3">
+                            <h6 class="timeline-sidebar-title">Team Activity</h6>
+                            <div class="timeline-team-list">
+                                <div class="timeline-team-item">
+                                    <div class="timeline-avatar" style="background: var(--nk-accent-blue);">SM</div>
+                                    <div class="timeline-team-info">
+                                        <strong>Sarah M.</strong>
+                                        <small>Pushed 8 commits to feature/notifications</small>
+                                    </div>
+                                    <span class="timeline-team-time">1h</span>
+                                </div>
+                                <div class="timeline-team-item">
+                                    <div class="timeline-avatar" style="background: var(--nk-accent-teal);">AK</div>
+                                    <div class="timeline-team-info">
+                                        <strong>Alex K.</strong>
+                                        <small>Resolved bug #412 &mdash; sidebar z-index</small>
+                                    </div>
+                                    <span class="timeline-team-time">3h</span>
+                                </div>
+                                <div class="timeline-team-item">
+                                    <div class="timeline-avatar" style="background: var(--nk-accent-purple);">JL</div>
+                                    <div class="timeline-team-info">
+                                        <strong>Jordan L.</strong>
+                                        <small>Updated Figma designs for dashboard v3</small>
+                                    </div>
+                                    <span class="timeline-team-time">5h</span>
+                                </div>
+                                <div class="timeline-team-item">
+                                    <div class="timeline-avatar" style="background: var(--nk-accent-red);">MT</div>
+                                    <div class="timeline-team-info">
+                                        <strong>Mike T.</strong>
+                                        <small>Merged PR #284 &mdash; multi-currency support</small>
+                                    </div>
+                                    <span class="timeline-team-time">8h</span>
+                                </div>
+                                <div class="timeline-team-item">
+                                    <div class="timeline-avatar" style="background: var(--nk-accent-purple);">ER</div>
+                                    <div class="timeline-team-info">
+                                        <strong>Elena R.</strong>
+                                        <small>Onboarding &mdash; set up dev environment</small>
+                                    </div>
+                                    <span class="timeline-team-time">4h</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Upcoming Deadlines -->
+                        <div class="timeline-sidebar-card">
+                            <h6 class="timeline-sidebar-title">Upcoming Deadlines</h6>
+                            <div class="timeline-deadline-list">
+                                <div class="timeline-deadline-item">
+                                    <div class="timeline-deadline-date">
+                                        <span class="timeline-deadline-day">14</span>
+                                        <span class="timeline-deadline-month">Feb</span>
+                                    </div>
+                                    <div>
+                                        <strong>Sprint 14 midpoint review</strong>
+                                        <small>Team standup at 10:00 AM</small>
+                                    </div>
+                                </div>
+                                <div class="timeline-deadline-item">
+                                    <div class="timeline-deadline-date">
+                                        <span class="timeline-deadline-day">17</span>
+                                        <span class="timeline-deadline-month">Feb</span>
+                                    </div>
+                                    <div>
+                                        <strong>Sprint 14 ends</strong>
+                                        <small>Demo + retrospective</small>
+                                    </div>
+                                </div>
+                                <div class="timeline-deadline-item">
+                                    <div class="timeline-deadline-date">
+                                        <span class="timeline-deadline-day">21</span>
+                                        <span class="timeline-deadline-month">Feb</span>
+                                    </div>
+                                    <div>
+                                        <strong>v2.5.0 release candidate</strong>
+                                        <small>Feature freeze for QA testing</small>
+                                    </div>
+                                </div>
+                                <div class="timeline-deadline-item">
+                                    <div class="timeline-deadline-date">
+                                        <span class="timeline-deadline-day">28</span>
+                                        <span class="timeline-deadline-month">Feb</span>
+                                    </div>
+                                    <div>
+                                        <strong>Monthly stakeholder report</strong>
+                                        <small>KPIs, revenue, and roadmap update</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Activity Timeline End -->
+        <div class="footer-copyright-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer-copy-right">
+                            <p>Copyright &copy; 2026 <a href="https://colorlib.com/wp/templates/">Colorlib</a> All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap 5.3.8 Bundle (includes Popper)
+		============================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS 2.3.4
+		============================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- SimpleBar 6.2.7
+		============================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/simplebar@6.2.7/dist/simplebar.min.js"></script>
+    <!-- main JS
+		============================================ -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

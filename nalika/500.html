@@ -1,153 +1,74 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>500 Page | Nalika - Material Admin Template</title>
-    <meta name="description" content="">
+    <title>500 - Server Error | Nalika - Admin Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- favicon
-		============================================ -->
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-    <!-- Google Fonts
-		============================================ -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
-    <!-- Bootstrap CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Bootstrap CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <!-- owl.carousel CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/owl.theme.css">
-    <link rel="stylesheet" href="css/owl.transitions.css">
-    <!-- animate CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/animate.css">
-    <!-- normalize CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/normalize.css">
-    <!-- main CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/main.css">
-    <!-- morrisjs CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/morrisjs/morris.css">
-    <!-- mCustomScrollbar CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/scrollbar/jquery.mCustomScrollbar.min.css">
-    <!-- metisMenu CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/metisMenu/metisMenu.min.css">
-    <link rel="stylesheet" href="css/metisMenu/metisMenu-vertical.css">
-    <!-- calendar CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/calendar/fullcalendar.min.css">
-    <link rel="stylesheet" href="css/calendar/fullcalendar.print.min.css">
-    <!-- style CSS
-		============================================ -->
-    <link rel="stylesheet" href="style.css">
-    <!-- responsive CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/responsive.css">
-    <!-- modernizr JS
-		============================================ -->
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            background: #152036;
+            font-family: 'Roboto', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nk-error-code {
+            font-size: 120px;
+            font-weight: 700;
+            color: #e74c3c;
+            line-height: 1;
+            letter-spacing: -4px;
+            text-shadow: 0 0 40px rgba(231,76,60,0.2);
+        }
+        .nk-error-title {
+            font-size: 22px;
+            font-weight: 500;
+            color: #fff;
+        }
+        .btn-nk-primary {
+            background: #03a9f4; border: none; color: #fff; border-radius: 8px;
+            padding: 10px 28px; font-weight: 500; font-size: 14px; transition: background 0.2s;
+        }
+        .btn-nk-primary:hover { background: #0290d1; color: #fff; }
+        .btn-nk-outline {
+            background: transparent; border: 1px solid #253a5c; color: #8a9bb5;
+            border-radius: 8px; padding: 10px 28px; font-size: 14px; transition: all 0.2s;
+        }
+        .btn-nk-outline:hover { border-color: #03a9f4; color: #03a9f4; }
+        .nk-auth-footer { color: #5a6a7f; font-size: 13px; }
+        .nk-auth-footer a { color: #03a9f4; text-decoration: none; }
+        .nk-auth-footer a:hover { text-decoration: underline; }
+    </style>
 </head>
 
 <body>
-    <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+    <div class="text-center px-3" style="max-width:500px;">
+        <div class="nk-error-code mb-3">500</div>
+        <h1 class="nk-error-title mb-3">Internal Server Error</h1>
+        <p class="text-secondary mb-4" style="font-size:14px; line-height:1.7;">
+            The server encountered an unexpected error. We apologize for the inconvenience. Please try again or contact support if the issue persists.
+        </p>
+        <div class="d-flex justify-content-center gap-3 mb-5">
+            <a href="index.html" class="btn btn-nk-primary">
+                <i class="bi bi-house me-1"></i>Dashboard
+            </a>
+            <a href="javascript:location.reload()" class="btn btn-nk-outline">
+                <i class="bi bi-arrow-clockwise me-1"></i>Try Again
+            </a>
+        </div>
 
-    <div class="color-line"></div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="back-link back-backend">
-                    <a href="index.html" class="btn btn-primary">Back to Dashboard</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
-            <div class="col-md-6 col-md-6 col-sm-6 col-xs-12">
-                <div class="content-error">
-                    <h1>Internal Server Error <span class="counter"> 500</span></h1>
-                    <p>The server encountered something unexpected that didn't allow it to complete the request. We apologize.</p>
-                    <a href="#">Report Problem</a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 col-md-12 col-sm-12 col-xs-12 text-center login-footer">
-                <p>Copyright © 2018 <a href="https://colorlib.com/wp/templates/">Colorlib</a> All rights reserved.</p>
-            </div>
+        <div class="nk-auth-footer">
+            <p>&copy; 2026 <a href="https://colorlib.com/wp/templates/">Colorlib</a>. All rights reserved.</p>
         </div>
     </div>
 
-
-    <!-- jquery
-		============================================ -->
-    <script src="js/vendor/jquery-1.11.3.min.js"></script>
-    <!-- bootstrap JS
-		============================================ -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- wow JS
-		============================================ -->
-    <script src="js/wow.min.js"></script>
-    <!-- price-slider JS
-		============================================ -->
-    <script src="js/jquery-price-slider.js"></script>
-    <!-- meanmenu JS
-		============================================ -->
-    <script src="js/jquery.meanmenu.js"></script>
-    <!-- owl.carousel JS
-		============================================ -->
-    <script src="js/owl.carousel.min.js"></script>
-    <!-- sticky JS
-		============================================ -->
-    <script src="js/jquery.sticky.js"></script>
-    <!-- scrollUp JS
-		============================================ -->
-    <script src="js/jquery.scrollUp.min.js"></script>
-    <!-- mCustomScrollbar JS
-		============================================ -->
-    <script src="js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/scrollbar/mCustomScrollbar-active.js"></script>
-    <!-- metisMenu JS
-		============================================ -->
-    <script src="js/metisMenu/metisMenu.min.js"></script>
-    <script src="js/metisMenu/metisMenu-active.js"></script>
-    <!-- counterup JS
-		============================================ -->
-    <script src="js/counterup/jquery.counterup.min.js"></script>
-    <script src="js/counterup/waypoints.min.js"></script>
-    <script src="js/counterup/counterup-active.js"></script>
-    <!-- morrisjs JS
-		============================================ -->
-    <script src="js/sparkline/jquery.sparkline.min.js"></script>
-    <script src="js/sparkline/jquery.charts-sparkline.js"></script>
-    <!-- calendar JS
-		============================================ -->
-    <script src="js/calendar/moment.min.js"></script>
-    <script src="js/calendar/fullcalendar.min.js"></script>
-    <script src="js/calendar/fullcalendar-active.js"></script>
-    <!-- tab JS
-		============================================ -->
-    <script src="js/tab.js"></script>
-    <!-- plugins JS
-		============================================ -->
-    <script src="js/plugins.js"></script>
-    <!-- main JS
-		============================================ -->
-    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

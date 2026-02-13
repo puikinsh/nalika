@@ -1,0 +1,891 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Calendar | Nalika - Material Admin Template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon
+		============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- Google Fonts
+		============================================ -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5.3.8 CSS
+		============================================ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <!-- Bootstrap Icons 1.13.1
+		============================================ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- nalika Icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/nalika-icon.css">
+    <!-- AOS 2.3.4 CSS
+		============================================ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <!-- SimpleBar 6.2.7 CSS
+		============================================ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@6.2.7/dist/simplebar.min.css">
+    <!-- main CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- style CSS
+		============================================ -->
+    <link rel="stylesheet" href="style.css">
+    <!-- responsive CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+    .cal-dot { display:inline-block; width:10px; height:10px; border-radius:50%; }
+    .cal-upcoming .cal-up-item { display:flex; align-items:flex-start; gap:10px; padding:8px 0; border-bottom:1px solid var(--nk-border-default); }
+    .cal-upcoming .cal-up-item:last-child { border-bottom:none; }
+    .cal-upcoming .cal-up-date { min-width:40px; text-align:center; background:var(--nk-bg-body); border-radius:6px; padding:4px 6px; line-height:1.2; }
+    .cal-upcoming .cal-up-date .day { font-size:16px; font-weight:600; color:var(--nk-text-primary); display:block; }
+    .cal-upcoming .cal-up-date .mon { font-size:10px; text-transform:uppercase; color:var(--nk-text-muted); display:block; }
+    .cal-upcoming .cal-up-title { font-size:13px; color:var(--nk-text-primary); margin-bottom:2px; }
+    .cal-upcoming .cal-up-time { font-size:11px; color:var(--nk-text-muted); }
+    .cal-categories .form-check-label { color:var(--nk-text-secondary); display:flex; align-items:center; gap:6px; }
+    .fc .fc-event { cursor:pointer; border:none; padding:2px 4px; }
+    .fc .fc-daygrid-event-dot { display:none; }
+    .fc .fc-list-event-dot { border-color:inherit; }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="left-sidebar-pro">
+        <nav id="sidebar" class="">
+            <div class="sidebar-header">
+                <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
+                <strong><img src="img/logo/logosn.png" alt="" /></strong>
+            </div>
+            <div class="nalika-profile">
+                <div class="profile-dtl">
+                    <a href="#"><img src="https://avatars.githubusercontent.com/u/3451398?s=200&v=4" alt="Aigars Silkalns" /></a>
+                    <h2>Aigars <span class="min-dtn">Silkalns</span></h2>
+                </div>
+                <div class="profile-social-dtl">
+                    <ul class="dtl-social">
+                        <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                        <li><a href="#"><i class="bi bi-twitter-x"></i></a></li>
+                        <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="left-custom-menu-adp-wrap comment-scrollbar">
+                <nav class="sidebar-nav left-sidebar-menu-pro">
+                    <ul class="metismenu" id="menu1">
+                        <li>
+                            <a class="has-arrow" href="index.html">
+							   <i class="bi big-icon bi-speedometer2 icon-wrap"></i>
+							   <span class="mini-click-non">Dashboards</span>
+							</a>
+                            <ul class="submenu-angle" aria-expanded="true">
+                                <li><a title="Main Dashboard" href="index.html"><span class="mini-sub-pro">Main Dashboard</span></a></li>
+                                <li><a title="Analytics" href="index-1.html"><span class="mini-sub-pro">Analytics</span></a></li>
+                                <li><a title="Projects" href="index-2.html"><span class="mini-sub-pro">Projects</span></a></li>
+                                <li><a title="Statistics" href="analytics.html"><span class="mini-sub-pro">Statistics</span></a></li>
+                                <li><a title="Widgets" href="widgets.html"><span class="mini-sub-pro">Widgets</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="product-list.html" aria-expanded="false"><i class="bi big-icon bi-bag icon-wrap"></i> <span class="mini-click-non">Ecommerce</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Product List" href="product-list.html"><span class="mini-sub-pro">Product List</span></a></li>
+                                <li><a title="Product Edit" href="product-edit.html"><span class="mini-sub-pro">Product Edit</span></a></li>
+                                <li><a title="Product Detail" href="product-detail.html"><span class="mini-sub-pro">Product Detail</span></a></li>
+                                <li><a title="Product Cart" href="product-cart.html"><span class="mini-sub-pro">Product Cart</span></a></li>
+                                <li><a title="Product Payment" href="product-payment.html"><span class="mini-sub-pro">Product Payment</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="bi big-icon bi-envelope icon-wrap"></i> <span class="mini-click-non">Mailbox</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Inbox" href="mailbox.html"><span class="mini-sub-pro">Inbox</span></a></li>
+                                <li><a title="View Mail" href="mailbox-view.html"><span class="mini-sub-pro">View Mail</span></a></li>
+                                <li><a title="Compose Mail" href="mailbox-compose.html"><span class="mini-sub-pro">Compose Mail</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="active">
+                            <a class="has-arrow" href="kanban-board.html" aria-expanded="false"><i class="bi big-icon bi-grid-3x3 icon-wrap"></i> <span class="mini-click-non">Interface</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Kanban Board" href="kanban-board.html"><span class="mini-sub-pro">Kanban Board</span></a></li>
+                                <li><a title="Activity Timeline" href="activity-timeline.html"><span class="mini-sub-pro">Activity Timeline</span></a></li>
+                                <li><a title="Calendar" href="calendar.html"><span class="mini-sub-pro">Calendar</span></a></li>
+                                <li><a title="Code Editor" href="code-editor.html"><span class="mini-sub-pro">Code Editor</span></a></li>
+                                <li><a title="Images Cropper" href="images-cropper.html"><span class="mini-sub-pro">Images Cropper</span></a></li>
+                                <li><a title="PDF Viewer" href="pdf-viewer.html"><span class="mini-sub-pro">PDF Viewer</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="file-manager.html" aria-expanded="false"><i class="bi big-icon bi-pie-chart icon-wrap"></i> <span class="mini-click-non">Miscellaneous</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="File Manager" href="file-manager.html"><span class="mini-sub-pro">File Manager</span></a></li>
+                                <li><a title="Blog" href="blog.html"><span class="mini-sub-pro">Blog</span></a></li>
+                                <li><a title="Blog Details" href="blog-details.html"><span class="mini-sub-pro">Blog Details</span></a></li>
+                                <li><a title="404 Page" href="404.html"><span class="mini-sub-pro">404 Page</span></a></li>
+                                <li><a title="500 Page" href="500.html"><span class="mini-sub-pro">500 Page</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="bar-charts.html" aria-expanded="false"><i class="bi big-icon bi-bar-chart icon-wrap"></i> <span class="mini-click-non">Charts</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Bar Charts" href="bar-charts.html"><span class="mini-sub-pro">Bar Charts</span></a></li>
+                                <li><a title="Line Charts" href="line-charts.html"><span class="mini-sub-pro">Line Charts</span></a></li>
+                                <li><a title="Area Charts" href="area-charts.html"><span class="mini-sub-pro">Area Charts</span></a></li>
+                                <li><a title="Rounded Charts" href="rounded-chart.html"><span class="mini-sub-pro">Rounded Charts</span></a></li>
+                                <li><a title="Mixed Charts" href="c3.html"><span class="mini-sub-pro">Mixed Charts</span></a></li>
+                                <li><a title="Sparkline Charts" href="sparkline.html"><span class="mini-sub-pro">Sparkline Charts</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="static-table.html" aria-expanded="false"><i class="bi big-icon bi-table icon-wrap"></i> <span class="mini-click-non">Data Tables</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Static Table" href="static-table.html"><span class="mini-sub-pro">Static Table</span></a></li>
+                                <li><a title="Data Table" href="data-table.html"><span class="mini-sub-pro">Data Table</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="basic-form-element.html" aria-expanded="false"><i class="bi big-icon bi-ui-checks icon-wrap"></i> <span class="mini-click-non">Forms</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Basic Form Elements" href="basic-form-element.html"><span class="mini-sub-pro">Basic Elements</span></a></li>
+                                <li><a title="Advance Form Elements" href="advance-form-element.html"><span class="mini-sub-pro">Advanced Elements</span></a></li>
+                                <li><a title="Password Meter" href="password-meter.html"><span class="mini-sub-pro">Password Meter</span></a></li>
+                                <li><a title="Multi Upload" href="multi-upload.html"><span class="mini-sub-pro">Multi Upload</span></a></li>
+                                <li><a title="Text Editor" href="tinymc.html"><span class="mini-sub-pro">Text Editor</span></a></li>
+                                <li><a title="Dual List Box" href="dual-list-box.html"><span class="mini-sub-pro">Dual List Box</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="notifications.html" aria-expanded="false"><i class="bi big-icon bi-display icon-wrap"></i> <span class="mini-click-non">App Views</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Notifications" href="notifications.html"><span class="mini-sub-pro">Notifications</span></a></li>
+                                <li><a title="Alerts" href="alerts.html"><span class="mini-sub-pro">Alerts</span></a></li>
+                                <li><a title="Modals" href="modals.html"><span class="mini-sub-pro">Modals</span></a></li>
+                                <li><a title="Buttons" href="buttons.html"><span class="mini-sub-pro">Buttons</span></a></li>
+                                <li><a title="Tabs" href="tabs.html"><span class="mini-sub-pro">Tabs</span></a></li>
+                                <li><a title="Accordion" href="accordion.html"><span class="mini-sub-pro">Accordion</span></a></li>
+                            </ul>
+                        </li>
+                        <li id="removable">
+                            <a class="has-arrow" href="#" aria-expanded="false"><i class="bi big-icon bi-files icon-wrap"></i> <span class="mini-click-non">Pages</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Login" href="login.html"><span class="mini-sub-pro">Login</span></a></li>
+                                <li><a title="Register" href="register.html"><span class="mini-sub-pro">Register</span></a></li>
+                                <li><a title="Lock" href="lock.html"><span class="mini-sub-pro">Lock</span></a></li>
+                                <li><a title="Password Recovery" href="password-recovery.html"><span class="mini-sub-pro">Password Recovery</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </nav>
+    </div>
+    <!-- Start Welcome area -->
+    <div class="all-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="logo-pro">
+                        <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-advance-area">
+                    <div class="header-top-area">
+            <div class="container-fluid">
+                <div class="nk-header-bar">
+                    <!-- Sidebar Toggle -->
+                    <button type="button" id="sidebarCollapse" class="btn text-white p-0 me-3 border-0 text-decoration-none" style="font-size:20px;">
+                        <i class="icon nalika-menu-task"></i>
+                    </button>
+
+                    <!-- Search -->
+                    <div class="nk-header-search d-none d-lg-block">
+                        <input type="text" class="nk-search-input" placeholder="Search...">
+                        <i class="bi bi-search nk-search-icon"></i>
+                    </div>
+
+                    <!-- Right Icons -->
+                    <div class="nk-header-right ms-auto">
+                        <!-- Messages -->
+                        <div class="dropdown">
+                            <a href="#" class="nk-header-icon" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                                <i class="icon nalika-mail"></i>
+                                <span class="nk-badge"></span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <h6 class="nk-dd-title">Messages</h6>
+                                <div class="nk-dd-body">
+                                    <a href="#" class="nk-dd-item">
+                                        <img src="img/contact/1.svg" alt="">
+                                        <div class="nk-dd-item-body">
+                                            <div class="d-flex justify-content-between"><h6>Aigars</h6><span class="nk-dd-date">16 Sept</span></div>
+                                            <p>Please done this project as soon possible.</p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="nk-dd-item">
+                                        <img src="img/contact/4.svg" alt="">
+                                        <div class="nk-dd-item-body">
+                                            <div class="d-flex justify-content-between"><h6>Sulaiman din</h6><span class="nk-dd-date">16 Sept</span></div>
+                                            <p>Please done this project as soon possible.</p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="nk-dd-item">
+                                        <img src="img/contact/3.svg" alt="">
+                                        <div class="nk-dd-item-body">
+                                            <div class="d-flex justify-content-between"><h6>Victor Jara</h6><span class="nk-dd-date">16 Sept</span></div>
+                                            <p>Please done this project as soon possible.</p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="nk-dd-item">
+                                        <img src="img/contact/2.svg" alt="">
+                                        <div class="nk-dd-item-body">
+                                            <div class="d-flex justify-content-between"><h6>Victor Jara</h6><span class="nk-dd-date">16 Sept</span></div>
+                                            <p>Please done this project as soon possible.</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="nk-dd-footer">
+                                    <a href="#">View All Messages</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Notifications -->
+                        <div class="dropdown">
+                            <a href="#" class="nk-header-icon" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                                <i class="icon nalika-alarm"></i>
+                                <span class="nk-badge"></span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <h6 class="nk-dd-title">Notifications</h6>
+                                <div class="nk-dd-body">
+                                    <a href="#" class="nk-dd-item">
+                                        <div class="nk-notif-icon"><i class="icon nalika-tick"></i></div>
+                                        <div class="nk-dd-item-body">
+                                            <div class="d-flex justify-content-between"><h6>Aigars</h6><span class="nk-dd-date">16 Sept</span></div>
+                                            <p>Please done this project as soon possible.</p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="nk-dd-item">
+                                        <div class="nk-notif-icon"><i class="icon nalika-cloud"></i></div>
+                                        <div class="nk-dd-item-body">
+                                            <div class="d-flex justify-content-between"><h6>Sulaiman din</h6><span class="nk-dd-date">16 Sept</span></div>
+                                            <p>Please done this project as soon possible.</p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="nk-dd-item">
+                                        <div class="nk-notif-icon"><i class="icon nalika-folder"></i></div>
+                                        <div class="nk-dd-item-body">
+                                            <div class="d-flex justify-content-between"><h6>Victor Jara</h6><span class="nk-dd-date">16 Sept</span></div>
+                                            <p>Please done this project as soon possible.</p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="nk-dd-item">
+                                        <div class="nk-notif-icon"><i class="icon nalika-bar-chart"></i></div>
+                                        <div class="nk-dd-item-body">
+                                            <div class="d-flex justify-content-between"><h6>Victor Jara</h6><span class="nk-dd-date">16 Sept</span></div>
+                                            <p>Please done this project as soon possible.</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="nk-dd-footer">
+                                    <a href="#">View All Notifications</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- User Profile -->
+                        <div class="dropdown">
+                            <a href="#" class="nk-header-icon nk-header-user" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="icon nalika-user"></i>
+                                <span class="nk-user-name d-none d-md-inline">Aigars</span>
+                                <i class="bi bi-chevron-down" style="font-size:12px;"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end nk-user-menu">
+                                <li><a class="dropdown-item" href="register.html"><i class="icon nalika-home me-2"></i>Register</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="icon nalika-user me-2"></i>My Profile</a></li>
+                                <li><a class="dropdown-item" href="lock.html"><i class="icon nalika-diamond me-2"></i>Lock</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="icon nalika-settings me-2"></i>Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="login.html"><i class="icon nalika-unlocked me-2"></i>Log Out</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Settings Panel -->
+                        <div class="dropdown">
+                            <a href="#" class="nk-header-icon" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                                <i class="icon nalika-menu-task"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end nk-settings-panel">
+                                <ul class="nav nav-tabs nav-fill" role="tablist">
+                                    <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#nkNews" type="button">News</button></li>
+                                    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#nkActivity" type="button">Activity</button></li>
+                                    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#nkSettings" type="button">Settings</button></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <!-- News Tab -->
+                                    <div class="tab-pane fade show active" id="nkNews">
+                                        <div class="nk-panel-heading">
+                                            <h6><i class="icon nalika-chat me-1"></i> Latest News</h6>
+                                            <p>You have 10 New News.</p>
+                                        </div>
+                                        <a href="#" class="nk-panel-item">
+                                            <img src="img/contact/4.svg" alt="">
+                                            <div class="nk-panel-item-body">
+                                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                <small>Yesterday 2:45 pm</small>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="nk-panel-item">
+                                            <img src="img/contact/1.svg" alt="">
+                                            <div class="nk-panel-item-body">
+                                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                <small>Yesterday 2:45 pm</small>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="nk-panel-item">
+                                            <img src="img/contact/2.svg" alt="">
+                                            <div class="nk-panel-item-body">
+                                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                <small>Yesterday 2:45 pm</small>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="nk-panel-item">
+                                            <img src="img/contact/3.svg" alt="">
+                                            <div class="nk-panel-item-body">
+                                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                <small>Yesterday 2:45 pm</small>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="nk-panel-item">
+                                            <img src="img/contact/4.svg" alt="">
+                                            <div class="nk-panel-item-body">
+                                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+                                                <small>Yesterday 2:45 pm</small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <!-- Activity Tab -->
+                                    <div class="tab-pane fade" id="nkActivity">
+                                        <div class="nk-panel-heading">
+                                            <h6><i class="icon nalika-happiness me-1"></i> Recent Activity</h6>
+                                            <p>You have 20 Recent Activity.</p>
+                                        </div>
+                                        <div class="nk-activity-item">
+                                            <h6>New User Registered</h6>
+                                            <p>The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                            <small>1 hours ago</small>
+                                        </div>
+                                        <div class="nk-activity-item">
+                                            <h6>New Order Received</h6>
+                                            <p>The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                            <small>2 hours ago</small>
+                                        </div>
+                                        <div class="nk-activity-item">
+                                            <h6>New Order Received</h6>
+                                            <p>The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                            <small>3 hours ago</small>
+                                        </div>
+                                        <div class="nk-activity-item">
+                                            <h6>New Order Received</h6>
+                                            <p>The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                            <small>4 hours ago</small>
+                                        </div>
+                                        <div class="nk-activity-item">
+                                            <h6>New User Registered</h6>
+                                            <p>The point of using Lorem Ipsum is that it has a more or less normal.</p>
+                                            <small>5 hours ago</small>
+                                        </div>
+                                    </div>
+                                    <!-- Settings Tab -->
+                                    <div class="tab-pane fade" id="nkSettings">
+                                        <div class="nk-panel-heading">
+                                            <h6><i class="icon nalika-gear me-1"></i> Settings Panel</h6>
+                                            <p>You have 20 Settings. 5 not completed.</p>
+                                        </div>
+                                        <div class="nk-setting-item">
+                                            <label for="nkOpt1">Show notifications</label>
+                                            <div class="form-check form-switch mb-0">
+                                                <input class="form-check-input" type="checkbox" id="nkOpt1">
+                                            </div>
+                                        </div>
+                                        <div class="nk-setting-item">
+                                            <label for="nkOpt2">Disable Chat</label>
+                                            <div class="form-check form-switch mb-0">
+                                                <input class="form-check-input" type="checkbox" id="nkOpt2">
+                                            </div>
+                                        </div>
+                                        <div class="nk-setting-item">
+                                            <label for="nkOpt3">Enable history</label>
+                                            <div class="form-check form-switch mb-0">
+                                                <input class="form-check-input" type="checkbox" id="nkOpt3">
+                                            </div>
+                                        </div>
+                                        <div class="nk-setting-item">
+                                            <label for="nkOpt4">Show charts</label>
+                                            <div class="form-check form-switch mb-0">
+                                                <input class="form-check-input" type="checkbox" id="nkOpt4">
+                                            </div>
+                                        </div>
+                                        <div class="nk-setting-item">
+                                            <label for="nkOpt5">Update everyday</label>
+                                            <div class="form-check form-switch mb-0">
+                                                <input class="form-check-input" type="checkbox" id="nkOpt5" checked>
+                                            </div>
+                                        </div>
+                                        <div class="nk-setting-item">
+                                            <label for="nkOpt6">Global search</label>
+                                            <div class="form-check form-switch mb-0">
+                                                <input class="form-check-input" type="checkbox" id="nkOpt6" checked>
+                                            </div>
+                                        </div>
+                                        <div class="nk-setting-item">
+                                            <label for="nkOpt7">Offline users</label>
+                                            <div class="form-check form-switch mb-0">
+                                                <input class="form-check-input" type="checkbox" id="nkOpt7" checked>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="breadcome-area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="breadcome-list single-page-breadcome">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                        <div class="breadcome-heading">
+                                            <form role="search" class="">
+                                                <input type="text" placeholder="Search..." class="form-control">
+                                                <a href=""><i class="bi bi-search"></i></a>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                        <ul class="breadcome-menu">
+                                            <li><a href="#">Home</a> <span class="bread-slash">/</span>
+                                            </li>
+                                            <li><span class="bread-blod">Calendar</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Calendar Start -->
+        <div class="calender-area mg-tb-30">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Sidebar -->
+                    <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+                        <div class="cal-sidebar" style="background:var(--nk-bg-surface); border-radius:8px; padding:20px;">
+                            <button class="btn btn-info w-100 mb-4" id="btnAddEvent"><i class="bi bi-plus-lg me-2"></i>New Event</button>
+
+                            <h6 class="text-white mb-3">Categories</h6>
+                            <div class="cal-categories mb-4">
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" id="catWork" value="work" checked>
+                                    <label class="form-check-label" for="catWork"><span class="cal-dot" style="background:#0d6efd;"></span> Work</label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" id="catPersonal" value="personal" checked>
+                                    <label class="form-check-label" for="catPersonal"><span class="cal-dot" style="background:#198754;"></span> Personal</label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" id="catDeadline" value="deadline" checked>
+                                    <label class="form-check-label" for="catDeadline"><span class="cal-dot" style="background:#dc3545;"></span> Deadline</label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" id="catSocial" value="social" checked>
+                                    <label class="form-check-label" for="catSocial"><span class="cal-dot" style="background:#ffc107;"></span> Social</label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" id="catTravel" value="travel" checked>
+                                    <label class="form-check-label" for="catTravel"><span class="cal-dot" style="background:#0dcaf0;"></span> Travel</label>
+                                </div>
+                            </div>
+
+                            <h6 class="text-white mb-3">Upcoming Events</h6>
+                            <div id="upcomingEvents" class="cal-upcoming"></div>
+                        </div>
+                    </div>
+                    <!-- Calendar -->
+                    <div class="col-lg-9 col-md-8">
+                        <div class="calender-inner">
+                            <div id="calendarPro"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Calendar End -->
+
+        <!-- Event Detail Modal -->
+        <div class="modal fade" id="eventDetailModal" tabindex="-1" aria-labelledby="eventDetailTitle" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content" style="background:var(--nk-bg-surface); color:var(--nk-text-primary);">
+                    <div class="modal-header border-0">
+                        <h5 class="modal-title" id="eventDetailTitle">Event Details</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3 d-flex align-items-center gap-2">
+                            <span class="cal-dot" id="detailDot"></span>
+                            <span id="detailCategory" class="text-uppercase small fw-bold" style="letter-spacing:.05em;"></span>
+                        </div>
+                        <h4 id="detailTitle" class="text-white mb-3"></h4>
+                        <div class="mb-2" style="color:var(--nk-text-secondary);"><i class="bi bi-clock me-2"></i><span id="detailTime"></span></div>
+                        <div class="mb-3" style="color:var(--nk-text-secondary);"><i class="bi bi-geo-alt me-2"></i><span id="detailLocation"></span></div>
+                        <p id="detailDesc" style="color:var(--nk-text-secondary);"></p>
+                    </div>
+                    <div class="modal-footer border-0">
+                        <button type="button" class="btn btn-outline-danger btn-sm" id="btnDeleteEvent"><i class="bi bi-trash me-1"></i>Delete</button>
+                        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Create Event Modal -->
+        <div class="modal fade" id="createEventModal" tabindex="-1" aria-labelledby="createEventTitle" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content" style="background:var(--nk-bg-surface); color:var(--nk-text-primary);">
+                    <div class="modal-header border-0">
+                        <h5 class="modal-title" id="createEventTitle">New Event</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="newEventTitle" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="newEventTitle" placeholder="Event title...">
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <label for="newEventStart" class="form-label">Start</label>
+                                <input type="datetime-local" class="form-control" id="newEventStart">
+                            </div>
+                            <div class="col-6">
+                                <label for="newEventEnd" class="form-label">End</label>
+                                <input type="datetime-local" class="form-control" id="newEventEnd">
+                            </div>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="newEventAllDay">
+                            <label class="form-check-label" for="newEventAllDay">All day</label>
+                        </div>
+                        <div class="mb-3">
+                            <label for="newEventCategory" class="form-label">Category</label>
+                            <select class="form-select" id="newEventCategory">
+                                <option value="work">Work</option>
+                                <option value="personal">Personal</option>
+                                <option value="deadline">Deadline</option>
+                                <option value="social">Social</option>
+                                <option value="travel">Travel</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="newEventLocation" class="form-label">Location</label>
+                            <input type="text" class="form-control" id="newEventLocation" placeholder="Optional location...">
+                        </div>
+                        <div class="mb-3">
+                            <label for="newEventDesc" class="form-label">Description</label>
+                            <textarea class="form-control" id="newEventDesc" rows="3" placeholder="Optional description..." style="min-height:80px;"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer border-0">
+                        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-info btn-sm" id="btnSaveEvent"><i class="bi bi-check-lg me-1"></i>Create Event</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright-area mt-4">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer-copy-right">
+                            <p>Copyright &copy; 2026 <a href="https://colorlib.com/wp/templates/">Colorlib</a> All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap 5.3.8 Bundle (includes Popper)
+		============================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS 2.3.4
+		============================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- SimpleBar 6.2.7
+		============================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/simplebar@6.2.7/dist/simplebar.min.js"></script>
+    <!-- FullCalendar 6.1.20
+		============================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.20/index.global.min.js"></script>
+    <!-- main JS
+		============================================ -->
+    <script src="js/main.js"></script>
+    <!-- Calendar Page Init
+		============================================ -->
+    <script>
+    (function () {
+        var calendarEl = document.getElementById('calendarPro');
+        if (!calendarEl || typeof FullCalendar === 'undefined') return;
+
+        /* ── Category colors ─────────────────────── */
+        var catColors = {
+            work:     { bg: '#0d6efd', text: '#fff' },
+            personal: { bg: '#198754', text: '#fff' },
+            deadline: { bg: '#dc3545', text: '#fff' },
+            social:   { bg: '#ffc107', text: '#000' },
+            travel:   { bg: '#0dcaf0', text: '#000' }
+        };
+
+        /* ── Helper: date offset from today ──────── */
+        function d(offset, time) {
+            var dt = new Date(Date.now() + 86400000 * offset);
+            if (time) {
+                var p = time.split(':');
+                dt.setHours(parseInt(p[0]), parseInt(p[1]), 0, 0);
+            }
+            return dt;
+        }
+        function iso(date) { return date.toISOString().slice(0, 10); }
+
+        /* ── Demo events ─────────────────────────── */
+        var demoEvents = [
+            { title: 'Sprint Planning',       start: d(0, '09:00'), end: d(0, '10:30'),  category: 'work',     location: 'Room 301',         description: 'Review backlog items and assign sprint tasks to the team.' },
+            { title: 'Lunch with Sarah',       start: d(0, '12:30'), end: d(0, '13:30'),  category: 'social',   location: 'Cafe Noir',        description: 'Catch up over lunch. She wants to discuss the new project.' },
+            { title: 'Design Review',          start: d(1, '14:00'), end: d(1, '15:00'),  category: 'work',     location: 'Zoom',             description: 'Review mockups for the dashboard redesign with the UX team.' },
+            { title: 'Proposal Deadline',      start: iso(d(2)),     end: null,            category: 'deadline', location: '',                 description: 'Submit the Q2 budget proposal to finance by end of day.', allDay: true },
+            { title: 'Team Building',          start: d(3, '16:00'), end: d(3, '18:00'),  category: 'social',   location: 'Rooftop Terrace',  description: 'Bowling, pizza, and drinks with the whole department.' },
+            { title: 'Client Presentation',    start: d(4, '10:00'), end: d(4, '11:30'),  category: 'work',     location: 'Board Room',       description: 'Present Q1 results and roadmap to the Acme Corp stakeholders.' },
+            { title: 'Flight to Berlin',       start: d(5, '07:30'), end: d(5, '10:00'),  category: 'travel',   location: 'Airport Terminal 2', description: 'LH1234. Window seat booked. Pack passport!' },
+            { title: 'Conference',             start: iso(d(5)),     end: iso(d(8)),       category: 'travel',   location: 'Berlin Convention Center', description: 'WebSummit Berlin — attending the full 3-day event.', allDay: true },
+            { title: 'Code Freeze',            start: iso(d(9)),     end: null,            category: 'deadline', location: '',                 description: 'No more feature commits after this date. Bug fixes only.', allDay: true },
+            { title: '1-on-1 with Manager',    start: d(1, '11:00'), end: d(1, '11:30'),  category: 'work',     location: 'Office',           description: 'Weekly sync to discuss progress and blockers.' },
+            { title: 'Yoga Class',             start: d(2, '07:00'), end: d(2, '08:00'),  category: 'personal', location: 'Downtown Studio',  description: 'Morning vinyasa flow. Bring mat and towel.' },
+            { title: 'Dentist Appointment',    start: d(6, '15:00'), end: d(6, '16:00'),  category: 'personal', location: 'Dr. Smith Clinic', description: 'Routine checkup and cleaning.' },
+            { title: 'Release v2.0',           start: iso(d(12)),    end: null,            category: 'deadline', location: '',                 description: 'Production deploy of the new admin template.', allDay: true },
+            { title: 'Birthday Party — Mike',  start: d(10, '19:00'), end: d(10, '23:00'), category: 'social',  location: 'Mike\'s Place',    description: 'Bring a gift. Theme: 80s retro!' },
+            { title: 'Gym Session',            start: d(-1, '06:30'), end: d(-1, '07:30'), category: 'personal', location: 'FitHub',          description: 'Upper body + cardio day.' },
+            { title: 'Product Demo',           start: d(-2, '15:00'), end: d(-2, '16:00'), category: 'work',    location: 'Google Meet',      description: 'Demo the new dashboard features to the product team.' },
+            { title: 'Tax Filing Deadline',    start: iso(d(14)),     end: null,           category: 'deadline', location: '',                 description: 'Submit annual tax returns before midnight.', allDay: true },
+        ];
+
+        /* ── Map to FullCalendar event objects ───── */
+        var events = demoEvents.map(function (e) {
+            var c = catColors[e.category] || catColors.work;
+            return {
+                title: e.title,
+                start: e.start,
+                end: e.end,
+                allDay: e.allDay || false,
+                backgroundColor: c.bg,
+                textColor: c.text,
+                borderColor: c.bg,
+                extendedProps: {
+                    category: e.category,
+                    location: e.location,
+                    description: e.description
+                }
+            };
+        });
+
+        /* ── Active category filters ─────────────── */
+        var activeCategories = { work: true, personal: true, deadline: true, social: true, travel: true };
+
+        function filterEvents(fetchInfo, successCallback) {
+            var filtered = events.filter(function (e) {
+                return activeCategories[e.extendedProps.category];
+            });
+            successCallback(filtered);
+        }
+
+        /* ── Initialize FullCalendar ─────────────── */
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+            },
+            buttonText: {
+                today: 'Today',
+                month: 'Month',
+                week: 'Week',
+                day: 'Day',
+                list: 'List'
+            },
+            height: 'auto',
+            editable: true,
+            selectable: true,
+            selectMirror: true,
+            dayMaxEvents: 3,
+            eventDisplay: 'block',
+            nowIndicator: true,
+            events: filterEvents,
+
+            /* Click existing event → detail modal */
+            eventClick: function (info) {
+                info.jsEvent.preventDefault();
+                var ev = info.event;
+                var props = ev.extendedProps;
+                var c = catColors[props.category] || catColors.work;
+
+                document.getElementById('detailDot').style.background = c.bg;
+                document.getElementById('detailCategory').textContent = props.category;
+                document.getElementById('detailCategory').style.color = c.bg;
+                document.getElementById('detailTitle').textContent = ev.title;
+                document.getElementById('detailLocation').textContent = props.location || 'No location';
+                document.getElementById('detailDesc').textContent = props.description || 'No description.';
+
+                /* Format time */
+                var opts = { weekday: 'short', month: 'short', day: 'numeric' };
+                var timeStr = '';
+                if (ev.allDay) {
+                    timeStr = ev.start.toLocaleDateString(undefined, opts);
+                    if (ev.end) timeStr += ' — ' + new Date(ev.end - 86400000).toLocaleDateString(undefined, opts);
+                } else {
+                    var tOpts = { hour: '2-digit', minute: '2-digit' };
+                    timeStr = ev.start.toLocaleDateString(undefined, opts) + ', ' + ev.start.toLocaleTimeString(undefined, tOpts);
+                    if (ev.end) timeStr += ' — ' + ev.end.toLocaleTimeString(undefined, tOpts);
+                }
+                document.getElementById('detailTime').textContent = timeStr;
+
+                /* Store ref for delete */
+                document.getElementById('btnDeleteEvent').onclick = function () {
+                    ev.remove();
+                    events = events.filter(function (e) { return e !== info.event; });
+                    bootstrap.Modal.getInstance(document.getElementById('eventDetailModal')).hide();
+                    renderUpcoming();
+                };
+
+                new bootstrap.Modal(document.getElementById('eventDetailModal')).show();
+            },
+
+            /* Select date range → create modal */
+            select: function (info) {
+                openCreateModal(info.start, info.end, info.allDay);
+                calendar.unselect();
+            },
+
+            /* After events render, update upcoming list */
+            eventsSet: function () {
+                renderUpcoming();
+            }
+        });
+
+        calendar.render();
+
+        /* ── "New Event" button ──────────────────── */
+        document.getElementById('btnAddEvent').addEventListener('click', function () {
+            openCreateModal(new Date(), null, true);
+        });
+
+        function openCreateModal(start, end, allDay) {
+            document.getElementById('newEventTitle').value = '';
+            document.getElementById('newEventLocation').value = '';
+            document.getElementById('newEventDesc').value = '';
+            document.getElementById('newEventCategory').value = 'work';
+            document.getElementById('newEventAllDay').checked = allDay;
+
+            var toLocal = function (dt) {
+                var pad = function (n) { return n < 10 ? '0' + n : n; };
+                return dt.getFullYear() + '-' + pad(dt.getMonth() + 1) + '-' + pad(dt.getDate()) + 'T' + pad(dt.getHours()) + ':' + pad(dt.getMinutes());
+            };
+            document.getElementById('newEventStart').value = toLocal(start);
+            document.getElementById('newEventEnd').value = end ? toLocal(end) : toLocal(new Date(start.getTime() + 3600000));
+
+            new bootstrap.Modal(document.getElementById('createEventModal')).show();
+        }
+
+        /* ── Save new event ──────────────────────── */
+        document.getElementById('btnSaveEvent').addEventListener('click', function () {
+            var title = document.getElementById('newEventTitle').value.trim();
+            if (!title) { document.getElementById('newEventTitle').focus(); return; }
+
+            var cat = document.getElementById('newEventCategory').value;
+            var c = catColors[cat] || catColors.work;
+            var allDay = document.getElementById('newEventAllDay').checked;
+            var startVal = document.getElementById('newEventStart').value;
+            var endVal = document.getElementById('newEventEnd').value;
+
+            var newEv = {
+                title: title,
+                start: allDay ? startVal.slice(0, 10) : startVal,
+                end: allDay ? endVal.slice(0, 10) : endVal,
+                allDay: allDay,
+                backgroundColor: c.bg,
+                textColor: c.text,
+                borderColor: c.bg,
+                extendedProps: {
+                    category: cat,
+                    location: document.getElementById('newEventLocation').value.trim(),
+                    description: document.getElementById('newEventDesc').value.trim()
+                }
+            };
+
+            events.push(newEv);
+            calendar.refetchEvents();
+            bootstrap.Modal.getInstance(document.getElementById('createEventModal')).hide();
+        });
+
+        /* ── Category filter checkboxes ──────────── */
+        document.querySelectorAll('.cal-categories input[type="checkbox"]').forEach(function (cb) {
+            cb.addEventListener('change', function () {
+                activeCategories[this.value] = this.checked;
+                calendar.refetchEvents();
+            });
+        });
+
+        /* ── Upcoming events sidebar ─────────────── */
+        function renderUpcoming() {
+            var container = document.getElementById('upcomingEvents');
+            if (!container) return;
+            var now = new Date();
+            var upcoming = events
+                .filter(function (e) {
+                    var s = new Date(e.start);
+                    return s >= now && activeCategories[e.extendedProps.category];
+                })
+                .sort(function (a, b) { return new Date(a.start) - new Date(b.start); })
+                .slice(0, 6);
+
+            if (upcoming.length === 0) {
+                container.innerHTML = '<p style="color:var(--nk-text-muted); font-size:13px;">No upcoming events.</p>';
+                return;
+            }
+
+            container.innerHTML = upcoming.map(function (e) {
+                var s = new Date(e.start);
+                var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+                var time = e.allDay ? 'All day' : s.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
+                return '<div class="cal-up-item">' +
+                    '<div class="cal-up-date"><span class="day">' + s.getDate() + '</span><span class="mon">' + months[s.getMonth()] + '</span></div>' +
+                    '<div><div class="cal-up-title"><span class="cal-dot me-1" style="background:' + e.backgroundColor + ';"></span>' + e.title + '</div>' +
+                    '<div class="cal-up-time">' + time + '</div></div></div>';
+            }).join('');
+        }
+    })();
+    </script>
+</body>
+
+</html>

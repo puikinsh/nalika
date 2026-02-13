@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="570" height="550" viewBox="0 0 570 550">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="50%" stop-color="#252262"/>
+      <stop offset="100%" stop-color="#312e81"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <radialGradient id="orb1" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="570" height="550" fill="url(#bg)"/>
+  <circle cx="420" cy="120" r="200" fill="url(#orb1)"/>
+  <circle cx="150" cy="430" r="180" fill="url(#orb1)"/>
+  <!-- Large diamond -->
+  <g transform="translate(285,240)" fill="none" stroke="url(#glow)" stroke-width="2.5" opacity="0.7">
+    <polygon points="0,-80 72,-24 45,56 -45,56 -72,-24"/>
+    <line x1="-72" y1="-24" x2="72" y2="-24"/>
+    <line x1="0" y1="-80" x2="-24" y2="-24"/>
+    <line x1="0" y1="-80" x2="24" y2="-24"/>
+    <line x1="-24" y1="-24" x2="45" y2="56"/>
+    <line x1="24" y1="-24" x2="-45" y2="56"/>
+    <line x1="0" y1="-24" x2="0" y2="56"/>
+  </g>
+  <text x="285" y="360" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#a5b4fc" letter-spacing="4" opacity="0.5">COLLECTION</text>
+</svg>

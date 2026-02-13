@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Build artifacts
+.sass-cache/
+*.map
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Migration scripts (temporary)
+migrate.py
+cleanup.py
+cleanup2.py
+css_migrate.py
+fix_icons.py
+fix_stray.py
+fix_final.py
+fix_css.py
+fix_css_compat.py
+fix_header.py
+RELEASE.md

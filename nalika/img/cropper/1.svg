@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="658" viewBox="0 0 1000 658">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#134e4a"/>
+      <stop offset="50%" stop-color="#1e3a5f"/>
+      <stop offset="100%" stop-color="#312e81"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="30%" cy="30%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1000" height="658" fill="url(#bg)"/>
+  <rect width="1000" height="658" fill="url(#sun)"/>
+  <!-- Mountains silhouette -->
+  <polygon points="0,500 200,280 350,400 500,200 650,350 800,250 1000,450 1000,658 0,658" fill="#0f172a" opacity="0.3"/>
+  <polygon points="0,550 150,380 300,480 500,300 700,420 1000,350 1000,658 0,658" fill="#0f172a" opacity="0.4"/>
+  <!-- Sun/moon circle -->
+  <circle cx="300" cy="200" r="50" fill="#fbbf24" opacity="0.15"/>
+  <circle cx="300" cy="200" r="35" fill="#fbbf24" opacity="0.1"/>
+  <!-- Crop guide lines -->
+  <g stroke="#fff" stroke-width="1" opacity="0.15" stroke-dasharray="8,4">
+    <line x1="333" y1="0" x2="333" y2="658"/>
+    <line x1="667" y1="0" x2="667" y2="658"/>
+    <line x1="0" y1="219" x2="1000" y2="219"/>
+    <line x1="0" y1="439" x2="1000" y2="439"/>
+  </g>
+  <text x="500" y="340" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="500" fill="#94a3b8" letter-spacing="4" opacity="0.4">CROP DEMO IMAGE</text>
+</svg>

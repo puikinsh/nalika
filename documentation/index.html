@@ -1,900 +1,1814 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 
 <head>
     <meta charset="UTF-8">
-    <title>Documentation | Nalika - Admin Template</title>
-    <meta name="description" content="Thanks for purchasing Huge. If you need any support, please contact with us.">
-    <meta name="author" content="uttaraitpark">
-    <meta name="copyright" content="uttaraitpark">
-    <link rel="shortcut icon" type="image/png" href="img/favicon.ico">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/tree-viewer.css">
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation | Nalika - Admin Dashboard Template</title>
+    <meta name="description" content="Documentation for the Nalika dark-design Bootstrap 5 admin dashboard template by Colorlib.">
+    <meta name="author" content="Colorlib">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.8 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-lP8Nk7BhkNzL0QDXU/iael1RgSRiQ9VpCMH+PeSmmLXbcz0kiMWS/MqZdBx0EP7" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons 1.13 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Highlight.js for code blocks -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/github.min.css">
+
+    <style>
+        :root {
+            --sidebar-width: 280px;
+            --sidebar-bg: #0f172a;
+            --sidebar-hover: #1e293b;
+            --sidebar-active: #2563eb;
+            --sidebar-text: #94a3b8;
+            --sidebar-text-active: #ffffff;
+            --accent: #2563eb;
+            --accent-light: #3b82f6;
+            --content-bg: #f8fafc;
+            --card-bg: #ffffff;
+            --heading-color: #0f172a;
+            --text-color: #334155;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --code-bg: #f1f5f9;
+            --tree-line: #cbd5e1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-size: 0.9375rem;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--content-bg);
+        }
+
+        /* Sidebar */
+        .doc-sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: var(--sidebar-width);
+            height: 100vh;
+            background: var(--sidebar-bg);
+            display: flex;
+            flex-direction: column;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .sidebar-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .sidebar-brand .brand-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.125rem;
+            color: #fff;
+        }
+
+        .sidebar-brand .brand-text {
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.0625rem;
+            letter-spacing: -0.01em;
+        }
+
+        .sidebar-brand .brand-version {
+            display: block;
+            font-size: 0.6875rem;
+            font-weight: 400;
+            color: var(--sidebar-text);
+            letter-spacing: 0;
+        }
+
+        .sidebar-nav {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem 0;
+        }
+
+        .sidebar-nav::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .sidebar-nav::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+
+        .nav-item {
+            margin: 0 0.75rem 0.125rem;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.625rem 0.875rem;
+            color: var(--sidebar-text);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.15s ease;
+        }
+
+        .nav-link:hover {
+            color: #e2e8f0;
+            background: var(--sidebar-hover);
+        }
+
+        .nav-link.active {
+            color: var(--sidebar-text-active);
+            background: var(--sidebar-active);
+        }
+
+        .nav-link i {
+            font-size: 1.125rem;
+            width: 1.25rem;
+            text-align: center;
+        }
+
+        .sidebar-footer {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .sidebar-footer p {
+            color: var(--sidebar-text);
+            font-size: 0.75rem;
+            margin: 0;
+        }
+
+        .sidebar-footer a {
+            color: var(--accent-light);
+            text-decoration: none;
+        }
+
+        .sidebar-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Content */
+        .doc-main {
+            margin-left: var(--sidebar-width);
+            min-height: 100vh;
+        }
+
+        .doc-content {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 3rem 2.5rem;
+        }
+
+        /* Sections */
+        .doc-section {
+            display: none;
+        }
+
+        .doc-section.active {
+            display: block;
+            animation: fadeIn 0.25s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Typography */
+        .doc-section h1 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: var(--heading-color);
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .doc-section h2 {
+            font-size: 1.375rem;
+            font-weight: 600;
+            color: var(--heading-color);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .doc-section h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--heading-color);
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .lead {
+            font-size: 1.0625rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        /* Info Cards */
+        .info-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-card .card-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.125rem;
+        }
+
+        .meta-item .label {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .meta-item .value {
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: var(--heading-color);
+        }
+
+        .meta-item .value a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .meta-item .value a:hover {
+            text-decoration: underline;
+        }
+
+        /* Code Blocks */
+        pre {
+            background: var(--code-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.25rem;
+            margin: 1.25rem 0;
+            overflow-x: auto;
+            font-size: 0.8125rem;
+            line-height: 1.7;
+        }
+
+        pre code {
+            font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+            font-size: 0.8125rem;
+        }
+
+        code:not(pre code) {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8125rem;
+            background: var(--code-bg);
+            padding: 0.15em 0.4em;
+            border-radius: 4px;
+            color: #c2410c;
+        }
+
+        /* File Tree */
+        .file-tree {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin: 1.25rem 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8125rem;
+            line-height: 1.8;
+        }
+
+        .file-tree ul {
+            list-style: none;
+            padding-left: 1.5rem;
+            margin: 0;
+        }
+
+        .file-tree > ul {
+            padding-left: 0;
+        }
+
+        .file-tree li {
+            position: relative;
+            color: var(--text-color);
+        }
+
+        .file-tree li::before {
+            content: '';
+            position: absolute;
+            left: -1rem;
+            top: 0;
+            width: 0.75rem;
+            height: 100%;
+            border-left: 1px solid var(--tree-line);
+        }
+
+        .file-tree li::after {
+            content: '';
+            position: absolute;
+            left: -1rem;
+            top: 0.9rem;
+            width: 0.75rem;
+            border-top: 1px solid var(--tree-line);
+        }
+
+        .file-tree li:last-child::before {
+            height: 0.9rem;
+        }
+
+        .file-tree > ul > li::before,
+        .file-tree > ul > li::after {
+            display: none;
+        }
+
+        .file-tree .tree-icon {
+            margin-right: 0.375rem;
+            font-style: normal;
+        }
+
+        .file-tree .folder > span {
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--heading-color);
+        }
+
+        .file-tree .folder > span:hover {
+            color: var(--accent);
+        }
+
+        .file-tree .folder.collapsed > ul {
+            display: none;
+        }
+
+        .file-tree .file {
+            color: var(--text-muted);
+        }
+
+        .file-tree .count {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            font-weight: 400;
+        }
+
+        /* Plugin Table */
+        .plugin-table {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 1.25rem 0;
+        }
+
+        .plugin-table table {
+            margin: 0;
+        }
+
+        .plugin-table thead th {
+            background: var(--code-bg);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.875rem 1rem;
+        }
+
+        .plugin-table tbody td {
+            padding: 0.75rem 1rem;
+            font-size: 0.875rem;
+            vertical-align: middle;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .plugin-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .plugin-table tbody tr:hover {
+            background: var(--code-bg);
+        }
+
+        .plugin-table .plugin-name {
+            font-weight: 600;
+            color: var(--heading-color);
+            white-space: nowrap;
+        }
+
+        .plugin-table a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .plugin-table a:hover {
+            text-decoration: underline;
+        }
+
+        /* Credit list */
+        .credit-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .credit-list li {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 0.625rem 1rem;
+        }
+
+        .credit-list li a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+
+        .credit-list li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Page catalog cards */
+        .page-category {
+            margin-bottom: 2rem;
+        }
+
+        .page-category h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .page-category h3 .badge {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            padding: 0.2rem 0.5rem;
+            border-radius: 6px;
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .page-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .page-grid a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.75rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.8125rem;
+            font-weight: 500;
+            transition: border-color 0.15s, box-shadow 0.15s;
+        }
+
+        .page-grid a:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 1px var(--accent);
+            color: var(--accent);
+        }
+
+        .page-grid a i {
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+
+        .page-grid a:hover i {
+            color: var(--accent);
+        }
+
+        /* Func list for JS architecture */
+        .func-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .func-list li {
+            display: flex;
+            gap: 1rem;
+            padding: 0.625rem 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.875rem;
+        }
+
+        .func-list li:last-child {
+            border-bottom: none;
+        }
+
+        .func-list .func-name {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8125rem;
+            font-weight: 500;
+            color: var(--accent);
+            white-space: nowrap;
+            min-width: 180px;
+        }
+
+        .func-list .func-desc {
+            color: var(--text-muted);
+        }
+
+        /* Support section */
+        .support-card {
+            background: linear-gradient(135deg, var(--sidebar-bg), #1e3a5f);
+            color: #fff;
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        .support-card h3 {
+            color: #fff;
+            margin-top: 0;
+            font-size: 1.25rem;
+        }
+
+        .support-card p {
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+        }
+
+        .support-card .btn {
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 0.625rem 1.75rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: background 0.15s ease;
+        }
+
+        .support-card .btn:hover {
+            background: var(--accent-light);
+        }
+
+        /* Mobile toggle */
+        .mobile-toggle {
+            display: none;
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            z-index: 1100;
+            background: var(--sidebar-bg);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            width: 44px;
+            height: 44px;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .overlay.show {
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .doc-sidebar {
+                transform: translateX(-100%);
+            }
+
+            .doc-sidebar.open {
+                transform: translateX(0);
+            }
+
+            .doc-main {
+                margin-left: 0;
+            }
+
+            .doc-content {
+                padding: 4.5rem 1.25rem 2rem;
+            }
+
+            .meta-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .credit-list {
+                grid-template-columns: 1fr;
+            }
+
+            .page-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .func-list .func-name {
+                min-width: 120px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <div class="wrapper">
-        <div class="left-side">
-            <div class="logo">
-                <img src="img/logo.png" alt="" />
-            </div>
-            <div class="left-content">
-                <ul role="tablist">
-                    <li role="presentation" class="active"><a href="#one" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-home"></i></span>Welcome</a></li>
-                    <li role="presentation"><a href="#two" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-folder"></i></span>Main File Structure</a></li>
-                    <li role="presentation"><a href="#three" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-code"></i></span>HTML Structure</a></li>
-                    <li role="presentation"><a href="#six" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-slideshare"></i></span>Plugins stractures</a></li>
-                    <li role="presentation"><a href="#source" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-thumbs-up"></i></span>Sources & Credits</a></li>
-                    <li role="presentation"><a href="#support" aria-controls="home" role="tab" data-toggle="tab"><span><i class="fa fa-support"></i></span>Support</a></li>
-                </ul>
-            </div>
-            <div class="copyright">
-                <p>Copyright &#169; 2018 <a href="https://colorlib.com/wp/templates/" >Colorlib</a></p>
-            </div>
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+        <i class="bi bi-list"></i>
+    </button>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="doc-sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="#" class="sidebar-brand">
+                <div class="brand-icon">N</div>
+                <div>
+                    <span class="brand-text">Nalika</span>
+                    <span class="brand-version">Documentation</span>
+                </div>
+            </a>
         </div>
-        <div class="right-side">
-            <div class="right-content">
-                <div id="one" class="content active fade in">
-                    <h1><span>Nalika</span> - Nalika Admin Template</h1>
-                    <div class="content-welcome">
-                        <p>
-                            
-                        </p>
-                    </div>
-                    <div class="created">
-                        <p>
-                            Created: 04/11/2018
-                            <br> Latest Update: 04/11/2018
-                            <br> By: <a href="https://colorlib.com/wp/templates/" >Colorlib</a>
-                            
-                            
-                            <br>
-                            <br> Thank you for purchasing our theme. If you have any question, please feel free to contact us from <a href="https://colorlib.com/wp/templates/">here</a>.
-                        </p>
+
+        <nav class="sidebar-nav">
+            <div class="nav-item">
+                <a href="#welcome" class="nav-link active" data-section="welcome">
+                    <i class="bi bi-house-door"></i> Welcome
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="#pages" class="nav-link" data-section="pages">
+                    <i class="bi bi-files"></i> Page Catalog
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="#file-structure" class="nav-link" data-section="file-structure">
+                    <i class="bi bi-folder2-open"></i> File Structure
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="#html-structure" class="nav-link" data-section="html-structure">
+                    <i class="bi bi-code-slash"></i> HTML Structure
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="#javascript" class="nav-link" data-section="javascript">
+                    <i class="bi bi-braces"></i> JavaScript
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="#libraries" class="nav-link" data-section="libraries">
+                    <i class="bi bi-puzzle"></i> Libraries
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="#customization" class="nav-link" data-section="customization">
+                    <i class="bi bi-palette"></i> Customization
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="#credits" class="nav-link" data-section="credits">
+                    <i class="bi bi-bookmark-star"></i> Credits
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="#support" class="nav-link" data-section="support">
+                    <i class="bi bi-chat-dots"></i> Support
+                </a>
+            </div>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p>&copy; 2018 <a href="https://colorlib.com/wp/templates/">Colorlib</a>. All rights reserved.</p>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="doc-main">
+        <div class="doc-content">
+
+            <!-- ============================================================ -->
+            <!-- WELCOME -->
+            <!-- ============================================================ -->
+            <section id="welcome" class="doc-section active">
+                <h1>Nalika Admin Template</h1>
+                <p class="lead">A dark-design Bootstrap 5 admin dashboard with 51 pages &mdash; dashboards, e-commerce, charts, forms, tables, mailbox, editors, maps, and more. Fully upgraded to modern standards with zero jQuery.</p>
+
+                <div class="info-card">
+                    <div class="card-label">Template Info</div>
+                    <div class="meta-grid">
+                        <div class="meta-item">
+                            <span class="label">Author</span>
+                            <span class="value"><a href="https://colorlib.com/wp/templates/">Colorlib</a></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="label">License</span>
+                            <span class="value">MIT</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="label">HTML Pages</span>
+                            <span class="value">51</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="label">Build System</span>
+                            <span class="value">None required</span>
+                        </div>
                     </div>
                 </div>
-                <div id="two" class="content fade">
-                    <h1>Main File Structure</h1>
-                    <p>
-                        All the file are well organized, its so easy to work with.
-                        <br> 1. Unzip the files.
-                        <br> 2. Open "kiaalap" folder.
-                        <br> You will find the html markup file on the root that will be edited.
-                        <br> Also you will see 4 directories, css, js, fonts and images.
-                        <br> In the first folder Content only styling files the all the other files expect the htmls.
-                        <br> Js folder contain only the jquery library. Fonts folder contain essetial font files for fonts.
-                    </p>
-                    <pre>
-								<div class="tree-viewer-pd" id="jstree1">
+
+                <div class="info-card">
+                    <div class="card-label">Technology Stack</div>
+                    <div class="meta-grid">
+                        <div class="meta-item">
+                            <span class="label">CSS Framework</span>
+                            <span class="value">Bootstrap 5.3.8</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="label">JavaScript</span>
+                            <span class="value">Vanilla JS (no jQuery)</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="label">Icons</span>
+                            <span class="value">Bootstrap Icons 1.13</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="label">Charts</span>
+                            <span class="value">ApexCharts 5.3</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="label">Font</span>
+                            <span class="value">Google Fonts Roboto</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="label">Animations</span>
+                            <span class="value">AOS 2.3</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Getting Started</h2>
+                <ol>
+                    <li>Unzip the downloaded archive</li>
+                    <li>Open the <code>nalika/</code> folder</li>
+                    <li>Open any <code>.html</code> file directly in a browser</li>
+                    <li>Edit HTML files and CSS directly &mdash; no build step or npm needed</li>
+                </ol>
+                <p>All asset paths are relative to <code>nalika/</code>. Third-party libraries load from CDN, so an internet connection is needed for first load (browsers cache them afterward).</p>
+
+                <h2>What's Included</h2>
+                <div class="meta-grid" style="margin-top:1rem">
+                    <div class="info-card" style="margin-bottom:0">
+                        <div style="font-size:1.5rem;font-weight:700;color:var(--accent)">3</div>
+                        <div style="font-size:0.8125rem;color:var(--text-muted)">Dashboard layouts</div>
+                    </div>
+                    <div class="info-card" style="margin-bottom:0">
+                        <div style="font-size:1.5rem;font-weight:700;color:var(--accent)">8</div>
+                        <div style="font-size:0.8125rem;color:var(--text-muted)">Chart pages</div>
+                    </div>
+                    <div class="info-card" style="margin-bottom:0">
+                        <div style="font-size:1.5rem;font-weight:700;color:var(--accent)">5</div>
+                        <div style="font-size:0.8125rem;color:var(--text-muted)">E-commerce pages</div>
+                    </div>
+                    <div class="info-card" style="margin-bottom:0">
+                        <div style="font-size:1.5rem;font-weight:700;color:var(--accent)">6</div>
+                        <div style="font-size:0.8125rem;color:var(--text-muted)">Form pages</div>
+                    </div>
+                    <div class="info-card" style="margin-bottom:0">
+                        <div style="font-size:1.5rem;font-weight:700;color:var(--accent)">6</div>
+                        <div style="font-size:0.8125rem;color:var(--text-muted)">UI component pages</div>
+                    </div>
+                    <div class="info-card" style="margin-bottom:0">
+                        <div style="font-size:1.5rem;font-weight:700;color:var(--accent)">6</div>
+                        <div style="font-size:0.8125rem;color:var(--text-muted)">Auth &amp; error pages</div>
+                    </div>
+                </div>
+
+                <h2>Theme Colors</h2>
+                <p>Nalika uses a dark color scheme throughout:</p>
+                <div class="d-flex gap-3 flex-wrap mt-3">
+                    <div class="d-flex align-items-center gap-2">
+                        <div style="width:32px;height:32px;border-radius:6px;background:#152036;border:1px solid var(--border-color)"></div>
+                        <div>
+                            <div style="font-weight:600;font-size:0.8125rem">#152036</div>
+                            <div style="font-size:0.75rem;color:var(--text-muted)">Main background</div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <div style="width:32px;height:32px;border-radius:6px;background:#1b2a47;border:1px solid var(--border-color)"></div>
+                        <div>
+                            <div style="font-weight:600;font-size:0.8125rem">#1b2a47</div>
+                            <div style="font-size:0.75rem;color:var(--text-muted)">Sidebar</div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <div style="width:32px;height:32px;border-radius:6px;background:#ec4445;border:1px solid var(--border-color)"></div>
+                        <div>
+                            <div style="font-weight:600;font-size:0.8125rem">#ec4445</div>
+                            <div style="font-size:0.75rem;color:var(--text-muted)">Accent / hover</div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <div style="width:32px;height:32px;border-radius:6px;background:#00c292;border:1px solid var(--border-color)"></div>
+                        <div>
+                            <div style="font-weight:600;font-size:0.8125rem">#00c292</div>
+                            <div style="font-size:0.75rem;color:var(--text-muted)">Success / chart</div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <div style="width:32px;height:32px;border-radius:6px;background:#ab8ce4;border:1px solid var(--border-color)"></div>
+                        <div>
+                            <div style="font-weight:600;font-size:0.8125rem">#ab8ce4</div>
+                            <div style="font-size:0.75rem;color:var(--text-muted)">Purple / chart</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- PAGE CATALOG -->
+            <!-- ============================================================ -->
+            <section id="pages" class="doc-section">
+                <h1>Page Catalog</h1>
+                <p class="lead">All 51 pages organized by category. Each page uses the shared sidebar layout except auth and error pages, which use a minimal full-screen layout.</p>
+
+                <div class="page-category">
+                    <h3><i class="bi bi-speedometer2"></i> Dashboards <span class="badge">3</span></h3>
+                    <div class="page-grid">
+                        <a href="../nalika/index.html"><i class="bi bi-graph-up"></i> Dashboard V.1</a>
+                        <a href="../nalika/index-1.html"><i class="bi bi-graph-up-arrow"></i> Dashboard V.2</a>
+                        <a href="../nalika/index-2.html"><i class="bi bi-bar-chart-line"></i> Dashboard V.3</a>
+                    </div>
+                    <p style="margin-top:0.5rem;font-size:0.8125rem;color:var(--text-muted)">Feature ApexCharts, FullCalendar, Swiper carousel, counter animations, and sparkline mini-charts.</p>
+                </div>
+
+                <div class="page-category">
+                    <h3><i class="bi bi-bar-chart"></i> Charts <span class="badge">8</span></h3>
+                    <div class="page-grid">
+                        <a href="../nalika/analytics.html"><i class="bi bi-pie-chart"></i> Analytics</a>
+                        <a href="../nalika/area-charts.html"><i class="bi bi-graph-up"></i> Area Charts</a>
+                        <a href="../nalika/bar-charts.html"><i class="bi bi-bar-chart-fill"></i> Bar Charts</a>
+                        <a href="../nalika/line-charts.html"><i class="bi bi-graph-up-arrow"></i> Line Charts</a>
+                        <a href="../nalika/c3.html"><i class="bi bi-pie-chart-fill"></i> C3 Charts</a>
+                        <a href="../nalika/peity.html"><i class="bi bi-activity"></i> Peity</a>
+                        <a href="../nalika/rounded-chart.html"><i class="bi bi-circle"></i> Rounded Charts</a>
+                        <a href="../nalika/sparkline.html"><i class="bi bi-lightning"></i> Sparkline</a>
+                    </div>
+                    <p style="margin-top:0.5rem;font-size:0.8125rem;color:var(--text-muted)">Powered by ApexCharts with area, line, bar, donut, and sparkline chart types.</p>
+                </div>
+
+                <div class="page-category">
+                    <h3><i class="bi bi-cart3"></i> E-Commerce <span class="badge">5</span></h3>
+                    <div class="page-grid">
+                        <a href="../nalika/product-list.html"><i class="bi bi-grid"></i> Product List</a>
+                        <a href="../nalika/product-detail.html"><i class="bi bi-eye"></i> Product Detail</a>
+                        <a href="../nalika/product-edit.html"><i class="bi bi-pencil-square"></i> Product Edit</a>
+                        <a href="../nalika/product-cart.html"><i class="bi bi-cart-check"></i> Shopping Cart</a>
+                        <a href="../nalika/product-payment.html"><i class="bi bi-credit-card"></i> Payment</a>
+                    </div>
+                </div>
+
+                <div class="page-category">
+                    <h3><i class="bi bi-input-cursor-text"></i> Forms <span class="badge">6</span></h3>
+                    <div class="page-grid">
+                        <a href="../nalika/basic-form-element.html"><i class="bi bi-ui-checks"></i> Basic Forms</a>
+                        <a href="../nalika/advance-form-element.html"><i class="bi bi-sliders"></i> Advanced Forms</a>
+                        <a href="../nalika/multi-upload.html"><i class="bi bi-cloud-upload"></i> Multi Upload</a>
+                        <a href="../nalika/password-meter.html"><i class="bi bi-shield-lock"></i> Password Meter</a>
+                        <a href="../nalika/images-cropper.html"><i class="bi bi-crop"></i> Image Cropper</a>
+                        <a href="../nalika/dual-list-box.html"><i class="bi bi-arrow-left-right"></i> Dual List Box</a>
+                    </div>
+                    <p style="margin-top:0.5rem;font-size:0.8125rem;color:var(--text-muted)">Uses Tom Select, noUiSlider, Pickr colorpicker, native HTML5 date/time pickers, and Dropzone for modern form controls.</p>
+                </div>
+
+                <div class="page-category">
+                    <h3><i class="bi bi-table"></i> Tables <span class="badge">2</span></h3>
+                    <div class="page-grid">
+                        <a href="../nalika/static-table.html"><i class="bi bi-table"></i> Static Table</a>
+                        <a href="../nalika/data-table.html"><i class="bi bi-funnel"></i> Data Table</a>
+                    </div>
+                    <p style="margin-top:0.5rem;font-size:0.8125rem;color:var(--text-muted)">DataTables 2.2 with Bootstrap 5 integration, sorting, pagination, and search.</p>
+                </div>
+
+                <div class="page-category">
+                    <h3><i class="bi bi-envelope"></i> Mailbox <span class="badge">3</span></h3>
+                    <div class="page-grid">
+                        <a href="../nalika/mailbox.html"><i class="bi bi-inbox"></i> Inbox</a>
+                        <a href="../nalika/mailbox-view.html"><i class="bi bi-envelope-open"></i> Mail View</a>
+                        <a href="../nalika/mailbox-compose.html"><i class="bi bi-pencil"></i> Compose</a>
+                    </div>
+                </div>
+
+                <div class="page-category">
+                    <h3><i class="bi bi-grid-1x2"></i> UI Components <span class="badge">6</span></h3>
+                    <div class="page-grid">
+                        <a href="../nalika/accordion.html"><i class="bi bi-arrows-collapse"></i> Accordion</a>
+                        <a href="../nalika/alerts.html"><i class="bi bi-exclamation-triangle"></i> Alerts</a>
+                        <a href="../nalika/buttons.html"><i class="bi bi-hand-index"></i> Buttons</a>
+                        <a href="../nalika/modals.html"><i class="bi bi-window-stack"></i> Modals</a>
+                        <a href="../nalika/notifications.html"><i class="bi bi-bell"></i> Notifications</a>
+                        <a href="../nalika/tabs.html"><i class="bi bi-segmented-nav"></i> Tabs</a>
+                    </div>
+                </div>
+
+                <div class="page-category">
+                    <h3><i class="bi bi-journal-text"></i> Blog <span class="badge">2</span></h3>
+                    <div class="page-grid">
+                        <a href="../nalika/blog.html"><i class="bi bi-newspaper"></i> Blog List</a>
+                        <a href="../nalika/blog-details.html"><i class="bi bi-file-text"></i> Blog Details</a>
+                    </div>
+                </div>
+
+                <div class="page-category">
+                    <h3><i class="bi bi-code-square"></i> Editors <span class="badge">2</span></h3>
+                    <div class="page-grid">
+                        <a href="../nalika/code-editor.html"><i class="bi bi-braces"></i> Code Editor</a>
+                        <a href="../nalika/tinymc.html"><i class="bi bi-type-bold"></i> WYSIWYG Editor</a>
+                    </div>
+                    <p style="margin-top:0.5rem;font-size:0.8125rem;color:var(--text-muted)">CodeMirror 5 for code editing, Summernote Lite 0.8 for rich text.</p>
+                </div>
+
+                <div class="page-category">
+                    <h3><i class="bi bi-geo-alt"></i> Maps <span class="badge">2</span></h3>
+                    <div class="page-grid">
+                        <a href="../nalika/data-maps.html"><i class="bi bi-globe-americas"></i> Data Maps</a>
+                        <a href="../nalika/google-map.html"><i class="bi bi-pin-map"></i> Google Maps</a>
+                    </div>
+                </div>
+
+                <div class="page-category">
+                    <h3><i class="bi bi-tools"></i> Utilities <span class="badge">6</span></h3>
+                    <div class="page-grid">
+                        <a href="../nalika/widgets.html"><i class="bi bi-grid-3x3-gap"></i> Widgets</a>
+                        <a href="../nalika/file-manager.html"><i class="bi bi-folder2"></i> File Manager</a>
+                        <a href="../nalika/tree-view.html"><i class="bi bi-diagram-3"></i> Tree View</a>
+                        <a href="../nalika/pdf-viewer.html"><i class="bi bi-filetype-pdf"></i> PDF Viewer</a>
+                        <a href="../nalika/preloader.html"><i class="bi bi-hourglass-split"></i> Preloader</a>
+                        <a href="../nalika/x-editable.html"><i class="bi bi-pencil-fill"></i> X-Editable</a>
+                    </div>
+                </div>
+
+                <div class="page-category">
+                    <h3><i class="bi bi-shield-lock"></i> Auth &amp; Error <span class="badge">6</span></h3>
+                    <div class="page-grid">
+                        <a href="../nalika/login.html"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+                        <a href="../nalika/register.html"><i class="bi bi-person-plus"></i> Register</a>
+                        <a href="../nalika/lock.html"><i class="bi bi-lock"></i> Lock Screen</a>
+                        <a href="../nalika/password-recovery.html"><i class="bi bi-key"></i> Password Recovery</a>
+                        <a href="../nalika/404.html"><i class="bi bi-exclamation-circle"></i> 404 Error</a>
+                        <a href="../nalika/500.html"><i class="bi bi-x-circle"></i> 500 Error</a>
+                    </div>
+                    <p style="margin-top:0.5rem;font-size:0.8125rem;color:var(--text-muted)">These pages use a minimal full-screen layout without the sidebar.</p>
+                </div>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- FILE STRUCTURE -->
+            <!-- ============================================================ -->
+            <section id="file-structure" class="doc-section">
+                <h1>File Structure</h1>
+                <p class="lead">All template files live inside the <code>nalika/</code> directory. Third-party libraries load from CDN &mdash; no <code>node_modules</code> or build tools required.</p>
+
+                <div class="file-tree" id="fileTree">
+                    <ul>
+                        <li class="folder">
+                            <span><i class="tree-icon bi bi-folder-fill text-warning"></i> nalika/</span>
+                            <ul>
+                                <li class="file"><i class="tree-icon bi bi-filetype-css text-primary"></i> style.css <span class="count">&mdash; main theme stylesheet (dark theme)</span></li>
+                                <li class="file"><i class="tree-icon bi bi-filetype-html text-danger"></i> *.html <span class="count">(51 pages)</span></li>
+                                <li class="folder">
+                                    <span><i class="tree-icon bi bi-folder-fill text-warning"></i> css/ <span class="count">&mdash; component &amp; legacy styles</span></span>
                                     <ul>
-                                        <li class="jstree-open">kiaalap
+                                        <li class="file"><i class="tree-icon bi bi-filetype-css text-primary"></i> main.css, responsive.css, nalika-icon.css</li>
+                                        <li class="file"><i class="tree-icon bi bi-filetype-css text-primary"></i> accordions.css, alerts.css, buttons.css, modals.css, tabs.css</li>
+                                        <li class="folder collapsed">
+                                            <span><i class="tree-icon bi bi-folder-fill text-warning"></i> form/, data-table/, editor/... <span class="count">(plugin CSS folders)</span></span>
                                             <ul>
-                                                <li>css
-                                                    <ul>
-														<li>chosen
-															<ul>
-																<li data-jstree='"type":"css"}'>bootstrap-chosen.css</li>
-															</ul>
-														</li>
-														<li>code-editor
-															<ul>
-																<li data-jstree='"type":"css"}'>ambiance.css</li>
-																<li data-jstree='"type":"css"}'>codemirror.css</li>
-															</ul>
-														</li>
-														<li>colorpicker
-															<ul>
-																<li data-jstree='"type":"css"}'>colorpicker.css</li>
-															</ul>
-														</li>
-														<li>cropper
-															<ul>
-																<li data-jstree='"type":"css"}'>cropper.min.css</li>
-															</ul>
-														</li>
-														<li>datapicker
-															<ul>
-																<li data-jstree='"type":"css"}'>datepicker3.css</li>
-															</ul>
-														</li>
-														<li>data-table
-															<ul>
-																<li data-jstree='"type":"css"}'>bootstrap-editable.css</li>
-																<li data-jstree='"type":"css"}'>bootstrap-table.css</li>
-															</ul>
-														</li>
-														<li>duallistbox
-															<ul>
-																<li data-jstree='"type":"css"}'>bootstrap-duallistbox.min.css</li>
-															</ul>
-														</li>
-														<li>form
-															<ul>
-																<li data-jstree='"type":"css"}'>all-type-forms.css</li>
-																<li data-jstree='"type":"css"}'>themesaller-forms.css</li>
-															</ul>
-														</li>
-														<li>ionRangeSlider
-															<ul>
-																<li data-jstree='"type":"css"}'>ion.rangeSlider.css</li>
-																<li data-jstree='"type":"css"}'>ion.rangeSlider.skinFlat.css</li>
-															</ul>
-														</li>
-														<li>jvectormap
-															<ul>
-																<li data-jstree='"type":"css"}'>jquery-jvectormap-2.0.3.css</li>
-															</ul>
-														</li>
-														<li>preloader
-															<ul>
-																<li data-jstree='"type":"css"}'>preloader-style.css</li>
-															</ul>
-														</li>
-														<li>select2
-															<ul>
-																<li data-jstree='"type":"css"}'>select2.min.css</li>
-															</ul>
-														</li>
-														<li>switcher
-															<ul>
-																<li data-jstree='"type":"css"}'>color-one.css</li>
-																<li data-jstree='"type":"css"}'>color-two.css</li>
-																<li data-jstree='"type":"css"}'>color-three.css</li>
-																<li data-jstree='"type":"css"}'>color-four.css</li>
-																<li data-jstree='"type":"css"}'>color-five.css</li>
-																<li data-jstree='"type":"css"}'>color-six.css</li>
-																<li data-jstree='"type":"css"}'>color-seven.css</li>
-																<li data-jstree='"type":"css"}'>color-eight.css</li>
-																<li data-jstree='"type":"css"}'>color-nine.css</li>
-																<li data-jstree='"type":"css"}'>color-ten.css</li>
-															</ul>
-														</li>
-														<li>touchspin
-															<ul>
-																<li data-jstree='"type":"css"}'>jquery.bootstrap-touchspin.min.css</li>
-															</ul>
-														</li>
-														<li>tree-viewer
-															<ul>
-																<li data-jstree='"type":"css"}'>jtree-viewer.css</li>
-															</ul>
-														</li>
-                                                        <li data-jstree='"type":"css"}'>accordions.css</li>
-                                                        <li data-jstree='"type":"css"}'>adminpro-custon-icon.css</li>
-                                                        <li data-jstree='"type":"css"}'>alerts.css</li>
-                                                        <li data-jstree='"type":"css"}'>animate.css</li>
-                                                        <li data-jstree='"type":"css"}'>bootstrap-editable.css</li>
-                                                        <li data-jstree='"type":"css"}'>buttons.css</li>
-                                                        <li data-jstree='"type":"css"}'>c3.min.css</li>
-                                                        <li data-jstree='"type":"css"}'>charts.css</li>
-                                                        <li data-jstree='"type":"css"}'>datetimepicker.css</li>
-                                                        <li data-jstree='"type":"css"}'>dropzone.css</li>
-                                                        <li data-jstree='"type":"css"}'>form.css</li>
-                                                        <li data-jstree='"type":"css"}'>jquery.mCustomScrollbar.min.css</li>
-                                                        <li data-jstree='"type":"css"}'>Lobibox.min.css</li>
-                                                        <li data-jstree='"type":"css"}'>meanmenu.min.css</li>
-                                                        <li data-jstree='"type":"css"}'>modals.css</li>
-                                                        <li data-jstree='"type":"css"}'>normalize.css</li>
-                                                        <li data-jstree='"type":"css"}'>notifications.css</li>
-                                                        <li data-jstree='"type":"css"}'>select2.css</li>
-                                                        <li data-jstree='"type":"css"}'>select2-bootstrap.css</li>
-                                                        <li data-jstree='"type":"css"}'>summernote.css</li>
-                                                        <li data-jstree='"type":"css"}'>tab-menus.css</li>
-                                                        <li data-jstree='"type":"css"}'>tabs.css</li>
-                                                        <li data-jstree='"type":"css"}'>typeahead.js-bootstrap.css</li>
-                                                        <li data-jstree='"type":"css"}'>x-editor-style.css</li>
-                                                        <li data-jstree='"type":"css"}'>bootstrap.min.css</li>
-                                                        <li data-jstree='"type":"css"}'>font-awesome.min.css</li>
-                                                        <li data-jstree='"type":"css"}'>responsive.css</li>
-                                                        <li data-jstree='"type":"css"}'>tree-viewer.css</li>
-                                                        <li data-jstree='"type":"css"}'>main.css</li>
-                                                    </ul>
-                                                </li>
-												<li>fonts
-                                                    <ul>
-                                                        <li data-jstree='"type":"otf"}'>FontAwesome.otf</li>
-                                                        <li data-jstree='"type":"ttf"}'>fontawesome-webfont.ttf</li>
-                                                        <li data-jstree='"type":"woff"}'>fontawesome-webfont.woff</li>
-                                                        <li data-jstree='"type":"woff"}'>glyphicons-halflings-regular.woff</li>
-                                                    </ul>
-                                                </li>
-												<li class="jstree-open">img
-                                                    <ul>
-                                                        <li>blog-details
-															<ul>
-																<li data-jstree='"type":"png"}'>1.jpg</li>
-															</ul>
-														</li>
-                                                        <li>contact
-															<ul>
-																<li data-jstree='"type":"png"}'>1.jpg</li>
-																<li data-jstree='"type":"png"}'>2.jpg</li>
-																<li data-jstree='"type":"png"}'>3.jpg</li>
-																<li data-jstree='"type":"png"}'>4.jpg</li>
-															</ul>
-														</li>
-                                                        <li>logo
-															<ul>
-																<li data-jstree='"type":"png"}'>logo.png</li>
-															</ul>
-														</li>
-                                                        <li>cropper
-															<ul>
-																<li data-jstree='"type":"jpg"}'>1.jpg</li>
-															</ul>
-														</li>
-                                                        <li>product
-															<ul>
-																<li data-jstree='"type":"jpg"}'>1.jpg</li>
-																<li data-jstree='"type":"jpg"}'>1-big.jpg</li>
-																<li data-jstree='"type":"jpg"}'>1-small.jpg</li>
-																<li data-jstree='"type":"jpg"}'>2.jpg</li>
-																<li data-jstree='"type":"jpg"}'>2-big.jpg</li>
-																<li data-jstree='"type":"jpg"}'>2-small.jpg</li>
-																<li data-jstree='"type":"jpg"}'>3.jpg</li>
-																<li data-jstree='"type":"jpg"}'>3-big.jpg</li>
-																<li data-jstree='"type":"jpg"}'>3-small.jpg</li>
-																<li data-jstree='"type":"jpg"}'>4.jpg</li>
-																<li data-jstree='"type":"jpg"}'>4-big.jpg</li>
-																<li data-jstree='"type":"jpg"}'>4-small.jpg</li>
-																<li data-jstree='"type":"jpg"}'>11-300x300.jpg</li>
-																<li data-jstree='"type":"jpg"}'>p8-375x375.jpg</li>
-																<li data-jstree='"type":"jpg"}'>product072-1-600x600.jpg</li>
-															</ul>
-														</li>
-                                                        <li data-jstree='"type":"png"}'>clear.png</li>
-                                                        <li data-jstree='"type":"ico"}'>favicon.ico</li>
-                                                        <li class="text-navy" data-jstree='"type":"img"}'>green1.png</li>
-                                                    </ul>
-                                                </li>
-                                                <li>pdf
-                                                    <ul>
-                                                        <li data-jstree='"type":"ogg"}'>mamunur.pdf</li>
-                                                    </ul>
-                                                </li>
-                                                <li class="jstree-open">js
-                                                    <ul>
-														<li>c3-charts
-															<ul>
-																<li data-jstree='"type":"js"}'>c3.min.js</li>
-																<li data-jstree='"type":"js"}'>c3-active.js</li>
-																<li data-jstree='"type":"js"}'>d3.min.js</li>
-															</ul>
-														</li>
-														<li>charts
-															<ul>
-																<li data-jstree='"type":"js"}'>area-chart.js</li>
-																<li data-jstree='"type":"js"}'>bar-chart.js</li>
-																<li data-jstree='"type":"js"}'>Chart.js</li>
-																<li data-jstree='"type":"js"}'>line-chart.js</li>
-																<li data-jstree='"type":"js"}'>rounded-chart.js</li>
-															</ul>
-														</li>
-														<li>chat-active
-															<ul>
-																<li data-jstree='"type":"js"}'>jquery.chat.js</li>
-															</ul>
-														</li>
-														<li>chosen
-															<ul>
-																<li data-jstree='"type":"js"}'>chosen.jquery.js</li>
-																<li data-jstree='"type":"js"}'>chosen-active.js</li>
-															</ul>
-														</li>
-														<li>code-editor
-															<ul>
-																<li data-jstree='"type":"js"}'>code-editor.js</li>
-																<li data-jstree='"type":"js"}'>code-editor-active.js</li>
-																<li data-jstree='"type":"js"}'>codemirror.js</li>
-															</ul>
-														</li>
-														<li>colorpicker
-															<ul>
-																<li data-jstree='"type":"js"}'>color-picker-active.js</li>
-																<li data-jstree='"type":"js"}'>jquery.spectrum.min.js</li>
-															</ul>
-														</li>
-														<li>counterup
-															<ul>
-																<li data-jstree='"type":"js"}'>counterup-active.js</li>
-																<li data-jstree='"type":"js"}'>jquery.counterup.min.js</li>
-																<li data-jstree='"type":"js"}'>waypoints.min.js</li>
-															</ul>
-														</li>
-														<li>cropper
-															<ul>
-																<li data-jstree='"type":"js"}'>cropper.min.js</li>
-																<li data-jstree='"type":"js"}'>cropper-actice.js</li>
-															</ul>
-														</li>
-														<li>data-map
-															<ul>
-																<li data-jstree='"type":"js"}'>bootstrap3-typeahead.min.js</li>
-																<li data-jstree='"type":"js"}'>d3.min.js</li>
-																<li data-jstree='"type":"js"}'>datamaps.all.min.js</li>
-																<li data-jstree='"type":"js"}'>data-maps-active.js</li>
-																<li data-jstree='"type":"js"}'>topojson.js</li>
-															</ul>
-														</li>
-														<li>datapicker
-															<ul>
-																<li data-jstree='"type":"js"}'>bootstrap-datepicker.js</li>
-																<li data-jstree='"type":"js"}'>datepicker-active.js</li>
-															</ul>
-														</li>
-														<li>data-table
-															<ul>
-																<li data-jstree='"type":"js"}'>bootstrap-editable.js</li>
-																<li data-jstree='"type":"js"}'>bootstrap-table.js</li>
-																<li data-jstree='"type":"js"}'>bootstrap-table-cookie.js</li>
-																<li data-jstree='"type":"js"}'>bootstrap-table-editable.js</li>
-																<li data-jstree='"type":"js"}'>bootstrap-table-export.js</li>
-																<li data-jstree='"type":"js"}'>bootstrap-table-key-events.js</li>
-																<li data-jstree='"type":"js"}'>bootstrap-table-resizable.js</li>
-																<li data-jstree='"type":"js"}'>colResizable-1.5.source.js</li>
-																<li data-jstree='"type":"js"}'>data-table-active.js</li>
-																<li data-jstree='"type":"js"}'>tableExport.js</li>
-															</ul>
-														</li>
-														<li>duallistbox
-															<ul>
-																<li data-jstree='"type":"js"}'>duallistbox.active.js</li>
-																<li data-jstree='"type":"js"}'>jquery.bootstrap-duallistbox.js</li>
-															</ul>
-														</li>
-														<li>flot
-															<ul>
-																<li data-jstree='"type":"js"}'>Chart.min.js</li>
-																<li data-jstree='"type":"js"}'>dashtwo-flot-active.js</li>
-																<li data-jstree='"type":"js"}'>flot-active.js</li>
-																<li data-jstree='"type":"js"}'>jquery.flot.js</li>
-																<li data-jstree='"type":"js"}'>jquery.flot.pie.js</li>
-																<li data-jstree='"type":"js"}'>jquery.flot.resize.js</li>
-																<li data-jstree='"type":"js"}'>jquery.flot.spline.js</li>
-																<li data-jstree='"type":"js"}'>jquery.flot.symbol.js</li>
-																<li data-jstree='"type":"js"}'>jquery.flot.time.js</li>
-																<li data-jstree='"type":"js"}'>jquery.flot.tooltip.min.js</li>
-																<li data-jstree='"type":"js"}'>widget-flot-chart-active.js</li>
-															</ul>
-														</li>
-														<li>google.maps
-															<ul>
-																<li data-jstree='"type":"js"}'>google.maps-active.js</li>
-															</ul>
-														</li>
-														<li>icheck
-															<ul>
-																<li data-jstree='"type":"js"}'>icheck.min.js</li>
-																<li data-jstree='"type":"js"}'>icheck-active.js</li>
-															</ul>
-														</li>
-														<li>input-mask
-															<ul>
-																<li data-jstree='"type":"js"}'>jasny-bootstrap.min.js</li>
-															</ul>
-														</li>
-														<li>ionRangeSlider
-															<ul>
-																<li data-jstree='"type":"js"}'>ion.rangeSlider.active.js</li>
-																<li data-jstree='"type":"js"}'>ion.rangeSlider.min.js</li>
-															</ul>
-														</li>
-														<li>jvectormap
-															<ul>
-																<li data-jstree='"type":"js"}'>jquery-jvectormap-2.0.2.min.js</li>
-																<li data-jstree='"type":"js"}'>jquery-jvectormap-world-mill-en.js</li>
-																<li data-jstree='"type":"js"}'>jvectormap-active.js</li>
-															</ul>
-														</li>
-														<li>knob
-															<ul>
-																<li data-jstree='"type":"js"}'>jquery.knob.js</li>
-																<li data-jstree='"type":"js"}'>knob-active.js</li>
-															</ul>
-														</li>
-														<li>map
-															<ul>
-																<li data-jstree='"type":"js"}'>france_departments.js</li>
-																<li data-jstree='"type":"js"}'>jquery.mapael.js</li>
-																<li data-jstree='"type":"js"}'>map-active.js</li>
-																<li data-jstree='"type":"js"}'>raphael.min.js</li>
-																<li data-jstree='"type":"js"}'>usa_states.js</li>
-																<li data-jstree='"type":"js"}'>world_countries.js</li>
-															</ul>
-														</li>
-														<li>multiple-email
-															<ul>
-																<li data-jstree='"type":"js"}'>multiple-email-active.js</li>
-															</ul>
-														</li>
-														<li>password-meter
-															<ul>
-																<li data-jstree='"type":"js"}'>password-meter-active.js</li>
-																<li data-jstree='"type":"js"}'>pwstrength-bootstrap.min.js</li>
-																<li data-jstree='"type":"js"}'>zxcvbn.js</li>
-															</ul>
-														</li>
-														<li>pdf
-															<ul>
-																<li data-jstree='"type":"js"}'>jquery.media.js</li>
-																<li data-jstree='"type":"js"}'>pdf-active.js</li>
-															</ul>
-														</li>
-														<li>peity
-															<ul>
-																<li data-jstree='"type":"js"}'>jquery.peity.min.js</li>
-																<li data-jstree='"type":"js"}'>peity-active.js</li>
-															</ul>
-														</li>
-														<li>rangle-slider
-															<ul>
-																<li data-jstree='"type":"js"}'>jquery-ui-1.10.4.custom.min.js</li>
-																<li data-jstree='"type":"js"}'>jquery-ui-touch-punch.min.js</li>
-																<li data-jstree='"type":"js"}'>rangle-active.js</li>
-															</ul>
-														</li>
-														<li>rounded-counter
-															<ul>
-																<li data-jstree='"type":"js"}'>jquery.appear.js</li>
-																<li data-jstree='"type":"js"}'>jquery.countdown.min.js</li>
-																<li data-jstree='"type":"js"}'>jquery.knob.js</li>
-																<li data-jstree='"type":"js"}'>knob-active.js</li>
-															</ul>
-														</li>
-														<li>select2
-															<ul>
-																<li data-jstree='"type":"js"}'>select2.full.min.js</li>
-																<li data-jstree='"type":"js"}'>select2-active.js</li>
-															</ul>
-														</li>
-														<li>skycons
-															<ul>
-																<li data-jstree='"type":"js"}'>skycons.active.js</li>
-																<li data-jstree='"type":"js"}'>skycons.min.js</li>
-															</ul>
-														</li>
-														<li>skycons
-															<ul>
-																<li data-jstree='"type":"js"}'>sparkline-active.js</li>
-																<li data-jstree='"type":"js"}'>jquery.sparkline.min.js</li>
-															</ul>
-														</li>
-														<li>switcher
-															<ul>
-																<li data-jstree='"type":"js"}'>styleswitch.js</li>
-																<li data-jstree='"type":"js"}'>switch-active.js</li>
-															</ul>
-														</li>
-														<li>todo
-															<ul>
-																<li data-jstree='"type":"js"}'>jquery.todo.js</li>
-															</ul>
-														</li>
-														<li>touchspin
-															<ul>
-																<li data-jstree='"type":"js"}'>jquery.bootstrap-touchspin.min.js</li>
-																<li data-jstree='"type":"js"}'>touchspin-active.js</li>
-															</ul>
-														</li>
-														<li>tree-line
-															<ul>
-																<li data-jstree='"type":"js"}'>jstree.active.js</li>
-																<li data-jstree='"type":"js"}'>jstree.min.js</li>
-															</ul>
-														</li>
-														<li>vendor
-															<ul>
-																<li data-jstree='"type":"js"}'>jquery-1.11.3.min.js</li>
-																<li data-jstree='"type":"js"}'>modernizr-2.8.3.min.js</li>
-															</ul>
-														</li>
-														<li>wow
-															<ul>
-																<li data-jstree='"type":"js"}'>wow.min.js</li>
-															</ul>
-														</li>
-                                                        <li data-jstree='"type":"js"}'>bootstrap.min.js</li>
-                                                        <li data-jstree='"type":"js"}'>jquery-ui.min.js</li>
-                                                        <li data-jstree='"type":"js"}'>jquery.meanmenu.js</li>
-                                                        <li data-jstree='"type":"js"}'>jquery-1.11.3.min.js</li>
-                                                        <li data-jstree='"type":"js"}'>modernizr-2.8.3.min.js</li>
-                                                        <li class="text-navy" data-jstree='"type":"js"}'>jquery.mCustomScrollbar.concat.min.js</li>
-                                                        <li class="text-navy" data-jstree='"type":"js"}'>bootstrap.min.js</li>
-                                                        <li class="text-navy" data-jstree='"type":"js"}'>bootstrap-datetimepicker.js</li>
-                                                        <li class="text-navy" data-jstree='"type":"js"}'>bootstrap-editable.js</li>
-                                                        <li class="text-navy" data-jstree='"type":"js"}'>datepicker-active.js</li>
-                                                        <li class="text-navy" data-jstree='"type":"js"}'>dropzone.js</li>
-                                                        <li class="text-navy" data-jstree='"type":"js"}'>form-active.js</li>
-                                                        <li class="text-navy" data-jstree='"type":"js"}'>jquery.form.min.js</li>
-                                                        <li class="text-navy" data-jstree='"type":"js"}'>jquery.maskedinput.min.js</li>
-                                                        <li class="text-navy" data-jstree='"type":"js"}'>jquery.mCustomScrollbar.concat.min.js</li>
-                                                        <li class="text-navy" data-jstree='"type":"js"}'>jquery.meanmenu.js</li>
-                                                        <li class="text-navy" data-jstree='"type":"js"}'>jquery.mockjax.js</li>
-                                                        <li class="text-navy" data-jstree='"type":"js"}'>jquery.scrollUp.min.js</li>
-                                                        <li class="text-navy" data-jstree='"type":"js"}'>jquery.sticky.js</li>
-                                                        <li class="text-navy" data-jstree='"type":"js"}'>jquery.validate.min.js</li>
-                                                        <li class="text-navy" data-jstree='"type":"js"}'>jquery-ui.min.js</li>
-                                                        <li class="text-navy" data-jstree='"type":"js"}'>Lobibox.js</li>
-                                                        <li class="text-navy" data-jstree='"type":"js"}'>main.js</li>
-                                                        <li class="text-navy" data-jstree='"type":"js"}'>masking-active.js</li>
-                                                        <li class="text-navy" data-jstree='"type":"js"}'>mock-active.js</li>
-                                                        <li class="text-navy" data-jstree='"type":"js"}'>modal-active.js</li>
-                                                        <li class="text-navy" data-jstree='"type":"js"}'>moment.min.js</li>
-                                                        <li class="text-navy" data-jstree='"type":"js"}'>notification-active.js</li>
-                                                        <li class="text-navy" data-jstree='"type":"js"}'>select2.js</li>
-                                                        <li class="text-navy" data-jstree='"type":"js"}'>summernote.min.js</li>
-                                                        <li class="text-navy" data-jstree='"type":"js"}'>summernote-active.js</li>
-                                                        <li class="text-navy" data-jstree='"type":"js"}'>typeahead.js</li>
-                                                        <li class="text-navy" data-jstree='"type":"js"}'>typeaheadjs.js</li>
-                                                        <li class="text-navy" data-jstree='"type":"js"}'>xediable-active.js</li>
-                                                    </ul>
-                                                </li>
-                                                <li data-jstree='"type":"html"}'> index.html</li>
-                                                <li data-jstree='"type":"html"}'> index-1.html</li>
-                                                <li data-jstree='"type":"html"}'> index-2.html</li>
-                                                <li data-jstree='"type":"html"}'> add-course.html</li>
-                                                <li data-jstree='"type":"html"}'> add-department.html</li>
-                                                <li data-jstree='"type":"html"}'> add-library-assets.html</li>
-                                                <li data-jstree='"type":"html"}'> add-professor.html</li>
-                                                <li data-jstree='"type":"html"}'> add-student.html</li>
-                                                <li data-jstree='"type":"html"}'> all-courses.html</li>
-                                                <li data-jstree='"type":"html"}'> all-professors.html</li>
-                                                <li data-jstree='"type":"html"}'> all-students.html</li>
-                                                <li data-jstree='"type":"html"}'> course-info.html</li>
-                                                <li data-jstree='"type":"html"}'> departments.html</li>
-                                                <li data-jstree='"type":"html"}'> edit-course.html</li>
-                                                <li data-jstree='"type":"html"}'> edit-department.html</li>
-                                                <li data-jstree='"type":"html"}'> edit-library-assets.html</li>
-                                                <li data-jstree='"type":"html"}'> edit-professor.html</li>
-                                                <li data-jstree='"type":"html"}'> edit-student.html</li>
-                                                <li data-jstree='"type":"html"}'> events.html</li>
-                                                <li data-jstree='"type":"html"}'> library-assets.html</li>
-                                                <li data-jstree='"type":"html"}'> professor-profile.html</li>
-                                                <li data-jstree='"type":"html"}'> student-profile.html</li>
-                                                <li data-jstree='"type":"html"}'> 404.html</li>
-                                                <li data-jstree='"type":"html"}'> 500.html</li>
-                                                <li data-jstree='"type":"html"}'> accordion.html</li>
-                                                <li data-jstree='"type":"html"}'> advance-form-element.html</li>
-                                                <li data-jstree='"type":"html"}'> alerts.html</li>
-                                                <li data-jstree='"type":"html"}'> analytics.html</li>
-                                                <li data-jstree='"type":"html"}'> area-charts.html</li>
-                                                <li data-jstree='"type":"html"}'> bar-charts.html</li>
-                                                <li data-jstree='"type":"html"}'> basic-form-element.html</li>
-                                                <li data-jstree='"type":"html"}'> buttons.html</li>
-                                                <li data-jstree='"type":"html"}'> c3.html</li>
-                                                <li data-jstree='"type":"html"}'> code-editor.html</li>
-                                                <li data-jstree='"type":"html"}'> contacts.html</li>
-                                                <li data-jstree='"type":"html"}'> data-maps.html</li>
-                                                <li data-jstree='"type":"html"}'> data-table.html</li>
-                                                <li data-jstree='"type":"html"}'> dual-list-box.html</li>
-                                                <li data-jstree='"type":"html"}'> google-map.html</li>
-                                                <li data-jstree='"type":"html"}'> images-cropper.html</li>
-                                                <li data-jstree='"type":"html"}'> line-charts.html</li>
-                                                <li data-jstree='"type":"html"}'> lock.html</li>
-                                                <li data-jstree='"type":"html"}'> login.html</li>
-                                                <li data-jstree='"type":"html"}'> mailbox.html</li>
-                                                <li data-jstree='"type":"html"}'> mailbox-compose.html</li>
-                                                <li data-jstree='"type":"html"}'> mailbox-view.html</li>
-                                                <li data-jstree='"type":"html"}'> modals.html</li>
-                                                <li data-jstree='"type":"html"}'> multi-upload.html</li>
-                                                <li data-jstree='"type":"html"}'> notifications.html</li>
-                                                <li data-jstree='"type":"html"}'> password-meter.html</li>
-                                                <li data-jstree='"type":"html"}'> password-recovery.html</li>
-                                                <li data-jstree='"type":"html"}'> pdf-viewer.html</li>
-                                                <li data-jstree='"type":"html"}'> peity.html</li>
-                                                <li data-jstree='"type":"html"}'> preloader.html</li>
-                                                <li data-jstree='"type":"html"}'> register.html</li>
-                                                <li data-jstree='"type":"html"}'> rounded-chart.html</li>
-                                                <li data-jstree='"type":"html"}'> sparkline.html</li>
-                                                <li data-jstree='"type":"html"}'> tabs.html</li>
-                                                <li data-jstree='"type":"html"}'> tinymc.html</li>
-                                                <li data-jstree='"type":"html"}'> tree-view.html</li>
-                                                <li data-jstree='"type":"html"}'> widgets.html</li>
-                                                <li data-jstree='"type":"html"}'> x-editable.html</li>
+                                                <li class="file">form/, data-table/, editor/, dropzone/, summernote/, metisMenu/, morrisjs/, calendar/, cropper/, code-editor/, select2/, preloader/, scrollbar/, tree-viewer/</li>
                                             </ul>
                                         </li>
                                     </ul>
-                                </div>
-</pre>
+                                </li>
+                                <li class="folder collapsed">
+                                    <span><i class="tree-icon bi bi-folder-fill text-warning"></i> js/ <span class="count">&mdash; main.js + legacy plugins</span></span>
+                                    <ul>
+                                        <li class="file"><i class="tree-icon bi bi-filetype-js text-success"></i> main.js <span class="count">&mdash; vanilla JS init (~370 lines)</span></li>
+                                        <li class="file"><i class="tree-icon bi bi-filetype-js text-success"></i> plugins.js, tab.js</li>
+                                        <li class="folder collapsed">
+                                            <span><i class="tree-icon bi bi-folder-fill text-warning"></i> vendor/, charts/, morrisjs/... <span class="count">(legacy plugin folders)</span></span>
+                                            <ul>
+                                                <li class="file">Kept for reference; active pages load modern equivalents from CDN.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="folder collapsed">
+                                    <span><i class="tree-icon bi bi-folder-fill text-warning"></i> fonts/ <span class="count">&mdash; custom nalika icon font</span></span>
+                                    <ul>
+                                        <li class="file"><i class="tree-icon bi bi-file-earmark-font"></i> nalika.{svg,ttf,woff}</li>
+                                    </ul>
+                                </li>
+                                <li class="folder collapsed">
+                                    <span><i class="tree-icon bi bi-folder-fill text-warning"></i> img/ <span class="count">&mdash; images by feature</span></span>
+                                    <ul>
+                                        <li class="file"><i class="tree-icon bi bi-folder text-warning"></i> logo/, blog-details/, contact/, product/, new-product/, notification/, cropper/</li>
+                                        <li class="file"><i class="tree-icon bi bi-file-earmark-image"></i> favicon.ico</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
-                <div id="three" class="content fade">
 
-                    <h1> HTML Structure </h1>
-                    <div>The base structure was organized by row, col-** class </div>
-                    <pre>
-<xmp>
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="logo">
-                    <a href="dashboard.html">
-                        <img src="img/logo.png" alt="">
+                <h2>Key Files</h2>
+                <div class="info-card">
+                    <table class="table table-borderless mb-0" style="font-size: 0.875rem;">
+                        <tbody>
+                            <tr>
+                                <td style="width:35%;font-weight:600;color:var(--heading-color)"><code>style.css</code></td>
+                                <td>Main theme stylesheet &mdash; dark color scheme, sidebar, header, cards, layout</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:600;color:var(--heading-color)"><code>js/main.js</code></td>
+                                <td>Central init script (~370 lines) &mdash; sidebar, sticky header, scroll-to-top, counters, AOS, Swiper, FullCalendar, ApexCharts</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:600;color:var(--heading-color)"><code>css/responsive.css</code></td>
+                                <td>Responsive breakpoints at 768px, 992px, 1169px</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:600;color:var(--heading-color)"><code>css/main.css</code></td>
+                                <td>Base and utility styles</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:600;color:var(--heading-color)"><code>css/nalika-icon.css</code></td>
+                                <td>Custom nalika icon font definitions</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:600;color:var(--heading-color)"><code>index.html</code></td>
+                                <td>Primary dashboard &mdash; ApexCharts, Swiper carousel</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>CDN vs. Local Assets</h2>
+                <p>All major libraries now load from <strong>jsDelivr CDN</strong>. Local files in <code>css/</code> and <code>js/</code> contain component-specific styles and legacy plugin files kept for reference. The active dependency chain for any page is:</p>
+                <pre><code class="language-text">CDN (cached by browser)
+ ├── Bootstrap 5.3.8 CSS + JS
+ ├── Bootstrap Icons 1.13.1
+ ├── AOS 2.3.4
+ ├── SimpleBar 6.2.7
+ └── Page-specific: ApexCharts, Swiper, FullCalendar, DataTables, etc.
+
+Local files
+ ├── style.css          (theme)
+ ├── css/main.css       (base)
+ ├── css/responsive.css (breakpoints)
+ ├── css/nalika-icon.css (custom icons)
+ └── js/main.js         (initialization)</code></pre>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- HTML STRUCTURE -->
+            <!-- ============================================================ -->
+            <section id="html-structure" class="doc-section">
+                <h1>HTML Structure</h1>
+                <p class="lead">All pages follow a consistent two-column layout. Auth and error pages use a minimal full-screen layout instead.</p>
+
+                <h2>Standard Page Layout</h2>
+                <p>Every dashboard page uses this structure:</p>
+                <pre><code class="language-html">&lt;!-- Left Sidebar --&gt;
+&lt;div class=&quot;left-sidebar-pro&quot;&gt;
+    &lt;nav id=&quot;sidebar&quot;&gt;
+        &lt;div class=&quot;sidebar-header&quot;&gt;
+            &lt;a href=&quot;index.html&quot;&gt;&lt;img src=&quot;img/logo/logo.png&quot;&gt;&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;nalika-profile&quot;&gt;...&lt;/div&gt;
+        &lt;div class=&quot;left-custom-menu-adm-wrap&quot;&gt;
+            &lt;ul class=&quot;nav nav-tabs&quot; id=&quot;menu1&quot;&gt;
+                &lt;li class=&quot;active&quot;&gt;
+                    &lt;a class=&quot;has-arrow&quot; href=&quot;#&quot;&gt;Dashboard&lt;/a&gt;
+                    &lt;ul class=&quot;submenu-angle&quot;&gt;
+                        &lt;li&gt;&lt;a href=&quot;index.html&quot;&gt;Dashboard v.1&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+&lt;/div&gt;
+
+&lt;!-- Main Content --&gt;
+&lt;div class=&quot;all-content-wrapper&quot;&gt;
+    &lt;div class=&quot;header-advance-area&quot;&gt;
+        &lt;!-- Top header with search, notifications, profile --&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;breadcome-area&quot;&gt;...&lt;/div&gt;
+
+    &lt;div class=&quot;container-fluid&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;col-12&quot;&gt;
+                &lt;!-- Page content here --&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;footer-copyright-area&quot;&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <h2>Grid System (Bootstrap 5)</h2>
+                <p>The template uses Bootstrap 5's grid with <code>col-*</code>, <code>col-sm-*</code>, <code>col-md-*</code>, <code>col-lg-*</code>, and <code>col-xl-*</code>:</p>
+                <pre><code class="language-html">&lt;div class=&quot;container-fluid&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-lg-6 col-md-6 col-12&quot;&gt;
+            &lt;!-- Half-width column --&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-lg-6 col-md-6 col-12&quot;&gt;
+            &lt;!-- Half-width column --&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <h2>Bootstrap 5 Data Attributes</h2>
+                <p>All interactive components use the <code>data-bs-*</code> prefix:</p>
+                <pre><code class="language-html">&lt;!-- Dropdown --&gt;
+&lt;a data-bs-toggle=&quot;dropdown&quot;&gt;...&lt;/a&gt;
+
+&lt;!-- Modal --&gt;
+&lt;button data-bs-toggle=&quot;modal&quot; data-bs-target=&quot;#myModal&quot;&gt;...&lt;/button&gt;
+
+&lt;!-- Collapse (sidebar submenu) --&gt;
+&lt;a data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#submenu1&quot;&gt;...&lt;/a&gt;
+
+&lt;!-- Tooltip --&gt;
+&lt;span data-bs-toggle=&quot;tooltip&quot; title=&quot;Help text&quot;&gt;...&lt;/span&gt;</code></pre>
+
+                <h2>Sidebar Toggle</h2>
+                <p>The sidebar is 205px wide and collapses to 80px. The toggle button (<code>#sidebarCollapse</code>) adds <code>.active</code> to <code>#sidebar</code> and <code>.mini-navbar</code> to <code>body</code>. This is handled in <code>js/main.js</code> with vanilla JS.</p>
+
+                <h2>Minimal Layout (Auth / Error Pages)</h2>
+                <p>Login, register, lock screen, password recovery, 404, and 500 pages use a simpler layout without the sidebar:</p>
+                <pre><code class="language-html">&lt;!-- No sidebar wrapper --&gt;
+&lt;div class=&quot;login-content&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;row justify-content-center&quot;&gt;
+            &lt;div class=&quot;col-lg-5&quot;&gt;
+                &lt;!-- Login form card --&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <h2>Common Head Template</h2>
+                <p>Every page loads a consistent set of base dependencies:</p>
+                <pre><code class="language-html">&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Page Title | Nalika&lt;/title&gt;
+    &lt;link rel=&quot;shortcut icon&quot; href=&quot;img/favicon.ico&quot;&gt;
+
+    &lt;!-- Bootstrap 5.3.8 --&gt;
+    &lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;!-- Bootstrap Icons 1.13.1 --&gt;
+    &lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;!-- AOS Animations --&gt;
+    &lt;link href=&quot;https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;!-- SimpleBar --&gt;
+    &lt;link href=&quot;https://cdn.jsdelivr.net/npm/simplebar@6.2.7/dist/simplebar.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+
+    &lt;!-- Theme styles --&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/nalika-icon.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/main.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/responsive.css&quot;&gt;
+
+    &lt;!-- Page-specific CSS here --&gt;
+&lt;/head&gt;</code></pre>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- JAVASCRIPT ARCHITECTURE -->
+            <!-- ============================================================ -->
+            <section id="javascript" class="doc-section">
+                <h1>JavaScript Architecture</h1>
+                <p class="lead">All JavaScript is vanilla JS &mdash; no jQuery required. The central <code>js/main.js</code> file uses a modular one-function-per-feature pattern.</p>
+
+                <h2>Design Principles</h2>
+                <ul>
+                    <li><strong>One function per feature</strong> &mdash; <code>initSidebar()</code>, <code>initStickyHeader()</code>, etc.</li>
+                    <li><strong>Guard clauses</strong> &mdash; every function starts with <code>if (!el) return</code> to gracefully skip on pages where the element doesn't exist</li>
+                    <li><strong>No global state</strong> &mdash; library instances are scoped within their init function</li>
+                    <li><strong>Modern APIs</strong> &mdash; <code>IntersectionObserver</code>, <code>requestAnimationFrame</code>, <code>classList</code>, <code>querySelectorAll</code></li>
+                    <li><strong>AOS initialized outside DOMContentLoaded</strong> &mdash; since scripts are at the body bottom, AOS must run immediately</li>
+                </ul>
+
+                <h2>Function Reference</h2>
+                <div class="info-card" style="padding:0.75rem 1.25rem">
+                    <ul class="func-list">
+                        <li>
+                            <span class="func-name">initTooltips()</span>
+                            <span class="func-desc">Initializes Bootstrap 5 tooltips via JS API</span>
+                        </li>
+                        <li>
+                            <span class="func-name">initPopovers()</span>
+                            <span class="func-desc">Initializes Bootstrap 5 popovers via JS API</span>
+                        </li>
+                        <li>
+                            <span class="func-name">initSidebar()</span>
+                            <span class="func-desc">Sidebar collapse/expand toggle, replaces old jQuery toggle</span>
+                        </li>
+                        <li>
+                            <span class="func-name">initSidebarNav()</span>
+                            <span class="func-desc">Submenu accordion, active page highlighting. Replaces metisMenu</span>
+                        </li>
+                        <li>
+                            <span class="func-name">initMobileMenu()</span>
+                            <span class="func-desc">Mobile hamburger menu with Bootstrap Collapse API. Replaces MeanMenu</span>
+                        </li>
+                        <li>
+                            <span class="func-name">initStickyHeader()</span>
+                            <span class="func-desc">Header sticks on scroll using scroll listener. Replaces jQuery Sticky</span>
+                        </li>
+                        <li>
+                            <span class="func-name">initScrollToTop()</span>
+                            <span class="func-desc">Scroll-to-top button with fade animation. Replaces jQuery ScrollUp</span>
+                        </li>
+                        <li>
+                            <span class="func-name">initCounters()</span>
+                            <span class="func-desc">Animated number counters using IntersectionObserver. Replaces CounterUp + Waypoints</span>
+                        </li>
+                        <li>
+                            <span class="func-name">initScrollbars()</span>
+                            <span class="func-desc">Custom scrollbar via SimpleBar 6. Replaces mCustomScrollbar</span>
+                        </li>
+                        <li>
+                            <span class="func-name">initAOS()</span>
+                            <span class="func-desc">Scroll-reveal animations via AOS 2.3. Replaces WOW.js + animate.css</span>
+                        </li>
+                        <li>
+                            <span class="func-name">initProductCarousel()</span>
+                            <span class="func-desc">Product slider using Swiper 12 with responsive breakpoints. Replaces Owl Carousel</span>
+                        </li>
+                        <li>
+                            <span class="func-name">initPriceSlider()</span>
+                            <span class="func-desc">Price range slider using noUiSlider 15. Replaces jQuery UI slider</span>
+                        </li>
+                        <li>
+                            <span class="func-name">initDropdownBehavior()</span>
+                            <span class="func-desc">Prevents header dropdown menus from closing on inner click</span>
+                        </li>
+                        <li>
+                            <span class="func-name">initCalendar()</span>
+                            <span class="func-desc">FullCalendar 6 with month/week/day views. Replaces FullCalendar v3 jQuery</span>
+                        </li>
+                        <li>
+                            <span class="func-name">initDashboardCharts()</span>
+                            <span class="func-desc">ApexCharts area, line, and sparkline charts. Replaces Morris.js, Flot, Sparkline</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <h2>Initialization Order</h2>
+                <pre><code class="language-javascript">// AOS must be initialized outside DOMContentLoaded
+// when scripts are loaded at body bottom
+initAOS();
+
+document.addEventListener('DOMContentLoaded', function () {
+    initTooltips();
+    initPopovers();
+    initSidebar();
+    initSidebarNav();
+    initMobileMenu();
+    initStickyHeader();
+    initScrollToTop();
+    initCounters();
+    initScrollbars();
+    initDropdownBehavior();
+    initProductCarousel();
+    initPriceSlider();
+    initCalendar();
+    initDashboardCharts();
+});</code></pre>
+
+                <h2>Script Loading Order</h2>
+                <p>Scripts are loaded at the bottom of every page in this order:</p>
+                <pre><code class="language-html">&lt;!-- 1. Bootstrap 5 Bundle (includes Popper) --&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- 2. Core libraries --&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/simplebar@6.2.7/dist/simplebar.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- 3. Page-specific libraries (only when needed) --&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/apexcharts@5.3.6/dist/apexcharts.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- 4. Main init script (always last) --&gt;
+&lt;script src=&quot;js/main.js&quot;&gt;&lt;/script&gt;</code></pre>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- LIBRARIES & DEPENDENCIES -->
+            <!-- ============================================================ -->
+            <section id="libraries" class="doc-section">
+                <h1>Libraries &amp; Dependencies</h1>
+                <p class="lead">All libraries load from jsDelivr CDN. This section lists every dependency and which pages use it.</p>
+
+                <h2>Core Stack (Every Page)</h2>
+                <div class="plugin-table">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Library</th>
+                                <th>Version</th>
+                                <th>Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="plugin-name"><a href="https://getbootstrap.com/docs/5.3/">Bootstrap</a></td>
+                                <td>5.3.8</td>
+                                <td>CSS framework + JS components (dropdowns, modals, tooltips, collapse)</td>
+                            </tr>
+                            <tr>
+                                <td class="plugin-name"><a href="https://icons.getbootstrap.com/">Bootstrap Icons</a></td>
+                                <td>1.13.1</td>
+                                <td>2,000+ SVG icons via CSS classes (<code>bi bi-*</code>)</td>
+                            </tr>
+                            <tr>
+                                <td class="plugin-name"><a href="https://michalsnik.github.io/aos/">AOS</a></td>
+                                <td>2.3.4</td>
+                                <td>Scroll-reveal animations (fade, slide, zoom)</td>
+                            </tr>
+                            <tr>
+                                <td class="plugin-name"><a href="https://github.com/Grsmto/simplebar">SimpleBar</a></td>
+                                <td>6.2.7</td>
+                                <td>Custom scrollbar for sidebar and notification panels</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>Dashboard &amp; Charts</h2>
+                <div class="plugin-table">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Library</th>
+                                <th>Version</th>
+                                <th>Used On</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="plugin-name"><a href="https://apexcharts.com/">ApexCharts</a></td>
+                                <td>5.3.6</td>
+                                <td>Dashboards, analytics, all chart pages, widgets (12 pages)</td>
+                            </tr>
+                            <tr>
+                                <td class="plugin-name"><a href="https://fullcalendar.io/">FullCalendar</a></td>
+                                <td>6.1.20</td>
+                                <td>Dashboards, analytics, widgets (5 pages)</td>
+                            </tr>
+                            <tr>
+                                <td class="plugin-name"><a href="https://swiperjs.com/">Swiper</a></td>
+                                <td>12</td>
+                                <td>Dashboard product carousel (3 pages)</td>
+                            </tr>
+                            <tr>
+                                <td class="plugin-name"><a href="https://www.chartjs.org/">Chart.js</a></td>
+                                <td>4.5.0</td>
+                                <td>Additional chart types on chart pages</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>Forms &amp; Inputs</h2>
+                <div class="plugin-table">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Library</th>
+                                <th>Version</th>
+                                <th>Replaces</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="plugin-name"><a href="https://tom-select.js.org/">Tom Select</a></td>
+                                <td>2.4.6</td>
+                                <td>Select2 / Chosen &mdash; searchable select boxes</td>
+                            </tr>
+                            <tr>
+                                <td class="plugin-name">Native HTML5</td>
+                                <td>&mdash;</td>
+                                <td>Bootstrap Datepicker &mdash; date/time pickers (<code>type="date"</code>, <code>type="time"</code>, etc.)</td>
+                            </tr>
+                            <tr>
+                                <td class="plugin-name"><a href="https://refreshless.com/nouislider/">noUiSlider</a></td>
+                                <td>15.8.1</td>
+                                <td>Ion.RangeSlider &mdash; range sliders</td>
+                            </tr>
+                            <tr>
+                                <td class="plugin-name"><a href="https://simonwep.github.io/pickr/">Pickr</a></td>
+                                <td>1.9.1</td>
+                                <td>Spectrum &mdash; color picker</td>
+                            </tr>
+                            <tr>
+                                <td class="plugin-name"><a href="https://www.dropzone.dev/">Dropzone</a></td>
+                                <td>5</td>
+                                <td>File upload with drag &amp; drop</td>
+                            </tr>
+                            <tr>
+                                <td class="plugin-name"><a href="https://summernote.org/">Summernote Lite</a></td>
+                                <td>0.8.18</td>
+                                <td>WYSIWYG rich text editor</td>
+                            </tr>
+                            <tr>
+                                <td class="plugin-name"><a href="https://fengyuanchen.github.io/cropperjs/">Cropper.js</a></td>
+                                <td>2.1.0</td>
+                                <td>Image cropping</td>
+                            </tr>
+                            <tr>
+                                <td class="plugin-name"><a href="https://sortablejs.github.io/Sortable/">SortableJS</a></td>
+                                <td>1.15.6</td>
+                                <td>Dual Listbox &mdash; drag-and-drop sorting</td>
+                            </tr>
+                            <tr>
+                                <td class="plugin-name"><a href="https://sweetalert2.github.io/">SweetAlert2</a></td>
+                                <td>11</td>
+                                <td>Lobibox &mdash; beautiful alert dialogs</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>Tables &amp; Data</h2>
+                <div class="plugin-table">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Library</th>
+                                <th>Version</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="plugin-name"><a href="https://datatables.net/">DataTables</a></td>
+                                <td>2.2.2</td>
+                                <td>Bootstrap 5 integration, sorting, search, pagination, export</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>Editors &amp; Utilities</h2>
+                <div class="plugin-table">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Library</th>
+                                <th>Version</th>
+                                <th>Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="plugin-name"><a href="https://codemirror.net/">CodeMirror</a></td>
+                                <td>5.65.18</td>
+                                <td>Code editor with syntax highlighting</td>
+                            </tr>
+                            <tr>
+                                <td class="plugin-name"><a href="https://www.jstree.com/">jsTree</a></td>
+                                <td>3.3.17</td>
+                                <td>Interactive tree view (tree-view.html only)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- CUSTOMIZATION -->
+            <!-- ============================================================ -->
+            <section id="customization" class="doc-section">
+                <h1>Customization</h1>
+                <p class="lead">How to modify the template's appearance and behavior to match your project.</p>
+
+                <h2>Changing Theme Colors</h2>
+                <p>Open <code>style.css</code> and find the color definitions near the top. The main colors to change are:</p>
+                <pre><code class="language-css">/* style.css — Main background */
+html, body {
+    background: #152036;  /* Change this for overall background */
+}
+
+/* Sidebar background */
+.left-sidebar-pro {
+    background: #1b2a47;  /* Change this for sidebar */
+}
+
+/* Accent color (used for hover, active states, links) */
+/* Search for #ec4445 and replace globally */</code></pre>
+                <p>For chart colors, edit the color arrays inside the <code>initDashboardCharts()</code> function in <code>js/main.js</code>:</p>
+                <pre><code class="language-javascript">// In js/main.js — initDashboardCharts()
+colors: ['#00c292', '#ab8ce4'],  // Change chart series colors
+// ...
+grid: { borderColor: '#1e3154' }, // Change chart grid lines</code></pre>
+
+                <h2>Adding a New Page</h2>
+                <ol>
+                    <li>Copy an existing page (e.g. <code>static-table.html</code>) as your starting point</li>
+                    <li>Update the <code>&lt;title&gt;</code> tag and breadcrumb text</li>
+                    <li>Replace the content area inside <code>.container-fluid</code></li>
+                    <li>Add a link to the sidebar navigation in the <code>#menu1</code> list</li>
+                    <li>If your page needs extra libraries, add them before <code>js/main.js</code></li>
+                </ol>
+                <pre><code class="language-html">&lt;!-- Adding a page-specific library --&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/some-library/dist/library.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/main.js&quot;&gt;&lt;/script&gt; &lt;!-- Always load last --&gt;</code></pre>
+
+                <h2>Working with Icons</h2>
+                <p>The template uses two icon sets:</p>
+                <pre><code class="language-html">&lt;!-- Bootstrap Icons (primary) --&gt;
+&lt;i class=&quot;bi bi-house-door&quot;&gt;&lt;/i&gt;
+&lt;i class=&quot;bi bi-envelope&quot;&gt;&lt;/i&gt;
+&lt;i class=&quot;bi bi-bell&quot;&gt;&lt;/i&gt;
+
+&lt;!-- Custom Nalika icons (sidebar, social) --&gt;
+&lt;i class=&quot;icon nalika-home&quot;&gt;&lt;/i&gt;
+&lt;i class=&quot;icon nalika-facebook&quot;&gt;&lt;/i&gt;</code></pre>
+                <p>Browse all 2,000+ Bootstrap Icons at <a href="https://icons.getbootstrap.com/" style="color:var(--accent)">icons.getbootstrap.com</a>.</p>
+
+                <h2>Sidebar Navigation</h2>
+                <p>The sidebar menu is a nested <code>&lt;ul&gt;</code> with class <code>.submenu-angle</code> for sub-items. To add a new menu section:</p>
+                <pre><code class="language-html">&lt;li&gt;
+    &lt;a class=&quot;has-arrow&quot; href=&quot;#&quot;&gt;
+        &lt;i class=&quot;icon nalika-bar-chart&quot;&gt;&lt;/i&gt;
+        &lt;span class=&quot;mini-click-non&quot;&gt;Reports&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;ul class=&quot;submenu-angle&quot;&gt;
+        &lt;li&gt;&lt;a href=&quot;monthly-report.html&quot;&gt;Monthly Report&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;annual-report.html&quot;&gt;Annual Report&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/li&gt;</code></pre>
+                <p>The <code>initSidebarNav()</code> function in <code>js/main.js</code> automatically handles submenu toggling and active-page highlighting.</p>
+
+                <h2>Adding Charts</h2>
+                <p>ApexCharts makes it easy to add new charts. Include the library and add a container:</p>
+                <pre><code class="language-html">&lt;!-- 1. Add a container with a unique ID --&gt;
+&lt;div id=&quot;myChart&quot;&gt;&lt;/div&gt;
+
+&lt;!-- 2. Initialize in a script block --&gt;
+&lt;script&gt;
+var chart = new ApexCharts(document.getElementById('myChart'), {
+    chart: { type: 'bar', height: 350, background: 'transparent' },
+    series: [{ name: 'Sales', data: [30, 40, 35, 50, 49, 60, 70] }],
+    xaxis: { categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] },
+    colors: ['#00c292'],
+    tooltip: { theme: 'dark' },
+    grid: { borderColor: '#1e3154' }
+});
+chart.render();
+&lt;/script&gt;</code></pre>
+
+                <h2>Responsive Breakpoints</h2>
+                <p>The layout adapts at three breakpoints defined in <code>css/responsive.css</code>:</p>
+                <div class="info-card">
+                    <table class="table table-borderless mb-0" style="font-size: 0.875rem;">
+                        <tbody>
+                            <tr>
+                                <td style="width:30%;font-weight:600;color:var(--heading-color)">1169px and below</td>
+                                <td>Content area adjusts, some columns stack</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:600;color:var(--heading-color)">992px and below</td>
+                                <td>Sidebar hides, mobile menu activates</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:600;color:var(--heading-color)">768px and below</td>
+                                <td>Single-column layout, cards stack vertically</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- CREDITS -->
+            <!-- ============================================================ -->
+            <section id="credits" class="doc-section">
+                <h1>Sources &amp; Credits</h1>
+                <p class="lead">Third-party libraries and resources used in this template.</p>
+
+                <h3>Framework &amp; Icons</h3>
+                <ul class="credit-list">
+                    <li><a href="https://getbootstrap.com/docs/5.3/">Bootstrap 5.3.8</a></li>
+                    <li><a href="https://icons.getbootstrap.com/">Bootstrap Icons 1.13</a></li>
+                    <li><a href="https://fonts.google.com/specimen/Roboto">Google Fonts &mdash; Roboto</a></li>
+                </ul>
+
+                <h3>Charts &amp; Data Visualization</h3>
+                <ul class="credit-list">
+                    <li><a href="https://apexcharts.com/">ApexCharts</a></li>
+                    <li><a href="https://www.chartjs.org/">Chart.js</a></li>
+                    <li><a href="https://fullcalendar.io/">FullCalendar</a></li>
+                </ul>
+
+                <h3>UI &amp; Layout</h3>
+                <ul class="credit-list">
+                    <li><a href="https://swiperjs.com/">Swiper</a></li>
+                    <li><a href="https://michalsnik.github.io/aos/">AOS (Animate On Scroll)</a></li>
+                    <li><a href="https://github.com/Grsmto/simplebar">SimpleBar</a></li>
+                    <li><a href="https://sweetalert2.github.io/">SweetAlert2</a></li>
+                    <li><a href="https://datatables.net/">DataTables</a></li>
+                    <li><a href="https://www.jstree.com/">jsTree</a></li>
+                </ul>
+
+                <h3>Forms &amp; Inputs</h3>
+                <ul class="credit-list">
+                    <li><a href="https://tom-select.js.org/">Tom Select</a></li>
+                    <li>Native HTML5 date/time inputs</li>
+                    <li><a href="https://refreshless.com/nouislider/">noUiSlider</a></li>
+                    <li><a href="https://simonwep.github.io/pickr/">Pickr</a></li>
+                    <li><a href="https://www.dropzone.dev/">Dropzone</a></li>
+                    <li><a href="https://fengyuanchen.github.io/cropperjs/">Cropper.js</a></li>
+                    <li><a href="https://sortablejs.github.io/Sortable/">SortableJS</a></li>
+                    <li><a href="https://summernote.org/">Summernote</a></li>
+                </ul>
+
+                <h3>Editors</h3>
+                <ul class="credit-list">
+                    <li><a href="https://codemirror.net/">CodeMirror</a></li>
+                </ul>
+            </section>
+
+            <!-- ============================================================ -->
+            <!-- SUPPORT -->
+            <!-- ============================================================ -->
+            <section id="support" class="doc-section">
+                <h1>Support</h1>
+                <p class="lead">Thank you for using Nalika. If you have any questions or run into issues, we're here to help.</p>
+
+                <div class="support-card">
+                    <h3>Need Help?</h3>
+                    <p>Our support team is happy to assist with questions about setup, customization, or troubleshooting.</p>
+                    <a href="https://colorlib.com/wp/templates/" class="btn">
+                        <i class="bi bi-envelope"></i> Contact Colorlib
                     </a>
                 </div>
-            </div><!-- column end -->
-        </div> <!-- row end -->
-    </div> <!-- container end -->
-</xmp>
-</pre>
+            </section>
 
-                </div>
-                
-                <div id="six" class="content fade">
-				
-				<div class="plugins-area">
-					<h1>Plugins</h1>
-					<div class="static-table-list">
-						<table class="table">
-							<thead>
-								<tr>
-									<th>#</th>
-									<th>Plugin Name</th>
-									<th>Description</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>1</td>
-									<td>C3 And D3</td>
-									<td>we are going to show you how to get started with C3 and <a href="http://c3js.org/gettingstarted.html">read more</a></td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td>Chart</td>
-									<td>Simple yet flexible JavaScript charting for designers & developersand <a href="http://www.chartjs.org/">read more</a></td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td>Chosen</td>
-									<td>Chosen is a jQuery plugin that makes long and <a href="https://harvesthq.github.io/chosen/">read more</a></td>
-								</tr>
-								<tr>
-									<td>4</td>
-									<td>CodeMirror</td>
-									<td>CodeMirror is a versatile text editor implemented in JavaScript for the browser and <a href="http://codemirror.net/index.html">read more</a></td>
-								</tr>
-								<tr>
-									<td>5</td>
-									<td>Colorpicker</td>
-									<td>Satisfied with the solutions available for colorpicking and <a href="http://bgrins.github.io/spectrum/">read more</a></td>
-								</tr>
-								<tr>
-									<td>6</td>
-									<td>counterup</td>
-									<td>COUNTER-UP JQUERY PLUGIN and <a href="http://bfintal.github.io/Counter-Up/demo/demo.html">read more</a></td>
-								</tr>
-								<tr>
-									<td>7</td>
-									<td>Cropper</td>
-									<td>A simple jQuery image cropping plugin and <a href="https://fengyuanchen.github.io/cropper/">read more</a></td>
-								</tr>
-								<tr>
-									<td>8</td>
-									<td>Data Map</td>
-									<td>HTML5 maps look gorgeous on iPhones, Android devices and iPads <a href="http://simplemaps.com/us">read more</a></td>
-								</tr>
-								<tr>
-									<td>9</td>
-									<td>Datepicker</td>
-									<td>Bootstrap-datepicker provides a flexible datepicker widget in the Bootstrap style and <a href="https://bootstrap-datepicker.readthedocs.io/en/stable/">read more</a></td>
-								</tr>
-								<tr>
-									<td>10</td>
-									<td>X-editable</td>
-									<td>X-editable can be used with any engine (bootstrap, jquery-ui, jquery only) and includes both popup and inline modes and <a href="http://vitalets.github.io/x-editable/">Read More</a></td>
-								</tr>
-								<tr>
-									<td>11</td>
-									<td>Dual Listbox</td>
-									<td>Bootstrap Dual Listbox is a responsive dual listbox widget optimized for Twitter Bootstrap and <a href="https://www.virtuosoft.eu/code/bootstrap-duallistbox/">Read More</a></td>
-								</tr>
-								<tr>
-									<td>12</td>
-									<td>plot Chart</td>
-									<td>Flot is a pure JavaScript plotting library for jQuery, with a focus on simple usage, attractive looks and interactive features and <a href="http://www.flotcharts.org/">Read More</a></td>
-								</tr>
-								<tr>
-									<td>13</td>
-									<td>Google Maps</td>
-									<td>All of the examples contained in the Google Maps JavaScript API documentation set are listed below for quick reference and <a href="https://developers.google.com/maps/documentation/javascript/examples/">Read More</a></td>
-								</tr>
-								<tr>
-									<td>14</td>
-									<td>iCheck</td>
-									<td>UPER CUSTOMIZED CHECKBOXES AND RADIO BUTTONS FOR JQUERY & ZEPTO and <a href="http://icheck.fronteed.com/">Read More</a></td>
-								</tr>
-								<tr>
-									<td>15</td>
-									<td>RangeSlider</td>
-									<td>Ion.RangeSlider 2.2.0. jQuery-plugin Easy, flexible and responsive range slider with skin support and <a href="http://ionden.com/a/plugins/ion.rangeSlider/en.html">Read More</a></td>
-								</tr>
-								<tr>
-									<td>16</td>
-									<td>jvectormap</td>
-									<td>JavaScript-based jVectorMap uses only native browser technologies like JavaScript, CSS, HTML, SVG or VML and <a href="http://jvectormap.com/">Read More</a></td>
-								</tr>
-								<tr>
-									<td>17</td>
-									<td>Knob</td>
-									<td>jQuery Knob mouse click and wheel mouse, keyboard (on focus) and fingers (touch events) and <a href="http://anthonyterrien.com/demo/knob/">Read More</a></td>
-								</tr>
-								<tr>
-									<td>18</td>
-									<td>Mapael</td>
-									<td>Ease the build of pretty data visualizations on dynamic vector maps and <a href="https://www.vincentbroute.fr/mapael/">Read More</a></td>
-								</tr>
-								<tr>
-									<td>19</td>
-									<td>Password Meter</td>
-									<td>jQuery Password Strength Meter for Twitter Bootstrap and <a href="https://cdn.rawgit.com/ablanco/jquery.pwstrength.bootstrap/master/examples/index.html">Read More</a></td>
-								</tr>
-								<tr>
-									<td>20</td>
-									<td>PDF Viewer</td>
-									<td>The jQuery Media Plugin supports unobtrusive conversion of standard markup into rich media content and <a href="http://malsup.com/jquery/media/">Read More</a></td>
-								</tr>
-								<tr>
-									<td>21</td>
-									<td>Peity Charts</td>
-									<td>Peity (sounds like deity) is a jQuery plugin that converts an element's content into a mini pie  donut  line  or bar chart  and is compatible with any browser that supports Chrome, Firefox, IE9+, Opera, Safari and <a href="http://benpickles.github.io/peity/">Read More</a></td>
-								</tr>
-								<tr>
-									<td>22</td>
-									<td>Skycons</td>
-									<td>Skycons is a set of ten animated weather glyphs, procedurally generated by JavaScript using the HTML5 canvas tag and <a href="https://darkskyapp.github.io/skycons/">Read More</a></td>
-								</tr>
-								<tr>
-									<td>23</td>
-									<td>Sparklines</td>
-									<td>This jQuery plugin generates sparklines (small inline charts) directly in the browser using data supplied either inline in the HTML, or via javascript and <a href="https://omnipotent.net/jquery.sparkline/#s-about">Read More</a></td>
-								</tr>
-								<tr>
-									<td>24</td>
-									<td>TouchSpin</td>
-									<td>A mobile and touch friendly input spinner component for Bootstrap 3. It supports the mousewheel and the up/down keys and <a href="https://www.virtuosoft.eu/code/bootstrap-touchspin/">Read More</a></td>
-								</tr>
-								<tr>
-									<td>25</td>
-									<td>jsTree</td>
-									<td>jsTree is jquery plugin, that provides interactive trees. It is absolutely free, open source and distributed under the MIT license. jsTree is easily extendable, themable and configurable, it supports HTML & JSON data sources and AJAX loading and <a href="https://www.jstree.com/">Read More</a></td>
-								</tr>
-								<tr>
-									<td>26</td>
-									<td>Lobibox</td>
-									<td>Free responsive jQuery messagebox and notification plugin available for commercial and non-commercial usages and <a href="http://lobianijs.com/site/lobibox">Read More</a></td>
-								</tr>
-								<tr>
-									<td>26</td>
-									<td>WOW</td>
-									<td>Reveal Animations When You Scroll. Very Animate.css Friend :-) Easily customize animation settings: style, delay, length, offset, iterations... and <a href="http://mynameismatthieu.com/WOW/">Read More</a></td>
-								</tr>
-								<tr>
-									<td>27</td>
-									<td>Data Table</td>
-									<td>An extended Bootstrap table with radio, checkbox, sort, pagination, and other added features and <a href="http://issues.wenzhixin.net.cn/bootstrap-table/">Read More</a></td>
-								</tr>
-								<tr>
-									<td>28</td>
-									<td>Custom scrollbar</td>
-									<td>Highly customizable custom scrollbar jQuery plugin. Features include vertical and/or horizontal scrollbar(s), adjustable scrolling momentum, mouse-wheel and <a href="http://manos.malihu.gr/jquery-custom-content-scroller/">Read More</a></td>
-								</tr>
-								<tr>
-									<td>29</td>
-									<td>Summernote</td>
-									<td>Customize by Initializing various options and modules and <a href="https://summernote.org/">Read More</a></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-                    
-                    
-                    <h1>Tinymc Editor Structure</h1>
-					<h3>Quick start</h3>
-			<p>Copy-paste the stylesheet "link" into your "head" before all other stylesheets to load our CSS.</p>
-			<pre>
-	<xmp>
-	<!-- summernote CSS
-		============================================ -->
-        <link rel="stylesheet" href="css/summernote.css">
-	</xmp>
-</pre>
-<p>The end of your pages, right before the closing "body" tag. Be sure to place js first, as our JavaScript plugins depend on them. </p>
-			<pre>
-	<xmp>
-	<!-- summernote JS
-		============================================ -->
-        <script src="js/summernote.min.js"></script>
-        <script src="js/summernote-active.js"></script>
-	</xmp>
-</pre>
-                    
-                    <pre>
-                        <xmp>
-    <div class="tinymce-single nt-mg-b-30">
-		<div class="alert-title">
-			<h2>Basic Summernote WYSIWYG editor</h2>
-			<p>The fastest way to get Summernote WYSIWYG editor is powerfull JavaScript plugin. you can easily maintance typography system.</p>
-		</div>
-		<div id="summernote1">
-		</div>
-	</div>                             
-                        </xmp>
-                    </pre>
-                    
-                    
-                </div>
-                
-                
-                <div id="source" class="content fade">
-                    <h1> Sources &amp; Credits </h1>
-                    
-                    <h3>Fonts</h3>
-                    <ul>
-                        <li><a href="https://fonts.googleapis.com/">Google Fonts</a></li>
-                    </ul>
-                    
-                    <h3>Icons</h3>
-                    <ul>
-                        <li><a href="http://fontawesome.io/">Font Awesome</a></li>
-                    </ul>
-                    <h3>Scripts</h3>
-                    <ul>
-                        <li><a href="http://benpickles.github.io/peity/">Peity Charts</a></li>
-                        <li><a href="https://omnipotent.net/jquery.sparkline/#s-about">Sparklines</a></li>
-                        <li><a href="http://manos.malihu.gr/jquery-custom-content-scroller/">Scrollbar</a></li>
-                        <li><a href="https://www.virtuosoft.eu/code/bootstrap-touchspin/">TouchSpin</a></li>
-                        <li><a href="http://issues.wenzhixin.net.cn/bootstrap-table/">Data Table</a></li>
-                        <li><a href="https://www.jstree.com/">JsTree</a></li>
-                        <li><a href="https://darkskyapp.github.io/skycons/">Skycons</a></li>
-                        <li><a href="https://cdn.rawgit.com/ablanco/jquery.pwstrength.bootstrap/master/examples/index.html">Password Meter</a></li>
-                        <li><a href="http://malsup.com/jquery/media/">PDF Viewer</a></li>
-                        <li><a href="https://www.vincentbroute.fr/mapael/">Mapael</a></li>
-                        <li><a href="http://jvectormap.com/">jvectormap</a></li>
-                        <li><a href="http://ionden.com/a/plugins/ion.rangeSlider/en.html">RangeSlider</a></li>
-                        <li><a href="https://fengyuanchen.github.io/cropper/">Cropper</a></li>
-                        <li><a href="http://simplemaps.com/us">Data Map</a></li>
-                        <li><a href="http://codemirror.net/index.html">CodeMirror</a></li>
-                        <li><a href="https://harvesthq.github.io/chosen/">Chosen</a></li>
-                        <li><a href="http://c3js.org/gettingstarted.html">C3 And D3</a></li>
-                        <li><a href="https://www.malot.fr/bootstrap-datetimepicker/">datetimepicker</a></li>
-                        <li><a href="http://github.com/vitalets/x-editable">x-editable</a></li>
-                        <li><a href="http://www.dropzonejs.com//">dropzonejs</a></li>
-                        <li><a href="http://jquery.malsup.com/form/#ajaxForm">form Validation</a></li>
-                        <li><a href="https://github.com/jzaefferer/jquery-validation">form Validation</a></li>
-                        <li><a href="http://digitalbush.com/projects/masked-input-plugin/#license">masked input</a></li>
-                        <li><a href="https://github.com/jakerella/jquery-mockjax">mockjax</a></li>
-                        <li><a href="https://lobianijs.com/site/lobibox">lobibox</a></li>
-                        <li><a href="http://summernote.org/">summernote</a></li>
-                        <li><a href="https://vitalets.github.io/x-editable/">editable</a></li>
-                    </ul>
-                </div>
-                <div id="support" class="content fade">
-                    <h1> Supports </h1>
-                    <p>Thank you for reading the documentaion. If you still have any question or any problem, please contact with us. We will give you best support. Thanks.</p>
-                    <a href="https://colorlib.com/wp/templates/" >Colorlib</a>
-                </div>
-                <div id="nine" class="content fade">
-                    <h1> Sliders Structure </h1>
-                    <div>The base structure was organized by row, col-** class </div>
-                    <pre>
-    <xmp>
-    <!-- code will be here -->
-    </xmp>
-</pre>
-                    <!-- code pre tag end -->
-                </div>
-            </div>
         </div>
-    </div>
-    <script src="js/jquery-3.1.0.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-	<script src="js/jstree.min.js"></script>
-    <script src="js/jstree.active.js"></script>
-    <script src="js/main.js"></script>
+    </main>
+
+    <!-- Bootstrap 5.3.8 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-JrMDOYiGRcJPaFOGFOmhOK/5sHvbVv6r65gJGV0kqOKEeJkIms7Hhym2/aA8g/p" crossorigin="anonymous"></script>
+
+    <!-- Highlight.js -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js"></script>
+
+    <script>
+        (function () {
+            'use strict';
+
+            // Navigation
+            var navLinks = document.querySelectorAll('.nav-link[data-section]');
+            var sections = document.querySelectorAll('.doc-section');
+
+            function showSection(sectionId) {
+                sections.forEach(function (s) { s.classList.remove('active'); });
+                navLinks.forEach(function (l) { l.classList.remove('active'); });
+
+                var target = document.getElementById(sectionId);
+                var link = document.querySelector('.nav-link[data-section="' + sectionId + '"]');
+
+                if (target) target.classList.add('active');
+                if (link) link.classList.add('active');
+
+                // Highlight code blocks in newly shown section
+                if (target) {
+                    target.querySelectorAll('pre code:not(.hljs)').forEach(function (block) {
+                        hljs.highlightElement(block);
+                    });
+                }
+
+                // Close mobile sidebar
+                document.getElementById('sidebar').classList.remove('open');
+                document.getElementById('overlay').classList.remove('show');
+
+                // Scroll to top
+                window.scrollTo(0, 0);
+            }
+
+            navLinks.forEach(function (link) {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    showSection(this.getAttribute('data-section'));
+                });
+            });
+
+            // Mobile toggle
+            var mobileToggle = document.getElementById('mobileToggle');
+            var sidebar = document.getElementById('sidebar');
+            var overlay = document.getElementById('overlay');
+
+            mobileToggle.addEventListener('click', function () {
+                sidebar.classList.toggle('open');
+                overlay.classList.toggle('show');
+            });
+
+            overlay.addEventListener('click', function () {
+                sidebar.classList.remove('open');
+                overlay.classList.remove('show');
+            });
+
+            // File tree toggle
+            document.querySelectorAll('.file-tree .folder > span').forEach(function (span) {
+                span.addEventListener('click', function () {
+                    this.parentElement.classList.toggle('collapsed');
+                });
+            });
+
+            // Initial highlight
+            document.querySelectorAll('.doc-section.active pre code').forEach(function (block) {
+                hljs.highlightElement(block);
+            });
+        })();
+    </script>
 </body>
 
 </html>

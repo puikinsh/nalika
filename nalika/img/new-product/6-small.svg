@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="270" height="250" viewBox="0 0 270 250">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#052e16"/>
+      <stop offset="100%" stop-color="#14532d"/>
+    </linearGradient>
+    <linearGradient id="ic" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+  <rect width="270" height="250" fill="url(#bg)"/>
+  <circle cx="30" cy="40" r="60" fill="#059669" opacity="0.07"/>
+  <circle cx="240" cy="200" r="70" fill="#34d399" opacity="0.05"/>
+  <!-- Headphones icon -->
+  <g transform="translate(135,108)" fill="none" stroke="url(#ic)" stroke-width="2" opacity="0.85">
+    <path d="M-30,8 C-30,-22 30,-22 30,8"/>
+    <rect x="-36" y="6" width="14" height="24" rx="4"/>
+    <rect x="22" y="6" width="14" height="24" rx="4"/>
+    <line x1="-30" y1="8" x2="-30" y2="18"/>
+    <line x1="30" y1="8" x2="30" y2="18"/>
+  </g>
+  <text x="135" y="170" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="500" fill="#6ee7b7" letter-spacing="1.5" opacity="0.6">AUDIO</text>
+</svg>

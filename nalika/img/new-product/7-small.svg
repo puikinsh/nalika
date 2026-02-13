@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="270" height="250" viewBox="0 0 270 250">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c1a3a"/>
+      <stop offset="100%" stop-color="#1e3a5f"/>
+    </linearGradient>
+    <linearGradient id="ic" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+  </defs>
+  <rect width="270" height="250" fill="url(#bg)"/>
+  <circle cx="230" cy="30" r="55" fill="#2563eb" opacity="0.07"/>
+  <circle cx="40" cy="220" r="65" fill="#60a5fa" opacity="0.05"/>
+  <!-- Camera icon -->
+  <g transform="translate(135,108)" fill="none" stroke="url(#ic)" stroke-width="2" opacity="0.85">
+    <rect x="-32" y="-16" width="64" height="42" rx="6"/>
+    <path d="M-12,-16 L-8,-26 L8,-26 L12,-16"/>
+    <circle cx="0" cy="6" r="14"/>
+    <circle cx="0" cy="6" r="8" stroke-width="1.5"/>
+    <circle cx="22" cy="-8" r="3" fill="url(#ic)"/>
+  </g>
+  <text x="135" y="170" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="500" fill="#93c5fd" letter-spacing="1.5" opacity="0.6">CAMERAS</text>
+</svg>

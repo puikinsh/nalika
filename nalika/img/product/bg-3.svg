@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="570" height="550" viewBox="0 0 570 550">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c1917"/>
+      <stop offset="50%" stop-color="#292524"/>
+      <stop offset="100%" stop-color="#44403c"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <radialGradient id="orb1" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="#d97706" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#d97706" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="570" height="550" fill="url(#bg)"/>
+  <circle cx="400" cy="150" r="180" fill="url(#orb1)"/>
+  <circle cx="170" cy="400" r="200" fill="url(#orb1)"/>
+  <!-- Crown/luxury icon -->
+  <g transform="translate(285,240)" fill="none" stroke="url(#glow)" stroke-width="2.5" opacity="0.7">
+    <path d="M-45,20 L-55,-20 L-25,0 L0,-30 L25,0 L55,-20 L45,20 Z"/>
+    <line x1="-45" y1="28" x2="45" y2="28"/>
+    <circle cx="0" cy="-30" r="4" fill="url(#glow)"/>
+    <circle cx="-55" cy="-20" r="4" fill="url(#glow)"/>
+    <circle cx="55" cy="-20" r="4" fill="url(#glow)"/>
+  </g>
+  <text x="285" y="355" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#fde68a" letter-spacing="4" opacity="0.5">LUXURY</text>
+</svg>
