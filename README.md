@@ -1,8 +1,8 @@
 # Nalika - Free Bootstrap Admin Dashboard Template
 
-**Nalika** is a dark-themed, fully responsive Bootstrap 5 Admin Dashboard Template. Originally built with Bootstrap 3 and jQuery by [Colorlib](https://colorlib.com), it has been completely modernized to **Bootstrap 5.3.8** with **zero jQuery** — all interactivity is vanilla JavaScript.
+**Nalika** is a dark-themed, fully responsive Bootstrap 5 Admin Dashboard Template. Originally built with Bootstrap 3 and jQuery by [Colorlib](https://colorlib.com), it has been completely modernized to **Bootstrap 5.3.9** with **zero jQuery** — all interactivity is vanilla JavaScript.
 
-Nalika includes 48 ready-to-use pages covering dashboards, e-commerce, charts, forms, tables, mailbox, UI components, and authentication screens. All dependencies are loaded via CDN — no build step, no `node_modules`, no package manager required.
+Nalika includes 48 ready-to-use pages covering dashboards, e-commerce, charts, forms, tables, mailbox, UI components, and authentication screens. The release includes ten additional compatibility routes and bundles Bootstrap locally. Optional widget libraries load from a CDN. A static file server is enough to run the template.
 
 ## Live Preview
 
@@ -12,7 +12,7 @@ Nalika includes 48 ready-to-use pages covering dashboards, e-commerce, charts, f
 
 ![Nalika — Project Management dashboard with sprint tasks and activity feed](screenshots/nalika-dark-dashboard-template.png)
 
-### Demo Site: [View Live Demo](https://colorlib.com/polygon/nalika/index.html)
+[Live demo](https://colorlib.com/polygon/nalika/) · [Download ZIP](https://downloads.colorlib.com/theme/nalika.zip) · [Product page](https://nalika.colorlib.com/)
 
 ## Premium Admin Templates
 
@@ -89,7 +89,7 @@ Level up your next project with a premium dashboard. The templates below from [D
 
 - [Features](#features)
 - [Quick Start](#quick-start)
-- [Pages](#pages-48)
+- [Pages](#pages-48-main-pages)
 - [Technology Stack](#technology-stack)
 - [Project Structure](#project-structure)
 - [Architecture](#architecture)
@@ -102,10 +102,10 @@ Level up your next project with a premium dashboard. The templates below from [D
 
 ### Core Features
 
-- **Bootstrap 5.3.8**: Latest Bootstrap CSS framework with JS bundle (includes Popper)
+- **Bootstrap 5.3.9**: Bundled CSS and JavaScript, including Popper
 - **Zero jQuery**: All JavaScript is vanilla ES6+ in a single modular file
-- **CDN-Only Dependencies**: No local vendor files — all libraries via jsDelivr
-- **No Build Step**: Open any HTML file directly in a browser, no compilation needed
+- **Local Bootstrap**: CSS and JavaScript are in `vendor/bootstrap/5.3.9/`. Widget libraries load from a CDN.
+- **No Build Step**: Serve the repository with any static web server.
 - **Dark Theme**: Sleek dark UI with `#152036` background and CSS custom properties (`--nk-*`)
 - **Fully Responsive**: Mobile-first design with breakpoints at 768px, 992px, and 1169px
 - **Collapsible Sidebar**: 205px expanded, 80px collapsed with smooth transitions
@@ -146,17 +146,17 @@ Level up your next project with a premium dashboard. The templates below from [D
 
 ## Quick Start
 
-No build step required. Clone and open:
+Clone the repository and start a local static server.
 
 ```bash
-git clone https://github.com/nicdev/nalika.git
+git clone https://github.com/puikinsh/nalika.git
 cd nalika
-open nalika/index.html
+python3 -m http.server 8000
 ```
 
-All asset paths are relative to the `nalika/` directory — open HTML files from there.
+Open [the dashboard](http://localhost:8000/nalika/) or [the guide](http://localhost:8000/documentation/).
 
-## Pages (48)
+## Pages (48 main pages)
 
 All pages are live on the Colorlib demo server. Click any page name to preview.
 
@@ -175,11 +175,11 @@ All pages are live on the Colorlib demo server. Click any page name to preview.
 
 ## Technology Stack
 
-All libraries loaded via jsDelivr CDN — no local vendor files, no `node_modules`.
+Bootstrap is bundled in the repository. Libraries for optional widgets load from a CDN.
 
 | Library | Version | Purpose |
 | --- | --- | --- |
-| Bootstrap | 5.3.8 | CSS framework + JS bundle (includes Popper) |
+| Bootstrap | 5.3.9 | CSS framework + JS bundle (includes Popper) |
 | Bootstrap Icons | 1.13.1 | Icon system |
 | AOS | 2.3.4 | Scroll animations |
 | SimpleBar | 6.2.7 | Custom scrollbars |
@@ -203,7 +203,7 @@ All libraries loaded via jsDelivr CDN — no local vendor files, no `node_module
 
 ```text
 nalika/
-  *.html              48 pages
+  *.html              48 main pages and 10 compatibility routes
   style.css           Main theme (dark) + Bootstrap 5 overrides
   css/main.css        Base/utility styles
   css/responsive.css  Breakpoints (768px, 992px, 1169px)
@@ -212,6 +212,8 @@ nalika/
   fonts/              Custom nalika icon font (local)
   img/                SVG placeholders organized by feature
   pdf/                Sample PDF for viewer page
+documentation/        Template guide
+vendor/bootstrap/     Versioned Bootstrap CSS and JS
 ```
 
 **Documentation:** [View Template Documentation](https://colorlib.com/polygon/nalika/documentation/index.html)
@@ -219,7 +221,7 @@ nalika/
 ## Architecture
 
 - **No jQuery** — all interactivity is vanilla JS in `js/main.js`
-- **CDN-only dependencies** — only local files are `js/main.js`, `style.css`, `css/main.css`, `css/responsive.css`, and `css/nalika-icon.css`
+- **Bundled Bootstrap** — the HTML loads CSS and JavaScript from `vendor/bootstrap/5.3.9/`.
 - **Dark theme** — background `#152036` (main), `#1b2a47` (sidebar/surface), with CSS custom properties (`--nk-bg-body`, `--nk-bg-surface`, `--nk-text-primary`, etc.)
 - **Collapsible sidebar** — 205px expanded, 80px collapsed; toggle adds `.mini-navbar` to `body` and `.active` to `#sidebar`
 - **Bootstrap 5 data attributes** — `data-bs-toggle`, `data-bs-target` used throughout
@@ -252,4 +254,4 @@ Created and maintained by [Colorlib](https://colorlib.com)
 
 ## License
 
-Nalika is licensed under The MIT License (MIT). You may use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the final products. Attribution to [Colorlib](https://colorlib.com) as the original author is required.
+Nalika is licensed under the [MIT License](LICENSE.md). You may use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the final products. Attribution to [Colorlib](https://colorlib.com) as the original author is required.

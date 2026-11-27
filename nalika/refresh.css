@@ -1,0 +1,34 @@
+:root {
+  --nk-chrome: #182640;
+  --nk-card: #20344f;
+  --nk-edge: #42546b;
+  --nk-accent: #ffca62;
+}
+.nalika-refresh .breadcome-area, .nalika-refresh .nk-overview {
+  margin-block: .85rem 1.25rem;
+}
+.nalika-refresh .nk-overview {
+  background: var(--nk-chrome);
+  color: #f4f7fa;
+  border: 1px solid var(--nk-edge);
+  border-radius: .9rem;
+  padding: clamp(1.15rem, 4vw, 2.25rem);
+}
+.nk-overview h2 {font-weight:720;letter-spacing:-.04em;font-size:clamp(1.5rem,4.5vw,2.8rem);margin-bottom:.5rem}
+.nk-overview>p {color:#c4cedc;max-width:63ch}
+.nk-portal {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.65rem}
+.nk-portal a {
+  color: #f0f5fc;
+  padding: .85rem;
+  background: var(--nk-card);
+  border: 1px solid var(--nk-edge);
+  border-radius: .65rem;
+  text-decoration: none;
+}
+.nk-portal strong,.nk-portal small{display:block}.nk-portal small{color:#c4cedc}
+.nk-portal a:hover strong { color:var(--nk-accent); text-decoration:underline; }
+.nalika-refresh :is(a,button,input,select,textarea):focus-visible {outline: 3px solid var(--nk-accent);outline-offset:2px}
+.nalika-refresh :is(.basic-form-area,.sparkline7-list,.product-status-wrap,.breadcome-list) {border-radius:.68rem}
+.nalika-refresh :is(input,select,textarea).form-control { border-radius:.45rem; }
+.nalika-refresh .left-sidebar-pro .sidebar-nav li a {text-underline-offset:.21em}
+@media(max-width:650px){.nk-portal{grid-template-columns:1fr}}

@@ -1135,9 +1135,9 @@ white-space: nowrap;
 	top:6px;
 	width:30px;
 }
-.ui-datepicker-prev { border-right:1px solid #FF0000; left:0; background:url(../images/left.png) no-repeat center; }
+.ui-datepicker-prev { border-right:1px solid #FF0000; left:0; background:none no-repeat center; }
 
-.ui-datepicker-next { border-left:1px solid #FF0000; right:0; background:url(../images/right.png) no-repeat center; }
+.ui-datepicker-next { border-left:1px solid #FF0000; right:0; background:none no-repeat center; }
 
 .ui-datepicker-calendar { border-collapse:collapse; line-height:1.5; width:100%; }
 
@@ -1687,7 +1687,7 @@ white-space: nowrap;
 }
 
 span.error-view{
-background: rgba(0, 0, 0, 0) url("../images/Error-128.png") no-repeat scroll right center;
+background: rgba(0, 0, 0, 0) none no-repeat scroll right center;
 float: right;
 height: 26px !important;
 margin: 0 !important;

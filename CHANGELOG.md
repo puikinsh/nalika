@@ -2,6 +2,13 @@
 
 All notable changes to the Nalika admin dashboard template.
 
+## [3.0.0] - 2026-11-27
+
+- Bundle Bootstrap 5.3.9 locally and remove the unused Bootstrap 3 and Jasny scripts.
+- Refine the dashboard, navigation, file uploads, and mobile tables.
+- Keep ten older demo URLs available on Bootstrap 5.3.9.
+- Update the documentation and its Bootstrap integrity hashes.
+
 ## [2.0.0] - 2026-02-13
 
 Complete modernization of the original Colorlib template. Every HTML page, stylesheet, and script has been rewritten or replaced.

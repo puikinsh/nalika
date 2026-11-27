@@ -4,32 +4,33 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Nalika is a Colorlib dark-design Bootstrap admin dashboard template (MIT license). It contains 48 HTML pages covering dashboards, e-commerce, forms, charts, tables, mailbox, auth pages, and error pages. Migrated to Bootstrap 5.3.8 + vanilla JS (no jQuery).
+Nalika is a Colorlib dark-design Bootstrap admin dashboard template (MIT license). It contains 48 main HTML pages and ten compatibility routes covering dashboards, e-commerce, forms, charts, tables, mailbox, auth pages, and error pages. Uses bundled Bootstrap 5.3.9 and vanilla JavaScript.
 
 ## Repository Structure
 
 ```
 nalika/                    # All template files live here (not repo root)
-├── *.html (48 pages)      # Dashboard pages, forms, charts, UI components
-├── css/                   # Legacy CSS files (Bootstrap, plugins, theme)
+├── *.html (58 routes)      # Dashboard pages, forms, charts, UI components
+├── css/                   # Theme CSS and feature styles
 ├── js/main.js             # Central vanilla JS init (~440 lines, modular)
-├── js/                    # Legacy JS files (kept for reference, no longer loaded)
+├── js/                    # Page-specific JavaScript
 ├── fonts/                 # Bootstrap Icons (CDN), custom nalika icon font (local)
 ├── img/                   # Images by feature (blog, products, etc.)
 ├── style.css              # Main theme stylesheet (dark theme + BS5 compat)
 └── pdf/
-documentation/             # Colorlib's original template docs
+documentation/             # Template guide
+vendor/bootstrap/          # Bundled Bootstrap CSS and JS
 ```
 
-All asset paths in HTML are relative to `nalika/` — open HTML files from that directory.
+Serve the repository root and open `nalika/index.html`. Bootstrap is served from `vendor/bootstrap/5.3.9/`.
 
 ## Current Technology Stack (2026)
 
-All libraries loaded via jsDelivr CDN — no local vendor files.
+Bootstrap is bundled locally. Optional widget libraries load from a CDN.
 
 |Library|Version|Purpose|
 |---|---|---|
-|Bootstrap|5.3.8|CSS framework + JS bundle (includes Popper)|
+|Bootstrap|5.3.9|CSS framework + JS bundle (includes Popper)|
 |Bootstrap Icons|1.13.1|Icon system (replaced Font Awesome + Glyphicons)|
 |AOS|2.3.4|Scroll animations (replaced WOW.js + animate.css)|
 |SimpleBar|6.2.7|Custom scrollbars (replaced mCustomScrollbar)|
@@ -43,7 +44,6 @@ All libraries loaded via jsDelivr CDN — no local vendor files.
 |Simple-DataTables|10.1.0|Data tables (replaced DataTables, no jQuery)|
 |CodeMirror|5.65.18|Code editor|
 |Cropper.js|2.1.0|Image cropping|
-|jsTree|3.3.17|Tree view|
 |noUiSlider|15.8.1|Range sliders (replaced jQuery UI/Ion Range)|
 |Pickr|1.9.1|Color picker (replaced Spectrum)|
 |SortableJS|1.15.6|Drag & drop|
@@ -52,7 +52,7 @@ All libraries loaded via jsDelivr CDN — no local vendor files.
 ## Architecture Notes
 
 - **No jQuery** — all JavaScript is vanilla JS in `js/main.js`.
-- **CDN-only dependencies** — no local vendor JS/CSS loaded (only `js/main.js`, `css/main.css`, `style.css`, `css/responsive.css`, and `css/nalika-icon.css`).
+- **Bundled Bootstrap** — pages load the 5.3.9 stylesheet and JavaScript from `vendor/bootstrap/`.
 - **Dark theme** uses background `#152036` (main) and `#1b2a47` (sidebar). Bootstrap 5 compatibility overrides are appended to `style.css`.
 - **Sidebar** is 205px wide, collapses to 80px. Toggle logic in `js/main.js` adds `.active` to `#sidebar` and `.mini-navbar` to `body`.
 - **Common page structure:** left sidebar (`div.left-sidebar-pro > nav#sidebar`) + main content (`div.all-content-wrapper` with header, breadcrumb, content, footer).
@@ -70,7 +70,7 @@ All libraries loaded via jsDelivr CDN — no local vendor files.
 
 ## Migration Notes
 
-Completed Bootstrap 3.3.6 → 5.3.8 migration:
+Bootstrap 5 migration patterns:
 
 - `col-xs-*` → `col-*`, panels → cards, `pull-left/right` → `float-start/end`
 - `data-toggle` → `data-bs-toggle`, `data-target` → `data-bs-target`

@@ -2252,7 +2252,7 @@ ul.tab-custon-design li .nav-link.active, ul.tab-review-design li .nav-link.acti
     padding: 0;
     width: 22px;
     height: 22px;
-    background: url(img/green1.png) no-repeat;
+    background: linear-gradient(135deg, #175749, #238569) no-repeat;
     border: none;
     cursor: pointer;
 }
@@ -3598,7 +3598,7 @@ ul.mailbox-list + hr, ul.h-list + hr {
     padding: 0;
     width: 22px;
     height: 22px;
-    background: url(img/green1.png) no-repeat;
+    background: linear-gradient(135deg, #175749, #238569) no-repeat;
     border: none;
     cursor: pointer;
 }
